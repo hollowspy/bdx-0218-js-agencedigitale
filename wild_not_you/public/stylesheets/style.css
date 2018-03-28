@@ -1,8 +1,44 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+    font-size: 14px;
+    text-align: center;
 }
 
-a {
-  color: #00B7FF;
+#header .video_header{
+    position:relative;
 }
+/* Par default, barre de recherche invisible */
+#header .search_bar{
+    display : none;
+}
+/* partie à supprimer ensuite ou à personnaliser si on le souhaite */
+#header #search_bar1{
+    border:2px red solid;
+}
+
+/* partie à supprimer ensuite ou à personnaliser si on le souhaite */
+#header #search_bar2{
+    border:2px green solid;
+}
+
+/* Dispo et taille des boutons - A redefinir ensuite selon la charte graphique */
+#header .btn_header_emploi, #header .btn_header_developpeur{
+    width: 100%;
+}
+
+/* Nouvelle disposition sur desktop avec les boutons sur la vidéo */
+@media screen and (min-width: 960px) {
+    #header .content_searchbar {
+    position: absolute;
+    top:40%;
+  }
+  #header .btn_header_emploi, #header .btn_header_developpeur{
+      height:100px;
+      opacity: 0.7;
+  }
+  #header .icon_search{
+      background-color: rgba(0,0,0,0.7)
+  }
+  #header .btn_header_emploi, #header .btn_header_developpeur{
+      margin-bottom: 5%;
+  }
+ }
