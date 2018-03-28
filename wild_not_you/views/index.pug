@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    header
+        include header.pug
+    body
+        p Test sur mon body
+    footer
+        p voici mon super footer genial
