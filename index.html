@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prototype footer</title>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+	<!-- Font Awesome -->
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+	<!-- BOOTRAP 4 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Tentative number CSS -->
+	<link rel="stylesheet" href="odometer-theme-car.css" />
+</head>
+<body>
+	<section id="myFooter">
+		<div class="container">
+			<div class="row myMain">
+				<div class="col-12 col-sm-6 col-lg-3 infos"> <!-- 1er colonne -->
+					<h3>Navigation</h3>
+					<ul>
+						<li class="cl-effect-1">
+							<a href="#">Home</a>
+						</li>
+						<li class="cl-effect-1">
+							<a href="#">Présentation</a>
+						</li>
+						<li class="cl-effect-1">
+							<a href="#">Entreprise</a>
+						</li>
+						<li class="cl-effect-1">
+							<a href="#">Collaborateurs</a>
+						</li>
+						<li class="cl-effect-1">
+							<a href="#">Nous rejoindre</a>
+						</li>
+						<li class="cl-effect-1">
+							<a href="#">Team</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3 infos"> <!-- 2eme colonne -->
+					<h3>Contact</h3>
+					<ul>
+						<li>68 Cours de Verdun Bordeaux 33000 FRANCE</li>
+						<li>alex.lorion@wildcodeschol.fr</li>
+						<li>06 66 96 17 77</li>
+					</ul>
+					<h3>Horaires</h3>
+					<ul>
+						<li>Semaine : 9h00 - 18h30 </li>
+						<li>Week-end : Fermé </li>
+					</ul>
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3 infos"> <!-- 3eme colonne -->
+					<span class="input input--minoru">
+						<input class="input__field input__field--yoko" type="text" id="input-16" />
+						<label class="input__label input__label--yoko" for="input-16">
+							<span class="input__label-content input__label-content--yoko">Name</span>
+						</label>
+					</span>
+					<span class="input input--minoru">
+						<input class="input__field input__field--yoko" type="text" id="input-16a" />
+						<label class="input__label input__label--yoko mail" for="input-16">
+							<span class="input__label-content input__label-content--yoko">Mail</span>
+						</label>
+					</span>
+					<span class="input input--minoru">
+						<input class="input__field input__field--yoko" type="text" id="input-16b" />
+						<label class="input__label input__label--yoko tel" for="input-16">
+							<span class="input__label-content input__label-content--yoko">Téléphone</span>
+						</label>
+					</span>
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1"></label>
+						<textarea class="form-control" id="myTextArea" rows="2" style="background-color: #1d1f20;color: #ffc107;"></textarea>
+					</div>
+					<button type="button" class="btn btn-outline-success">Valider</button>
+					<!-- 	MON BOUTON -->
+				</div>
+				<div class="col-12 col-sm-6 col-lg-3 infos"> <!-- 4eme colonne -->
+					<div class="map-responsive">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2828.632993430025!2d-0.5771663844630365!3d44.849406979098504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd552877d0d48f6b%3A0x5fbdab78bc865820!2s68+Cours+de+Verdun%2C+33000+Bordeaux!5e0!3m2!1sen!2sfr!4v1522140911990" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div> <!-- End map-reponsive -->
+				</div> <!-- End col map -->
+			</div> <!-- End row map -->
+			<div class="row" style="text-align: center;">
+				<div class="col-12 icon" >
+					<a href="https://www.instagram.com/wildcodeschool/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.linkedin.com/school/wild-code-school/" target="_blank"><i class="fab fa-linkedin"></i></a>
+					<a href="https://twitter.com/wildcodeschool?lang=en" target="_blank"><i class="fab fa-twitter-square"></i></a>
+					<a href="https://github.com/wildcodeschool"><i class="fab fa-github"></i></a>
+					<a href="https://www.facebook.com/wildcodeschool/" target="_blank"><i class="fab fa-facebook-square" ></i></a>
+				</div>
+			</div>
+			<div class="row mention" style="text-align: center;">
+				<div class="col">
+					<p>Alex est un super formateur</p>
+				</div>
+				<div class="col cl-effect-1">
+					<a href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228" target="_blank">Mention légale</a>
+				</div>
+				<div class="col cl-effect-1"><p>
+					<a href="https://github.com/WildCodeSchool/bdx-0218-js-agencedigitale" target="_blank">What's Ouside The World</a>
+				</div>
+			</div><!-- End row mention --> 
+		</div> <!-- End Container -->
+	</section> <!-- End myFooter -->
+
+	<!-- BOOTRAP 4 JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<!-- BOOTRAP 4 AJAX -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<!-- BOOTRAP 4 -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="myForm.js"></script>
+	<!-- Tentative Number script -->	
+
+</body>
+</html>
