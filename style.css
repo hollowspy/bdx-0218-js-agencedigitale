@@ -125,7 +125,7 @@ font-size: 2em;
 
 /* _______ Test Number _________*/
 
-.input {
+#myFooter .input {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -135,7 +135,7 @@ font-size: 2em;
   vertical-align: top;
 }
 
-.input__field {
+#myFooter .input__field {
   position: relative;
   display: block;
   float: right;
@@ -150,11 +150,11 @@ font-size: 2em;
   -webkit-appearance: none; /* for box shadows to show on iOS */
 }
 
-.input__field:focus {
+#myFooter .input__field:focus {
   outline: none;
 }
 
-.input__label {
+#myFooter .input__label {
   display: inline-block;
   float: right;
   padding: 0 1em;
@@ -172,7 +172,7 @@ font-size: 2em;
   user-select: none;
 }
 
-.input__label-content {
+#myFooter .input__label-content {
   position: relative;
   display: block;
   padding: 1.6em 0;
@@ -192,7 +192,7 @@ font-size: 2em;
 }
 
 /* Yoko */
-.input__field--yoko { /* Texte écris par l'utilisateur*/
+#myFooter .input__field--yoko { /* Texte écris par l'utilisateur*/
   z-index: 10;
   width: 100%;
   background: transparent;
@@ -202,14 +202,14 @@ font-size: 2em;
   transition: opacity 0.3s;
 }
 
-.input__label--yoko { /* Texte sous l'input */
+#myFooter .input__label--yoko { /* Texte sous l'input */
   position: relative;
   width: 100%;
   color: #ffc107; /* Jaune */
   text-align: left;
 }
 
-.input__label--yoko::before {
+#myFooter .input__label--yoko::before {
   content: '';
   position: absolute;
   bottom: 100%;
@@ -225,7 +225,7 @@ font-size: 2em;
   transition: transform 0.3s;
 }
 
-.input__label--yoko::after { /* Barre type span */
+#myFooter .input__label--yoko::after { /* Barre type span */
   content: '';
   position: absolute;
   top: 0;
@@ -239,54 +239,54 @@ font-size: 2em;
   transition: transform 0.3s;
 }
 
-/*.input__label--yoko:valid {
+/*#myFooter .input__label--yoko:valid {
    background: green;
 }*/
 
-.input__label-content--yoko {
+#myFooter .input__label-content--yoko {
   padding: 0.75em 0;
 }
 
-.input__field--yoko:focus,
-.input--filled .input__field--yoko {
+#myFooter .input__field--yoko:focus,
+#myFooter .input--filled .input__field--yoko {
   opacity: 1;
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
 
-.input__field--yoko:focus + .input__label--yoko::before,
+#myFooter .input__field--yoko:focus + .input__label--yoko::before,
 .input--filled .input__label--yoko::before {
   -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
   transform: perspective(1000px) rotate3d(1, 0, 0, 0deg);
 }
 
-.input__field--yoko:focus + .input__label--yoko,
+#myFooter .input__field--yoko:focus + .input__label--yoko,
 .input--filled .input__label--yoko {
   pointer-events: none;
 }
 
-.input__field--yoko:focus + .input__label--yoko::after,
-.input--filled .input__label--yoko::after {
+#myFooter .input__field--yoko:focus + .input__label--yoko::after,
+#myFooter .input--filled .input__label--yoko::after {
   -webkit-transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
   transform: perspective(1000px) rotate3d(1, 0, 0, -90deg);
 }
 
 /* ______  MON BOUTON ________*/
-.button {
+#myFooter .button {
   /* other styles */
   -webkit-filter: url("#filter");
   filter: url("/#filter");
 }
 
-.form-control {
+#myFooter .form-control {
     margin-bottom: 0;
     background-color: black;
 }
 
-.form-group {
+#myFooter .form-group {
   padding-top: 0;
 }
 
-label {
+#myFooter label {
   margin-bottom: 0;
 }
