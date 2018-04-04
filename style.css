@@ -1,0 +1,49 @@
+body {
+    text-decoration: none;
+    color:black;
+}
+
+.collab .langue {
+    border-radius: 0.2em;
+    
+}
+
+.collab.container-fluid {
+    text-align: center;
+}
+
+.collab h2 {
+    text-align: center; 
+    margin:auto;
+    font-size: 2em;
+}
+
+.collab .name{
+    font-variant: small-caps;
+    font-size:1.5em;
+    color:black;
+    margin-top: 15%;
+}
+
+.collab. .name, .collab .xp, .collab .description {
+    margin-bottom: 0%;
+    text-align: justify;
+}
+
+.collab .dev {
+    margin: auto;
+    margin-left: -1%;
+    max-width: 100%;
+}
+
+.collab .devDesc {
+    margin:0 2% 0 -2%;
+}
+
+.collab .titre {
+    margin : 0 10%;
+}
+
+.collab .img-fluid{
+    margin-top:50%;
+}
