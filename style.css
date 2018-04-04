@@ -1,32 +1,19 @@
 body {
     text-decoration: none;
     color:black;
-}
-
-.collab .langue {
-    border-radius: 0.2em;
-    
-}
-
-.collab.container-fluid {
-    text-align: center;
-}
-
-.collab h2 {
-    text-align: center; 
-    margin:auto;
-    font-size: 2em;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_seamless.png");
 }
 
 .collab .name{
     font-variant: small-caps;
     font-size:1.5em;
     color:black;
-    margin-top: 15%;
+    margin-top: 20%;
+    text-shadow: 2px 2px 15px darkgray;
 }
 
-.collab. .name, .collab .xp, .collab .description {
-    margin-bottom: 0%;
+.collab .name, .collab .xp, .collab .description {
+    margin-bottom: -5%;
     text-align: justify;
 }
 
@@ -37,13 +24,25 @@ body {
 }
 
 .collab .devDesc {
-    margin:0 2% 0 -2%;
+    margin: 0 3% 0 -4%;
+    padding: 0 5%;
 }
-
-.collab .titre {
-    margin : 0 10%;
+  
+.collab h2 {
+    text-align: center; 
+    font-size: 2em;
+    color:rgba(25,17,47);
+    border-bottom:1px dashed rgba(25,17,47);
+    padding-bottom: 5%;
+    margin:0 15%;
 }
 
 .collab .img-fluid{
     margin-top:50%;
+    border-radius: 0.2em;
+    box-shadow: 2px 2px 20px black;
+}
+
+.collab .lang{
+    color:rgba(10, 120,147, 1);
 }
