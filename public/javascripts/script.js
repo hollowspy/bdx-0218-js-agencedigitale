@@ -1,23 +1,59 @@
-function showSearchBarJob() {
-    let x = document.getElementById("search_bar1");
-    let y = document.getElementById("search_bar2");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-        y.style.display = "none";
-    }
-    else{
-        x.style.display = "none";
-        }
-}
+/* Scirpt de transformation de la Navbar  */
+$(document).ready(function() {
+  $(window).on("scroll", function() {
 
-function showSearchBarDev() {
-    let y = document.getElementById("search_bar2");
-    let x = document.getElementById("search_bar1");
-    if (y.style.display === "none") {
-        y.style.display = "block";
-        x.style.display = "none";
+    if ($(window).scrollTop() >= 10) {
+      $(".navbar").addClass("compressed");
+      $(".navbar-brand").css("display", "block");
+    } else {
+      $(".navbar").removeClass("compressed");
+      $(".navbar-brand").css("display", "none");
     }
-    else{
-        y.style.display = "none";
-        }
-}
+
+
+    if ($(window).scrollTop() >window.innerHeight) {
+     
+      $(".navbar-brand").css("display", "block");
+    } else {
+     
+      $(".navbar-brand").css("display", "none");
+    }
+
+  });
+});
+
+
+/* Script de la serious bar lors du scroll */ 
+
+var a = 0;
+$(window).scroll(function() {
+
+  var oTop = $('#counter').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 1000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+
+});
