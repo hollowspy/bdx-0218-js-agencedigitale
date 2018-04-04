@@ -73,6 +73,10 @@ h2, h3, h4, h5 {
 #job h2 {
     font-family: 'bebas_neuebold';
 }
+#job h3{
+    font-family: 'Lato';
+    font-size: 1.2em;
+}
 
 
 
