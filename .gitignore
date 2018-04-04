@@ -1,3 +1,4 @@
+
 Note_de_cadrage_Agence Web.pdf
 font/
 style-guide.jpg
@@ -5,4 +6,5 @@ stylesheet.css
 test_counter3/
 wild_not_you/node_modules/
 wild_not_you/package-lock.json
-
+node_modules/
+serious-bar.html
