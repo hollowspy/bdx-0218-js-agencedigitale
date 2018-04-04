@@ -48,8 +48,6 @@
 body {
     font-family: 'Lato', sans-serif;
     text-decoration: none;
-    text-align: center;
-    color:black;
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_seamless.png");
 }
 
@@ -421,10 +419,10 @@ h2, h3, h4, h5 {
   font-family: 'bebas_neueregular';
   font-size: 4rem;
 }
-#funBar .fake {
+/*#funBar .fake {
   height: 500px;
   width: 100%;
-}
+}*/
 
 /*------------------------
       SERIOUS BAR
@@ -432,10 +430,6 @@ h2, h3, h4, h5 {
 .counter-value{
   font-family: 'bebas_neueregular';
   font-size: 4rem;
-}
-.fake {
-  height: 500px;
-  width: 100%;
 }
 
 /*_____________________*/
