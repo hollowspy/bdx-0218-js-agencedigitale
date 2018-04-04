@@ -127,16 +127,6 @@ h2, h3, h4, h5 {
 }
 
 
-.fred_nav_logo_img {
-  background-image: url('images/wyn-logo.png');
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 303px;
-  position: absolute;
-  top: 20%;
-  left: 45%;
-}
-
 /*navbar autres onglets*/
 .navbar-light .navbar-nav .nav-link{
   color: #fff;
@@ -179,7 +169,7 @@ h2, h3, h4, h5 {
   border-radius: 5px;
 }
 
-.fred_nav_logo_img.scroll {
+#header .logo_wild.scroll {
   background-image: url('images/wny-logo.jpg');
   background-repeat: no-repeat;
   width: 160px;
@@ -187,10 +177,6 @@ h2, h3, h4, h5 {
   position: absolute;
   top: 10%;
   left: 20%;
-}
-
-.text-center{
-  padding-top: 100px;
 }
 
 /*-----------------------
@@ -226,16 +212,6 @@ h2, h3, h4, h5 {
     height: 50px;
 }
 
-
-#header .logo_wild {
-  background-image: url('../images/wyn-logo.png');
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 303px;
-  position: absolute;
-  top: 20%;
-  left: 45%;
-}
 
 
 /* --------------------
@@ -765,7 +741,7 @@ font-size: 2em;
     }
     #header .content_searchbar {
      position: absolute;
-     top:45%;
+     top:55%;
     }
   /* Barre de recherche en une ligne (display flex) sur la vidéo */
    #header .search_bar{
@@ -777,6 +753,15 @@ font-size: 2em;
    }
    #portofolio_entreprise .content_cadre:before {
        visibility: visible;
+   }
+   #header .logo_wild {
+     background-image: url('../images/wyn-logo.png');
+     background-repeat: no-repeat;
+     width: 160px;
+     height: 303px;
+     position: absolute;
+     top: 20%;
+     left: 45%;
    }
 }
 
@@ -792,6 +777,12 @@ font-size: 2em;
   }
 }
 
+@media screen and (max-width: 720px){
+  .video_header{
+      margin-top:15%;
+      border:2px red solid;
+  }
+}
 
 @media screen and (min-width: 960px) and (max-width:1140px){
     #portofolio_entreprise .content_cadre h3{
