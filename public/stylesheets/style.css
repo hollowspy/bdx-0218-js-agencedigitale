@@ -286,6 +286,7 @@ a {
    }
 }
 
+<<<<<<< HEAD
 /*__________________________*/
 /* ______ SERIOUS BAR ______*/
 /*__________________________*/
@@ -605,3 +606,156 @@ font-size: 2em;
   height: 1280px;
   position:relative;
 }
+=======
+
+/* CSS de la NavBar */ 
+@import "https://fonts.googleapis.com/css?family=Lato:400,700,900";
+
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(0,0,0,0.1);
+  color: #333;
+  transition: all 0.3s;
+}
+
+/*logo plus onglet recruteur*/
+.navbar-brand {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100px;
+  display: none;
+  box-shadow: 4px 4px 9px rgba(0,0,0,0.3);
+}
+
+.navbar-recruteur{
+  padding-left: 100px;
+  color: black;
+}
+
+
+.cl-effect-5 a {
+  overflow: hidden;
+}
+
+.cl-effect-5 a span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.cl-effect-5 a span::before {
+  position: absolute;
+  color: black;
+  top: 100%;
+  content: attr(data-hover);
+  font-weight: 700;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.cl-effect-5 a:hover span,
+.cl-effect-5 a:focus span {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+
+.fred_nav_logo_img {
+  background-image: url('images/wyn-logo.png');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 303px;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+}
+
+
+/*navbar autres onglets*/
+.navbar-light .navbar-nav .nav-link{
+  color: #fff;
+  margin-right: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link #border a {
+  border : 1px solid white;
+  border-radius: 5px;
+}
+
+
+.navbar #border a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.2s;
+}
+
+
+#navbarTogglerDemo02.navbar-collapse.collapse.show {
+  text-align: right;
+}
+
+/*navbar after scroll*/
+.navbar.compressed {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  color: black;
+}
+
+.navbar.compressed .navbar-nav .nav-link {
+  color: black;
+  margin-right: 20px;
+}
+
+
+.navbar.compressed #border a {
+  border : 1px solid black;
+  border-radius: 5px;
+}
+
+
+
+.fred_nav_logo_img.scroll {
+  background-image: url('images/wny-logo.jpg');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 303px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+
+
+
+
+.text-center{
+  padding-top: 100px;
+}
+
+
+
+
+
+@media screen and (max-width: 990px){
+  .navbar{
+    background:white;
+  }
+  #navbarTogglerDemo02 > ul > li > a{
+    color:black;
+  }
+  .navbar.compressed #border a{
+    border: 0;
+  }
+}
+
+  
+>>>>>>> 1b5c157fc01c6ad387d4dd962398ce111250931b
