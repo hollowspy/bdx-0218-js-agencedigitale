@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 .gitignore
 node_modules/
 serious-bar.html
+=======
+/node_modules
+>>>>>>> acceuil_entreprise
