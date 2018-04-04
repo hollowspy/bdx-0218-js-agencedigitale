@@ -779,8 +779,8 @@ font-size: 2em;
 
 @media screen and (max-width: 720px){
   .video_header{
-      margin-top:15%;
-     }
+      margin-top:60px;
+      }
 }
 
 @media screen and (min-width: 960px) and (max-width:1140px){
