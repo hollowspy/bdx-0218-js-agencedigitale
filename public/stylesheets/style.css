@@ -227,6 +227,17 @@ h2, h3, h4, h5 {
 }
 
 
+#header .logo_wild {
+  background-image: url('../images/wyn-logo.png');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 303px;
+  position: absolute;
+  top: 20%;
+  left: 45%;
+}
+
+
 /* --------------------
      PORTOFOLIO ENTREPRISE
 ------------------------ */
@@ -398,6 +409,10 @@ h2, h3, h4, h5 {
     margin:0 12%;
 }
 
+/* CSS de la NavBar */
+@import "https://fonts.googleapis.com/css?family=Lato:400,700,900";
+
+
 .collab .img-fluid{
     margin:auto;
     border-radius: 0.2em;
@@ -470,7 +485,6 @@ h2, h3, h4, h5 {
   text-decoration: none;
   color:white;
 }
-
 #myFooter ul {
   list-style: none;
   padding-left: initial;
@@ -490,6 +504,8 @@ h2, h3, h4, h5 {
 #myFooter .icon {
 font-size: 2em;
 }
+
+
 
 #myFooter .icon a {
   margin-left: 0.5em;
@@ -775,6 +791,7 @@ font-size: 2em;
     border: 0;
   }
 }
+
 
 @media screen and (min-width: 960px) and (max-width:1140px){
     #portofolio_entreprise .content_cadre h3{
