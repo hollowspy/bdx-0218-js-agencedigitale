@@ -64,6 +64,9 @@ h2, h3, h4, h5 {
 .bg-blue{
   background-color: #19112f;
 }
+.bg-white{
+    background-color: #FFF;
+}
 .pt-l{padding-top:5rem;}
 .pb-l{padding-bottom: 5rem;}
 
@@ -212,6 +215,17 @@ h2, h3, h4, h5 {
     height: 50px;
 }
 
+/*------------------------
+    OFFRES D'EMPLOIS
+-------------------------*/
+
+#job h2 {
+    font-family: 'bebas_neuebold';
+}
+#job h3{
+    font-family: 'Lato';
+    font-size: 1.2em;
+}
 
 
 /* --------------------
