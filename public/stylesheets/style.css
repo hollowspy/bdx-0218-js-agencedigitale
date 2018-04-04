@@ -1,8 +1,85 @@
+/*------------------------
+	    GENERAL
+-------------------------*/
+@font-face {
+    font-family: 'bebas_neuebold';
+    src: url('./fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('./fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neuebook';
+    src: url('./fonts/bebasneue_book-webfont.woff2') format('woff2'),
+         url('./fonts/bebasneue_book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neuelight';
+    src: url('./fonts/bebasneue_light-webfont.woff2') format('woff2'),
+         url('./fonts/bebasneue_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('./fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('./fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'bebas_neuethin';
+    src: url('./fonts/bebasneue_thin-webfont.woff2') format('woff2'),
+         url('./fonts/bebasneue_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bestloversregular';
+    src: url('./fonts/bestlovers-webfont.woff2') format('woff2'),
+         url('./fonts/bestlovers-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	font-family: 'bestloversregular';
+	font-size: 5,4em;
+}
+h2, h3, h4, h5 {
+	font-family: 'bebas_neuebook';
+}
+
+.bg-blue{
+	background-color: #19112f; 
+}
+.pt-l{padding-top:5rem;}
+.pb-l{padding-bottom: 5rem;}
+
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+}*/
 
 a {
   color: #00B7FF;
+}
+
+/*------------------------
+	    SERIOUS BAR
+-------------------------*/
+.counter-value{
+	font-family: 'bebas_neueregular';
+	font-size: 4rem;
+}
+.fake {
+	height: 500px;
+	width: 100%;
 }
