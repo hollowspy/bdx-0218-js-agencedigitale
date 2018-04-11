@@ -8,10 +8,12 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/blog', function(req, res, next) {
-  res.render('blog', { title: 'BLog WNY' });
+  res.render('blog', { title: 'Blog WNY' });
 });
 
-
-
+/* GET recruteur page */
+router.get('/recruteur', function(req, res, next) {
+  res.render('recruteur', { title: 'Express' });
+});
 
 module.exports = router;
