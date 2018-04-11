@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var recruteur = require('./routes/recruteur');
 var admin = require('./routes/admin');
+var emploi = require('./routes/emploi');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/recruteur', recruteur);
 app.use('/admin', admin);
+app.use('/emploi', emploi)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
