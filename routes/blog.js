@@ -1,9 +1,9 @@
-ar express = require('express');
+var express = require('express');
 var router = express.Router();
 
 
 /* GET blog page. */
-router.get('/blog', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('blog', { title: 'Blog WNY' });
 });
 
