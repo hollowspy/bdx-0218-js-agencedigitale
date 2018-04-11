@@ -504,6 +504,7 @@ body.admin {
 
 #header_blog .writeit{
   z-index: 1;
+  font-family: 'bebas_neuebook';
   color: black;
   font-size: 20pt;
   line-height: 53px;
