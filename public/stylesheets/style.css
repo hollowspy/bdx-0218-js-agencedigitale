@@ -497,6 +497,74 @@ body.admin {
 }
 
 
+/* --------------------
+     BLOG
+------------------------ */
+
+
+#header_blog .writeit{
+  z-index: 1;
+  color: black;
+  font-size: 20pt;
+  line-height: 53px;
+  text-align: center;
+  padding: 31.5px 0 70px 0;
+  top: 43%;
+  left: 35%;
+}
+
+
+#header_blog .after {
+-webkit-animation-delay: 500ms; 
+-moz-animation-delay: 500ms; 
+-ms-animation-delay: 500ms; 
+-o-animation-delay: 500ms; 
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
+}
+
+
+#header_blog img{
+z-index: 0;
+}
+
+#header_blog .logo_wild{
+z-index: 1;
+  top: 10%;
+  left: 40%;
+}
+
+
+#blog a{
+  color: black;
+}
+
+
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
+
+
+#blog .content{
+  color: #999;
+  margin: 0;
+}
+
+
 /*_____________________*/
 /* ______ FOOTER ______*/
 /*_____________________*/
