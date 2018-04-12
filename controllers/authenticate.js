@@ -4,20 +4,21 @@ module.exports.authenticate=function(req,res){
     var email=req.body.email;
     var password=req.body.password;
 
-    connection.query('SELECT * FROM user WHERE email = ?',[email], function (error, results, fields) {
+    connection.query('SELECT * FROM login WHERE email = ?',[email], function (error, results, fields) {
       if (error) {
           res.json({
             status:false,
             message:'there are some error with query'
             })
       }else{
-
+        console.log(results);
         if(results.length >0){
           if(results[0].password == password){
-              res.json({
-                  status:true,
-                  message:'successfully authenticated'
-              })
+              res.redirect('/administration');
+              // res.json({
+              //     status:true,
+              //     message:'successfully authenticated'
+              // })
           }else{
               res.json({
                 status:false,
