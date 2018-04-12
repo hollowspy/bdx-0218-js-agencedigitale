@@ -1,6 +1,6 @@
 .formEmploi#formEmploi
   h2 Deposer une offre
-  form#myForm(class='form-emploi' method='POST' action='/emploi')
+  form#myForm(class='form-emploi' method='POST'  enctype='multipart/form-data' action='/emploi')
 
     .container.form-ent
       .row.formOffre
@@ -45,10 +45,6 @@
               label.form_col(for='logo') Logo :
               input#logo(name='logo', type='file')
               span.tooltip Le logo ne peut pas &ecirc;tre absent
-          .row.envoiImg
-            .col-12
-              label.form_col.imgEnt(for='imgEnt') Images :
-              input#imgEnt(name='imgEnt', type='file')
-      .row.formOffre
+          .row.formOffre
         .col-12.formSubmit.mb-4.pt-4
           input(type='submit', value="Envoyer mon offre d'emploi")
