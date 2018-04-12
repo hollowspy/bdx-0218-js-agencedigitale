@@ -13,126 +13,9 @@
           input#duree(name='duree', type='text')
           span.tooltip La dur&eacute;e doit &ecirc;tre sup&eacute;rieure &agrave; 0
         .col-12.col-sm-4
-          label.form_col.input-group(for='lieu') Lieu :
-          select.custom-select
-            option(selected='') Localisation
-            optgroup(label='Alsace')
-              option(value='1')  Bas Rhin
-              option(value='2')  Haut Rhin
-            optgroup(label='Aquitaine')
-              option(value='3') Dordogne
-              option(value='4') Gironde
-              option(value='5') Landes
-              option(value='6') Lot-et-Garonne
-              option(value='7') Pyr&eacute;n&eacute;es-Atlantiques
-            optgroup(label='Auvergne')
-              option(value='8') Allier
-              option(value='9') Cantal
-              option(value='10') Haute-Loire
-              option(value='11') Puy de D&ocirc;me
-            optgroup(label='Basse Normandie')
-              option(value='12') Calvados
-              option(value='13') Manche
-              option(value='14') Orne
-            optgroup(label='Bourgnogne')
-              option(value='15') Ni&egrave;vre
-              option(value='16') Sa&ocirc;ne-et-Loire
-              option(value='17') Yonne
-            optgroup(label='Bretagne')
-              option(value='18') C&ocirc;tes d&apos;Armor
-              option(value='19') Finist&egrave;re
-              option(value='20') Ille-et-Vilaine
-              option(value='21') Morbihan
-            optgroup(label='Centre')
-              option(value='22') Cher
-              option(value='23') Eure-et-Loir
-              option(value='24') Indre
-              option(value='25') Indre-et-Loire
-              option(value='26') Loir-et-Cher
-              option(value='27') Loiret
-            optgroup(label='Champagne Ardenne')
-              option(value='28') Ardennes
-              option(value='29') Aube
-              option(value='30') Marne
-              option(value='31') Haute-Marne
-            optgroup(label='Corse')
-              option(value='32') Corse-du-Sud
-              option(value='33') Haute-Corse
-            optgroup(label='Franche-Comté')
-              option(value='34') Doubs
-              option(value='35') Jura
-              option(value='36') Haute-Sa&ocirc;ne
-              option(value='37') Territoire-de-Belfort
-            optgroup(label='Haute Normandie')
-              option(value='38') Eure
-              option(value='39') Seine-Maritime
-            optgroup(label='Ile de France')
-              option(value='40') Paris
-              option(value='41') Seine-et-Marne
-              option(value='42') Yvelines
-              option(value='43') Essonne
-              option(value='44') Hauts-de-Seine
-              option(value='45') Seine-Saint-Denis
-              option(value='46') Val-de-Marne
-            optgroup(label='Languedoc Roussillon')
-              option(value='47') Aude
-              option(value='48') Gard
-              option(value='49') H&eacute;rault
-              option(value='50') Loz&egrave;re
-              option(value='51') Pyr&eacute;n&eacute;es-Orientales
-            optgroup(label='Limousin')
-              option(value='52') Corr&egrave;ze
-              option(value='53') Creuse
-              option(value='54') Haute-Vienne
-            optgroup(label='Lorraine')
-              option(value='55') Meurthe-et-Moselle
-              option(value='56') Meuse
-              option(value='57') Moselle
-              option(value='58') Vosges
-            optgroup(label='Midi Pyrénées')
-              option(value='59') Ari&egrave;ge
-              option(value='60') Aveyron
-              option(value='61') Haute-Garonne
-              option(value='62') Gers
-              option(value='63') Lot
-              option(value='64') Hautes-Pyr&eacute;n&eacute;es
-              option(value='65') Tarn
-              option(value='66') Tarn-et-Garonne
-            optgroup(label='Nord Pas de Calais')
-              option(value='67') Nord
-              option(value='68') Pas-de-Calais
-            optgroup(label='Pays de la Loire')
-              option(value='69') Loire-Atlantique
-              option(value='70') Maine-et-Loire
-              option(value='71') Mayenne
-              option(value='72') Sarthe
-              option(value='73') Vend&eacute;e
-            optgroup(label='Picardie')
-              option(value='74') Aisne
-              option(value='75') Oise
-              option(value='76') Somme
-            optgroup(label='Poitou Charentes')
-              option(value='77') Charente
-              option(value='78') Charente-Maritime
-              option(value='79') Deux-S&egrave;vres
-              option(value='80') Vienne
-            optgroup(label='PACA')
-              option(value='81') Alpes
-              option(value='82') Hautes-Alpes
-              option(value='83') Alpes-Maritimes
-              option(value='84') Bouches-du-Rh&ocirc;ne
-              option(value='85') Var
-              option(value='86') Vaucluse
-            optgroup(label='Rhones Alpes')
-              option(value='87') Ain
-              option(value='88') Ard&egrave;che
-              option(value='89') Dr&ocirc;me
-              option(value='90') Is&egrave;re
-              option(value='91') Loire
-              option(value='92') Rh&ocirc;ne
-              option(value='93') Savoie
-              option(value='94') Haute-Savoie
-          span.tooltip Veuillez choisir un champ
+          label.form_col(for='lieu') Lieu :
+          input#duree(name='lieu', type='text')
+          span.tooltip Le lieu ne peut pas etre vide
       .row.formOffre
         .col-6.col-sm-4
           label.form_col(for='diplome') Dipl&ocirc;me :
@@ -146,18 +29,15 @@
         .col-12.col-sm-6
           label.form_col(for='descEmploi') Description du poste :
           textarea#descEmploi(name='descEmploi', rows='5')
-            | Veuillez &eacute;crire ici une description du poste.
           span.tooltip La description du poste ne peut pas &ecirc;tre vide
         .col-12.col-sm-6
           label.form_col(for='descEnt') Description de l&apos;entreprise :
           textarea#descEnt(name='descEnt', rows='5')
-            | Veuillez &eacute;crire ici une description de l&apos;entreprise.
           span.tooltip La description de l&apos;entreprise ne peut pas &ecirc;tre vide
       .row.formOffre
         .col-12.col-sm-6
-          label.form_col(for='descProfil') Comp&eacute;tences requises :
-          textarea#descProfil(name='descProfil', rows='5')
-            | Veuillez &eacute;crire ici une description du profil recherch&eacute;.
+          label.form_col(for='competences') Comp&eacute;tences requises :
+          textarea#descProfil(name='competences', rows='5')
           span.tooltip La description du profil ne peut pas &ecirc;tre vide
         .col-12.col-sm-6
           .row.envoiImg
