@@ -92,13 +92,13 @@ h2, h3, h4, h5 {
   padding: 0;
   top: 0;
   left: 0;
-  width: 120px;
+  width: 100px;
   display: none;
   box-shadow: 4px 4px 9px rgba(0,0,0,0.3);
 }
 
 .navbar-recruteur{
-  padding-left: 100px;
+  padding-left: 105px;
   color: black;
 }
 
@@ -1041,10 +1041,7 @@ z-index: 1;
        visibility: visible;
    }
    #header .logo_wild {
-     background-image: url('../images/wyn-logo.png');
-     background-repeat: no-repeat;
-     width: 160px;
-     height: 303px;
+     width: 115px;
      position: absolute;
      top: 20%;
      left: 45%;
