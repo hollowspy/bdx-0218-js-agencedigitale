@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 		  		var bar = {
 		  			'name':rows[i].name,
 		  			'numbers':rows[i].numbers,
-		  			'id':rows[i].id
+		  			'picto':rows[i].picto
 		  		}
 		  		// Add object into array
 		  		barList.push(bar);
