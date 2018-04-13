@@ -103,7 +103,7 @@ $(window).scroll(function() {
 
 // Create the array with the text you want to write
 var txt2write = new Array(
-    "Wild Not YOU / BLOG.",
+    "Wild not you / blog",
     );
 
 // Variables
