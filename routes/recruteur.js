@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 	  	} else {
 	  		// Loop check on each row
 	  		for (var i = 0; i < rows.length; i++) {
-
 	  			// Create an object to save current row's data
 		  		var bar = {
 		  			'name':rows[i].name,
