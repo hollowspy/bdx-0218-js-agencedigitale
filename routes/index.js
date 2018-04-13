@@ -11,9 +11,4 @@ router.get('/blog', function(req, res, next) {
   res.render('blog', { title: 'Blog WNY' });
 });
 
-/* GET recruteur page */
-router.get('/recruteur', function(req, res, next) {
-  res.render('recruteur', { title: 'Express' });
-});
-
 module.exports = router;
