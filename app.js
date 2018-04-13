@@ -1,21 +1,22 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var index = require('./routes/index');
-var users = require('./routes/users');
-var recruteur = require('./routes/recruteur');
-var admin = require('./routes/admin');
-var blog = require('./routes/blog');
-var emploi = require('./routes/emploi');
+let express = require('express');
+let path = require('path');
+let favicon = require('serve-favicon');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
+let index = require('./routes/index');
+let users = require('./routes/users');
+let recruteur = require('./routes/recruteur');
+let admin = require('./routes/admin');
+let blog = require('./routes/blog');
+let emploi = require('./routes/emploi');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
-
-
-var app = express();
+/* TIBO*/
+let transaction = require('./data_access/transaction.js');
+  /*End TIBO */
+let app = express();
 
 
 // upload de fichier sur le site
@@ -29,6 +30,13 @@ app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
     }
   });
 })
+
+/*TIBO*/
+  app.get('/contact', (req, res)=>{
+      transaction.getAllContacts(res);
+    });
+
+  /*End TIBO */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,6 +56,7 @@ app.use('/recruteur', recruteur);
 app.use('/admin', admin);
 app.use('/blog', blog);
 app.use('/emploi', emploi)
+
 
 
 // catch 404 and forward to error handler
