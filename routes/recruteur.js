@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
-  res.render('recruteur', { title: 'Page recruteur' });
+  res.render('recruteur', { title: 'Page recruteur', bodyClass: 'recruteur' });
 });
 
 

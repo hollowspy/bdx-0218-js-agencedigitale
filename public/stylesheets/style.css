@@ -573,23 +573,14 @@ body.admin {
 ------------------------ */
 
 
-#header_blog .writeit{
-  z-index: 1;
-  color: black;
-  font-size: 20pt;
-  line-height: 53px;
-  text-align: center;
-  padding: 31.5px 0 70px 0;
-  top: 43%;
-  left: 35%;
-}
+
 
 
 #header_blog .after {
--webkit-animation-delay: 500ms; 
--moz-animation-delay: 500ms; 
--ms-animation-delay: 500ms; 
--o-animation-delay: 500ms; 
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
 animation-delay: 500ms;
 animation: blink 1.3s infinite;
 }
@@ -635,6 +626,10 @@ z-index: 1;
   margin: 0;
 }
 
+#blog .container{
+  padding-top: 30px;
+}
+
 
 /*_____________________*/
 /* ______ FOOTER ______*/
@@ -667,6 +662,10 @@ z-index: 1;
 #myFooter {
   color:white;
   background-color: #8f201a; /* rouge */
+}
+.recruteur #myFooter {
+  color:#fff;
+  background-color: #19112f; /* rouge */
 }
 
 #myFooter a{
@@ -827,6 +826,9 @@ font-size: 2em;
 }
 
 /* Yoko */
+.recruteur #myFooter .input__field--yoko{
+  color: #0a7893;
+}
 #myFooter .input__field--yoko { /* Texte écris par l'utilisateur*/
   z-index: 10;
   width: 100%;
@@ -859,7 +861,9 @@ font-size: 2em;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-
+.recruteur #myFooter .input__label--yoko::after{
+  background: #0a7893;
+}
 #myFooter .input__label--yoko::after { /* Barre type span */
   content: '';
   position: absolute;
@@ -912,7 +916,9 @@ font-size: 2em;
   -webkit-filter: url("#filter");
   filter: url("/#filter");
 }
-
+.recruteur #myFooter .form-control{
+  background-color: #0a7893!important;
+}
 #myFooter .form-control {
     margin-bottom: 0;
     background-color: #8f201a; /* rouge */
@@ -950,10 +956,10 @@ font-size: 2em;
 
 
 #header_blog .after {
--webkit-animation-delay: 500ms; 
--moz-animation-delay: 500ms; 
--ms-animation-delay: 500ms; 
--o-animation-delay: 500ms; 
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
 animation-delay: 500ms;
 animation: blink 1.3s infinite;
 }
@@ -1043,6 +1049,28 @@ z-index: 1;
      top: 20%;
      left: 45%;
    }
+   #header_blog .logo_wild {
+     background-image: url('../images/wyn-logo.png');
+     background-repeat: no-repeat;
+     width: 160px;
+     height: 303px;
+     position: absolute;
+     top: 18%;
+     left: 45%;
+   }
+
+  #header_blog .writeit{
+    z-index: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    color:rgba(25,17,47);
+    font-size: 4rem;
+    line-height: 53px;
+    text-align: center;
+    padding: 31.5px 0 70px 0;
+    top: 43%;
+    left: 22%;
+  }
+
 }
 
 @media screen and (max-width: 990px){
