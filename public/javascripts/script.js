@@ -12,34 +12,34 @@ $(document).ready(function() {
 
 
     if ($(window).scrollTop() >window.innerHeight) {
-     
+
       $(".navbar-brand").css("display", "block");
     } else {
-     
+
       $(".navbar-brand").css("display", "none");
     }
 
   });
 
    // ajout de slick
-  $(".slick").slick({
-      dots: true,
+   $(".slick").slick({
+    dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 3,
     slidesToScroll: 3,
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 981,
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 981,
         // breakpoint: 992,
         settings: {
           slidesToShow: 2,
@@ -54,24 +54,29 @@ $(document).ready(function() {
           slidesToScroll: 1
         }
       }
-    ]
+      ]
     });
-});
 
 
-/* Script de la serious bar lors du scroll */ 
 
-var a = 0;
-$(window).scroll(function() {
+   /* Script Animation BLOG */
 
-  var oTop = $('#counter').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
+// Create the array with the text you want to write
+
+
+  /* Script de la serious bar lors du scroll */
+
+  var a = 0;
+  $(window).scroll(function() {
+
+    var oTop = $('#counter').offset().top - window.innerHeight;
+    if (a == 0 && $(window).scrollTop() > oTop) {
+      $('.counter-value').each(function() {
+        var $this = $(this),
         countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
+        $({
+          countNum: $this.text()
+        }).animate({
           countNum: countTo
         },
 
@@ -88,18 +93,18 @@ $(window).scroll(function() {
           }
 
         });
-    });
-    a = 1;
-  }
+      });
+      a = 1;
+    }
 
+  });
 });
+
 
 
 // ///////////////////
 // TEXT ANIMATION BLOG
 // ///////////////////
-
-
 
 // Create the array with the text you want to write
 var txt2write = new Array(
@@ -138,5 +143,4 @@ function type_text() {
     }
 
 }
-
 type_text();

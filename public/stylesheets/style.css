@@ -92,7 +92,7 @@ h2, h3, h4, h5 {
   padding: 0;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 120px;
   display: none;
   box-shadow: 4px 4px 9px rgba(0,0,0,0.3);
 }
@@ -362,6 +362,77 @@ h2, h3, h4, h5 {
  transition-delay: 0.2s;
 }
 
+/*------------------------
+        FORMULAIRE
+-------------------------*/
+
+#formEmploi .form_col{
+  font-family: 'bebas_neueregular';
+  font-size: 1.5em;
+    padding:0.5% 0;
+    display: block;
+}
+
+#formEmploi h2 {
+    color: #0a7893;
+    font-family: 'bestloversregular';
+    text-align: center;
+    font-size: 3.5em;
+    margin: 3% 0;
+}
+
+#formEmploi .formOffre{
+    padding:1.5%;
+}
+
+#formEmploi .envoiImg{
+    padding:1%;
+}
+
+
+#formEmploi .custom-select {
+    vertical-align: top;
+}
+
+#formEmploi button, input {
+    border: 0.09em dashed black;
+    overflow: hidden;
+    border-right: none;
+    border-left: none;
+    background: none;
+    padding: 0 5%;
+    display: block;
+    width:100%;
+}
+
+#formEmploi .envoiImg input {
+    border:none;
+}
+
+#formEmploi .imgEnt {
+    margin-top:5%;
+}
+
+#formEmploi .formSubmit{
+    margin-top: 2%;
+    text-align: center;
+    font-size:2em;
+}
+
+#formEmploi .formSubmit input {
+    border: 1px solid black;
+    display: inline-block;
+    width: auto;
+    background-color: #19112f;
+    color: white;
+    opacity: 0.8;
+    border-radius: 0.1em;
+    font-size: 0.7em;
+}
+
+#formEmploi textarea{
+    width:100%;
+}
 
 /*------------------------
          COLLAB
@@ -861,6 +932,74 @@ font-size: 2em;
 }
 
 
+/* --------------------
+     BLOG
+------------------------ */
+
+
+#header_blog .writeit{
+  z-index: 1;
+  color: black;
+  font-size: 20pt;
+  line-height: 53px;
+  text-align: center;
+  padding: 31.5px 0 70px 0;
+  top: 43%;
+  left: 35%;
+}
+
+
+#header_blog .after {
+-webkit-animation-delay: 500ms; 
+-moz-animation-delay: 500ms; 
+-ms-animation-delay: 500ms; 
+-o-animation-delay: 500ms; 
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
+}
+
+
+#header_blog img{
+z-index: 0;
+}
+
+#header_blog .logo_wild{
+z-index: 1;
+  top: 10%;
+  left: 40%;
+}
+
+
+#blog a{
+  color: black;
+}
+
+
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
+
+
+#blog .content{
+  color: #999;
+  margin: 0;
+}
+
+
 /*------------------------
       MEDIA QUERIES
 -------------------------*/
@@ -942,4 +1081,11 @@ font-size: 2em;
    #portofolio_entreprise .content_cadre p {
        font-size: 1.3rem;
    }
+}
+
+
+@media screen and (max-width: 960px){
+  #header_blog .logo_wild{
+    display: none
+  }
 }
