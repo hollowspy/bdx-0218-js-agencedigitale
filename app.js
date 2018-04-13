@@ -4,11 +4,31 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var index = require('./routes/index');
 var users = require('./routes/users');
+var recruteur = require('./routes/recruteur');
+var admin = require('./routes/admin');
+var blog = require('./routes/blog');
+var emploi = require('./routes/emploi');
+const router = express.Router();
+const multer = require('multer');
+const upload = multer({dest : 'tmp/'})
+
 
 var app = express();
+
+
+// upload de fichier sur le site
+
+app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
+  fs.rename(req.file.path, 'public/images/' + req.file.originalname, function(err){
+    if (err) {
+        res.send('problème durant le déplacement');
+    } else {
+        res.send('Fichier uploadé avec succès');
+    }
+  });
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +44,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/recruteur', recruteur);
+app.use('/admin', admin);
+app.use('/blog', blog);
+app.use('/emploi', emploi)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
