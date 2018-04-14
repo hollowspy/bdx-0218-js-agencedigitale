@@ -21,10 +21,12 @@ router.get('/', function(req, res, next) {
 
                     // Create an object to save current row's data
                     var emploi = {
+                        'id_emploi' : rows[i].id,
                         'name_poste': rows[i].nom_poste,
                         'duree': rows[i].duree,
                         'ville': rows[i].localisation,
-                        'descri_poste': rows[i].desc_poste
+                        'txt_poste': rows[i].poste,
+                        'txt_entreprise' : rows[i].entreprise
                     }
                     // Add object into array
                     listEmploi.push(emploi);
@@ -33,7 +35,7 @@ router.get('/', function(req, res, next) {
 
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    "listEmploi": listEmploi
+                    "listEmploi": listEmploi,
                 });
             }
         });
