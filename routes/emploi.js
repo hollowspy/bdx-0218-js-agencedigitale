@@ -26,7 +26,9 @@ router.get('/', function(req, res, next) {
                         'duree': rows[i].duree,
                         'ville': rows[i].localisation,
                         'txt_poste': rows[i].poste,
-                        'txt_entreprise' : rows[i].entreprise
+                        'txt_entreprise' : rows[i].entreprise,
+                        'txt_competences' : rows[i].competences,
+                        'name_recruteur' : rows[i].recruteur
                     }
                     // Add object into array
                     listEmploi.push(emploi);

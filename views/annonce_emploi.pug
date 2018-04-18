@@ -1,46 +1,47 @@
 #offre_emploi.container
   .row
-    for emploi in listEmploi
-     .col-6.col-md-5.offset-1.content_emploi
-      h2= emploi.name_poste
-      .info_emploi
-        img.logo_entreprise(src='http://via.placeholder.com/150x150')
-        .detail_emploi
-          ul.list_detail
-            li= emploi.name_poste
-            li= emploi.ville
-            li= emploi.duree
-      button.btn.btn-primary.btn_modal_emploi(type='button' data-toggle='modal' data-target= '#Annonce + emploi.id_emploi') En savoir plus..
-      p= emploi.id_emploi
-      #Annonce + emploi.id_emploi.modal.fade
-        .modal-dialog.modal-lg
-          .modal-content
-            // Modal Header
-            .modal-header
-              h2.modal-title= emploi.name_poste
-              button.close(type='button' data-dismiss='modal') &times;
-            // Modal body
-            .modal-body
-              h3  Ubisoft
-              .container
-                .row
-                  .col-12
-                    .descri_entreprise
-                      p= emploi.txt_entreprise
+    - for (let i =0; i < listEmploi.length; i++)
+         - let nbModal = 'Annonce' + i
+         .col-6.col-md-5.offset-1.content_emploi
+          h2= listEmploi[i].name_poste
+          .info_emploi
+            img.logo_entreprise(src='http://via.placeholder.com/150x150')
+            .detail_emploi
+              ul.list_detail
+                li= listEmploi[i].name_poste
+                li= listEmploi[i].duree
+                li= listEmploi[i].ville
+          button.btn.btn-primary.btn_modal_emploi(type='button' data-toggle='modal' data-target= '#Annonce' + i) En savoir plus..
+          div(id=nbModal).modal.fade
+            .modal-dialog.modal-lg
+              .modal-content
+                // Modal Header
+                .modal-header
+                  h2.modal-title= listEmploi[i].name_poste
+                  button.close(type='button' data-dismiss='modal') &times;
+                // Modal body
+                .modal-body
+                  h3= listEmploi[i].name_recruteur
+                  .container
+                    .row
+                      .col-12
+                        .descri_entreprise
+                          p= listEmploi[i].txt_entreprise
 
-              .contexte_annonce
-                .container
-                  .row
-                    .col-12.col-lg-6
-                      img.logo_modal(src='http://via.placeholder.com/300x300')
-                    .col-12.col-lg-6.descri_modal
-                      .profil_modal
-                        h4  Description du poste
-                          p= emploi.txt_poste
+                  .contexte_annonce
+                    .container
+                      .row
+                        .col-12.col-lg-6
+                          img.logo_modal(src='http://via.placeholder.com/300x300')
+                        .col-12.col-lg-6.descri_modal
+                          .profil_modal
+                            h4  Description du poste
+                            p= listEmploi[i].txt_poste
 
-                      .competence_modal
-                        h4  Competence Requise
+                          .competence_modal
+                            h4  Competence Requise
+                            p= listEmploi[i].txt_competences
 
-            // Modal footer
-            .modal-footer
-              button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
+                // Modal footer
+                .modal-footer
+                  button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
