@@ -14,12 +14,20 @@ block content
                 .row
                   #contentBar
                     table.table
-                      for bar in barList
+                      - for (var i = 0; i < bar.length; i++)
                         tr
-                          td= bar.name
-                          td= bar.picto
-                          td= bar.numbers
+                          td= bar[i].name
+                          td= bar[i].picto
+                          td= bar[i].numbers
                           td
                             a.modifier Modifier
                 .row
                   #contentOffres
+                    table.table
+                      - for (var i = 0; i < missions.length; i++)
+                        tr
+                          td= missions[i].nom_poste
+                          td= missions[i].recruteur
+                          td= missions[i].duree
+                          td
+                            a.modifier Modifier
