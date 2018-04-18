@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var recruteur = require('./routes/recruteur');
+var login = require('./routes/login');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -33,6 +34,7 @@ app.use(function(req, res, next) {
 app.use('/', index);
 app.use('/users', users);
 app.use('/recruteur', recruteur);
+app.use('/login', login);
 app.use('/admin', admin);
 
 

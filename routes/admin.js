@@ -4,45 +4,29 @@ const connection = require('../controllers/config');
 
 /* GET administration page */
 router.get('/', function(req, res, next) {
-  res.render('admin', { bodyClass:'admin'});
+
+  let barList = [];
+  connection.query('SELECT * FROM bar', function(err, rows, fields) {
+	  	if (err) {
+	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+	  	} else {
+	  		// Loop check on each row
+	  		for (var i = 0; i < rows.length; i++) {
+
+	  			// Create an object to save current row's data
+		  		var bar = {
+		  			'name':rows[i].name,
+		  			'numbers':rows[i].numbers,
+		  			'picto':rows[i].picto
+		  		}
+		  		// Add object into array
+		  		barList.push(bar);
+	  	}
+
+	  	// Render index.pug page using array
+      res.render('admin', { bodyClass:'admin', 'barList': barList});
+	  	}
+    });
 });
-
-/* POST administration page */
-router.post('/', function(req, res, next) {
-  var email=req.body.email;
-  var password=req.body.password;
-
-  connection.query('SELECT * FROM login WHERE email = ?',[email], function (error, results, fields) {
-    if (error) {
-        res.json({
-          status:false,
-          message:'there are some error with query'
-          })
-    }else{
-      console.log(results);
-      if(results.length >0){
-        if(results[0].password == password){
-            // res.redirect('/administration');
-            res.json({
-                status:true,
-                message:'successfully authenticated'
-            })
-        }else{
-            res.json({
-              status:false,
-              message:"Email and password does not match"
-             });
-        }
-      }
-      else{
-        res.json({
-            status:false,
-          message:"Email does not exits"
-        });
-      }
-    }
-  });
-});
-
 
 module.exports = router;

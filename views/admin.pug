@@ -1,18 +1,25 @@
 extends layout
 
 block content
-  body.admin
-    section#admin.text-center
-      form.form-signin(method='POST', action='/admin')
-        img.mb-4(src='images/logo-dev.png', alt='Administration Connexion')
-        h1.mb-3 Connexion
-        label.sr-only(for='inputEmail') Identifiant
-        input#inputEmail.form-control(type='email', name='email', placeholder='Email address', required='', autofocus='')
-        label.sr-only(for='inputPassword') Mot de passe
-        input#inputPassword.form-control(type='password', name='password', placeholder='Password', required='')
-        .checkbox.mb-3
-          label
-            input(type='checkbox', value='remember-me')
-            |  Remember me
-        button.btn.btn-lg.btn-dev.btn-block(type='submit', value='Submit') Sign in
-        p.mt-5.mb-3.text-muted © 2017-2018
+  body
+    section#admin
+          .container
+            .row
+              .col-2
+                .row
+                  a#modifBar(href='#') Bar
+                .row
+                  a#modifOffres(href='#') Offres Emplois
+              .col-10
+                .row
+                  #contentBar
+                    table.table
+                      for bar in barList
+                        tr
+                          td= bar.name
+                          td= bar.picto
+                          td= bar.numbers
+                          td
+                            a.modifier Modifier
+                .row
+                  #contentOffres

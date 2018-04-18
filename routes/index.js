@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
 	  	}
 
 	  	// Render index.pug page using array
-	  	res.render('index', {'barList': barList, bodyClass: 'developpeur'});
+	  	res.render('index', {'barList': barList, bodyClass: 'developpeur', page: 'developpeur'});
 	  	}
     });
 });
