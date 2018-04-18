@@ -118,14 +118,18 @@ h2, h3, h4, h5 {
 
 .cl-effect-5 a span::before {
   position: absolute;
-  color: black;
+  color: #d83832;
   top: 100%;
   content: attr(data-hover);
-  font-weight: 700;
+  font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.developpeur .cl-effect-5 a span::before {
+color:#0a7893;
+  }
 
 .cl-effect-5 a:hover span,
 .cl-effect-5 a:focus span {
@@ -133,6 +137,7 @@ h2, h3, h4, h5 {
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
 
 
 /*navbar autres onglets*/
