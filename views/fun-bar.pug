@@ -2,16 +2,9 @@ section#funBar.bg-red.pt-l.pb-l
   .container
     #counter
       .row.text-center.text-white
-        .col-4
-          i.fas.fa-4x.fa-wine-glass
-          .counter-value(data-count='928') 0
-          h2 Caisses de St Emilion
-        .col-4
-          i.fab.fa-4x.fa-nintendo-switch
-          .counter-value(data-count='221001') 0
-          h2 Heures de Mario-Kart
-        .col-4
-          i.fas.fa-4x.fa-utensils
-          .counter-value(data-count='2137') 0
-          h2 Toasts de foie gras
+        for bar in barList
+          .col-4
+            i.fas.fa-4x(class=bar.picto)
+            .counter-value(data-count=bar.numbers) 0
+            h2= bar.name
   // /.container

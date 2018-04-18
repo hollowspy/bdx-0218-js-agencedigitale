@@ -7,6 +7,11 @@ wild_not_you/node_modules/
 wild_not_you/package-lock.json
 .gitignore
 node_modules/
+<<<<<<< HEAD
 serious-bar.html
 /node_modules
 
+=======
+style-guide.jpg
+.DS_Store
+>>>>>>> a84cefca32d12dc9d6ed81a3e2c7f2929cd37f6e
