@@ -13,13 +13,9 @@
     "express": "^4.15.5",
     "fs": "0.0.1-security",
     "morgan": "~1.9.0",
-<<<<<<< HEAD
     "multer": "^1.3.0",
     "mysql": "^2.15.0",
     "pg": "^7.4.1",
-=======
-    "mysql": "^2.15.0",
->>>>>>> a84cefca32d12dc9d6ed81a3e2c7f2929cd37f6e
     "pug": "2.0.0-beta11",
     "serve-favicon": "~2.4.5"
   }

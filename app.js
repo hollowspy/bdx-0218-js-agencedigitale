@@ -17,15 +17,8 @@ const upload = multer({dest : 'tmp/'})
 let transaction = require('./data_access/transaction.js');
   /*End TIBO */
 let app = express();
-
-<<<<<<< HEAD
-=======
-var index = require('./routes/index');
-var users = require('./routes/users');
-var recruteur = require('./routes/recruteur');
 var login = require('./routes/login');
-var admin = require('./routes/admin');
->>>>>>> a84cefca32d12dc9d6ed81a3e2c7f2929cd37f6e
+
 
 // upload de fichier sur le site
 
