@@ -10,6 +10,8 @@ var recruteur = require('./routes/recruteur');
 var admin = require('./routes/admin');
 var blog = require('./routes/blog');
 var emploi = require('./routes/emploi');
+var login = require('./routes/login');
+
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
@@ -46,6 +48,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/recruteur', recruteur);
 app.use('/admin', admin);
+app.use('/login', login);
 app.use('/blog', blog);
 app.use('/emploi', emploi)
 
