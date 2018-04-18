@@ -13,19 +13,11 @@ let emploi = require('./routes/emploi');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
-/* TIBO*/
-let transaction = require('./data_access/transaction.js');
-  /*End TIBO */
+var login = require('./routes/login');
+
 let app = express();
 
-<<<<<<< HEAD
-=======
-var index = require('./routes/index');
-var users = require('./routes/users');
-var recruteur = require('./routes/recruteur');
-var login = require('./routes/login');
-var admin = require('./routes/admin');
->>>>>>> a84cefca32d12dc9d6ed81a3e2c7f2929cd37f6e
+
 
 // upload de fichier sur le site
 
