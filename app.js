@@ -9,7 +9,6 @@ let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
 let admin = require('./routes/admin');
 let blog = require('./routes/blog');
-let emploi = require('./routes/emploi');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
@@ -31,12 +30,10 @@ app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
   });
 })
 
-/*TIBO*/
-  app.get('/contact', (req, res)=>{
-      transaction.getAllContacts(res);
-    });
 
-  /*End TIBO */
+var login = require('./routes/login');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -62,9 +59,6 @@ app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/blog', blog);
-app.use('/emploi', emploi)
-
-
 
 
 // catch 404 and forward to error handler

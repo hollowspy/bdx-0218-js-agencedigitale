@@ -10,9 +10,9 @@ router.get('/', function(req, res, next) {
 	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
 	  	} else {
 	  		// Loop check on each row
-	  		for (var i = 0; i < rows.length; i++) {
+	  		for (let i = 0; i < rows.length; i++) {
 	  			// Create an object to save current row's data
-		  		var bar = {
+		  		let bar = {
 		  			'name':rows[i].name,
 		  			'numbers':rows[i].numbers,
 		  			'picto':rows[i].picto
