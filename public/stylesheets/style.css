@@ -98,7 +98,7 @@ h2, h3, h4, h5 {
 }
 
 .navbar-recruteur{
-  padding-left: 100px;
+  padding-left: 105px;
   color: black;
 }
 
@@ -362,6 +362,77 @@ h2, h3, h4, h5 {
  transition-delay: 0.2s;
 }
 
+/*------------------------
+        FORMULAIRE
+-------------------------*/
+
+#formEmploi .form_col{
+  font-family: 'bebas_neueregular';
+  font-size: 1.5em;
+    padding:0.5% 0;
+    display: block;
+}
+
+#formEmploi h2 {
+    color: #0a7893;
+    font-family: 'bestloversregular';
+    text-align: center;
+    font-size: 3.5em;
+    margin: 3% 0;
+}
+
+#formEmploi .formOffre{
+    padding:1.5%;
+}
+
+#formEmploi .envoiImg{
+    padding:1%;
+}
+
+
+#formEmploi .custom-select {
+    vertical-align: top;
+}
+
+#formEmploi button, input {
+    border: 0.09em dashed black;
+    overflow: hidden;
+    border-right: none;
+    border-left: none;
+    background: none;
+    padding: 0 5%;
+    display: block;
+    width:100%;
+}
+
+#formEmploi .envoiImg input {
+    border:none;
+}
+
+#formEmploi .imgEnt {
+    margin-top:5%;
+}
+
+#formEmploi .formSubmit{
+    margin-top: 2%;
+    text-align: center;
+    font-size:2em;
+}
+
+#formEmploi .formSubmit input {
+    border: 1px solid black;
+    display: inline-block;
+    width: auto;
+    background-color: #19112f;
+    color: white;
+    opacity: 0.8;
+    border-radius: 0.1em;
+    font-size: 0.7em;
+}
+
+#formEmploi textarea{
+    width:100%;
+}
 
 /*------------------------
          COLLAB
@@ -497,6 +568,69 @@ body.admin {
 }
 
 
+/* --------------------
+     BLOG
+------------------------ */
+
+
+
+
+
+#header_blog .after {
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
+}
+
+
+#header_blog img{
+z-index: 0;
+}
+
+#header_blog .logo_wild{
+z-index: 1;
+  top: 10%;
+  left: 40%;
+}
+
+
+#blog a{
+  color: black;
+}
+
+
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
+
+
+#blog .content{
+  color: #999;
+  margin: 0;
+}
+
+#blog .container{
+  padding-top: 30px;
+}
+
+
 /*_____________________*/
 /* ______ FOOTER ______*/
 /*_____________________*/
@@ -528,6 +662,10 @@ body.admin {
 #myFooter {
   color:white;
   background-color: #8f201a; /* rouge */
+}
+.recruteur #myFooter {
+  color:#fff;
+  background-color: #19112f; /* rouge */
 }
 
 #myFooter a{
@@ -629,6 +767,7 @@ font-size: 2em;
   max-width: 350px;
   width: calc(100% - 1em);
   vertical-align: top;
+  padding-bottom: 0.5em;
 }
 
 #myFooter .input__field {
@@ -688,6 +827,9 @@ font-size: 2em;
 }
 
 /* Yoko */
+.recruteur #myFooter .input__field--yoko{
+  color: #0a7893;
+}
 #myFooter .input__field--yoko { /* Texte écris par l'utilisateur*/
   z-index: 10;
   width: 100%;
@@ -720,7 +862,9 @@ font-size: 2em;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-
+.recruteur #myFooter .input__label--yoko::after{
+  background: #0a7893;
+}
 #myFooter .input__label--yoko::after { /* Barre type span */
   content: '';
   position: absolute;
@@ -773,7 +917,9 @@ font-size: 2em;
   -webkit-filter: url("#filter");
   filter: url("/#filter");
 }
-
+.recruteur #myFooter .form-control{
+  background-color: #0a7893!important;
+}
 #myFooter .form-control {
     margin-bottom: 0;
     background-color: #8f201a; /* rouge */
@@ -790,6 +936,74 @@ font-size: 2em;
   width:100%;
   height: 1280px;
   position:relative;
+}
+
+
+/* --------------------
+     BLOG
+------------------------ */
+
+
+#header_blog .writeit{
+  z-index: 1;
+  color: black;
+  font-size: 20pt;
+  line-height: 53px;
+  text-align: center;
+  padding: 31.5px 0 70px 0;
+  top: 43%;
+  left: 35%;
+}
+
+
+#header_blog .after {
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
+}
+
+
+#header_blog img{
+z-index: 0;
+}
+
+#header_blog .logo_wild{
+z-index: 1;
+  top: 10%;
+  left: 40%;
+}
+
+
+#blog a{
+  color: black;
+}
+
+
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
+
+
+#blog .content{
+  color: #999;
+  margin: 0;
 }
 
 
@@ -828,14 +1042,33 @@ font-size: 2em;
        visibility: visible;
    }
    #header .logo_wild {
+     width: 115px;
+     position: absolute;
+     top: 20%;
+     left: 45%;
+   }
+   #header_blog .logo_wild {
      background-image: url('../images/wyn-logo.png');
      background-repeat: no-repeat;
      width: 160px;
      height: 303px;
      position: absolute;
-     top: 20%;
+     top: 18%;
      left: 45%;
    }
+
+  #header_blog .writeit{
+    z-index: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    color:rgba(25,17,47);
+    font-size: 4rem;
+    line-height: 53px;
+    text-align: center;
+    padding: 31.5px 0 70px 0;
+    top: 43%;
+    left: 22%;
+  }
+
 }
 
 @media screen and (max-width: 990px){
@@ -874,4 +1107,11 @@ font-size: 2em;
    #portofolio_entreprise .content_cadre p {
        font-size: 1.3rem;
    }
+}
+
+
+@media screen and (max-width: 960px){
+  #header_blog .logo_wild{
+    display: none
+  }
 }

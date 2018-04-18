@@ -4,6 +4,7 @@ const connection = require('../controllers/config');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   let barList = [];
   connection.query('SELECT * FROM bar WHERE type = ?', ['fun'], function(err, rows, fields) {
 	  	if (err) {
@@ -28,5 +29,9 @@ router.get('/', function(req, res, next) {
     });
 });
 
+/* GET blog page. */
+router.get('/blog', function(req, res, next) {
+  res.render('blog', { title: 'Blog WNY' });
+});
 
 module.exports = router;
