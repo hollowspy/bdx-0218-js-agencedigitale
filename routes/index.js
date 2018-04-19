@@ -24,9 +24,5 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-/* GET blog page. */
-router.get('/blog', function (req, res, next) {
-	res.render('blog', { title: 'Blog WNY' });
-});
 
 module.exports = router;

@@ -1,92 +1,24 @@
 section#blog
   .container
     .row
-      .row
-        .col-xs-12.col-sm-4.col-md-4.col-lg-3
-          .picture
-            a(href='#')
-              img.img-fluid(src='images/blog_image1.jpg')
-            .keyword_box
-              .keyword_txt Infrastructure
-        .col-xs-12.col-sm-7.col-md-7.col-lg-6
-          .content
-            small
-              | 2018-04-10 _ 
-              strong Par Louis Dupuy
-          h4
-            a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
-          p
-            | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
-    hr
-    .row
-      .row
-        .col-xs-12.col-sm-4.col-md-4.col-lg-3
-          .picture
-            a(href='#')
-              img.img-fluid(src='images/blog_image2.jpg')
-            .keyword_box
-              .keyword_txt Infrastructure
-        .col-xs-12.col-sm-7.col-md-7.col-lg-6
-          .content
-            small
-              | 2018-04-10 _ 
-              strong Par Louis Dupuy
-          h4
-            a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
-          p
-            | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
-    hr
-    .row
-      .row
-        .col-xs-12.col-sm-4.col-md-4.col-lg-3
-          .picture
-            a(href='#')
-              img.img-fluid(src='images/blog_image3.jpg')
-            .keyword_box
-              .keyword_txt Infrastructure
-        .col-xs-12.col-sm-7.col-md-7.col-lg-6
-          .content
-            small
-              | 2018-04-10 _ 
-              strong Par Louis Dupuy
-          h4
-            a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
-          p
-            | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
-    hr
-    .row
-      .row
-        .col-xs-12.col-sm-4.col-md-4.col-lg-3
-          .picture
-            a(href='#')
-              img.img-fluid(src='images/blog_image4.jpg')
-            .keyword_box
-              .keyword_txt Infrastructure
-        .col-xs-12.col-sm-7.col-md-7.col-lg-6
-          .content
-            small
-              | 2018-04-10 _ 
-              strong Par Louis Dupuy
-          h4
-            a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
-          p
-            | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
-    hr
-    .row
-      .row
-        .col-xs-12.col-sm-4.col-md-4.col-lg-3
-          .picture
-            a(href='#')
-              img.img-fluid(src='images/blog_image5.jpg')
-            .keyword_box
-              .keyword_txt Infrastructure
-        .col-xs-12.col-sm-7.col-md-7.col-lg-6
-          .content
-            small
-              | 2018-04-10 _ 
-              strong Par Louis Dupuy
-          h4
-            a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
-          p
-            | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
-    hr
+      for blog in blogs
+        .row
+          .col-xs-12.col-sm-4.col-md-4.col-lg-3
+            .picture
+              a(href='#')
+                img.img-fluid(src=(blog.pathImage))
+              .keyword_box
+                .keyword_txt Infrastructure
+          .col-xs-12.col-sm-7.col-md-7.col-lg-6
+            .content
+              small
+                = blog.date 
+                |  |  
+                strong Par 
+                  = blog.author
+            h4
+              a(href='#') DEVOPS, UN CHEMIN DE PROGR&Egrave;S OUVERT &Agrave; TOUS.
+            p
+              | DevOps est aujourd&rsquo;hui un mod&egrave;le de transformation incontournable pour les DSI. Mais qu&rsquo;en est-il de sa mise en &oelig;uvre concr&egrave;te ?
+        hr
+      
