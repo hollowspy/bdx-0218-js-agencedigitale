@@ -395,14 +395,23 @@ h2, h3, h4, h5 {
 }
 
 #formEmploi button, input {
-    border: 0.09em dashed black;
+    border-bottom: 0.09em dashed black;
+    border-top :none;
+    border-right:none;
+    border-left:none;
     overflow: hidden;
-    border-right: none;
-    border-left: none;
     background: none;
     padding: 0 5%;
     display: block;
     width:100%;
+}
+
+#formEmploi button, input:hover, #formEmploi button, input:active, #formEmploi button, input:focus {
+  background-color: white;
+  border-radius: 0.05em;
+  border: 2px dashed #19112f;
+  padding: 5%;
+  transition-duration:1s;
 }
 
 #formEmploi .envoiImg input {
