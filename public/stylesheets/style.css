@@ -488,6 +488,9 @@ h2, h3, h4, h5 {
  color:rgba(10, 120,147, 1);
 }
 
+.collab .name, .collab .age, .collab .xp, .collab .exp{
+  display:inline-block; padding-right: 5%;
+}
 /*------------------------
         FUN BAR
 -------------------------*/

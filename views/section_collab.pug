@@ -2,88 +2,27 @@
   .titre.row
     h2 Nos diff&eacute;rents collaborateurs
   .row
-    .dev.col-12.col-sm-6
-      .perso.row
-        .dev.col-5
-          img.img-fluid.d01(src='images/dev03.jpg' alt='dev01')
-        .devDesc.col-7
-          p.name Audrey - 28 ans
-          br
-          p.xp Exp&eacute;rience - 5 ans
-          br
-          p.description
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at nulla et metus porttitor dapibus non quis enim.
-          br
-          .row
-            .lang.col-3
-              i.fab.fa-2x.fa-html5
-            .lang.col-3
-              i.fab.fa-2x.fa-github
-            .lang.col-3
-              i.fab.fa-2x.fa-php
-            .lang.col-3
-              i.fab.fa-2x.fa-css3-alt
-    .dev.col-12.col-sm-6
-      .perso.row
-        .dev.col-5
-          img.img-fluid.d02(src='images/dev07.jpg' alt='dev02')
-        .devDesc.col-7
-          p.name Anthony - 29 ans
-          br
-          p.xp Exp&eacute;rience - 8 ans
-          br
-          p.description
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at nulla et metus porttitor dapibus non quis enim.
-          br
-          .row
-            .lang.col-3
-              i.fab.fa-2x.fa-html5
-            .lang.col-3
-              i.fab.fa-2x.fa-github
-            .lang.col-3
-              i.fab.fa-2x.fa-android
-            .lang.col-3
-              i.fab.fa-2x.fa-js-square
-  .row
-    .dev.col-12.col-sm-6
-      .perso.row
-        .dev.col-5
-          img.img-fluid.d03(src='images/dev10.jpg' alt='dev03')
-        .devDesc.col-7
-          p.name Camille - 26 ans
-          br
-          p.xp Exp&eacute;rience - 3 ans
-          br
-          p.description
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at nulla et metus porttitor dapibus non quis enim.
-          br
-          .row
-            .lang.col-3
-              i.fab.fa-2x.fa-html5
-            .lang.col-3
-              i.fab.fa-2x.fa-github
-            .lang.col-3
-              i.fab.fa-2x.fa-node-js
-            .lang.col-3
-              i.fab.fa-2x.fa-react
-    .dev.col-12.col-sm-6
-      .perso.row
-        .dev.col-5
-          img.img-fluid.d04(src='images/dev08.jpg' alt='dev04')
-        .devDesc.col-7
-          p.name Maxime - 30 ans
-          br
-          p.xp Exp&eacute;rience - 8 ans
-          br
-          p.description
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at nulla et metus porttitor dapibus non quis enim.
-          br
-          .row
-            .lang.col-3
-              i.fab.fa-2x.fa-html5
-            .lang.col-3
-              i.fab.fa-2x.fa-github
-            .lang.col-3
-              i.fab.fa-2x.fa-wordpress-simple
-            .lang.col-3
-              i.fab.fa-2x.fa-js-square
+    - for (var i = 0; i < 4; i++)
+      .dev.col-12.col-sm-6
+        .perso.row
+          .dev.col-5
+            img.img-fluid.d01(src='images/'+collab[i].image alt='dev01')
+          .devDesc.col-7
+            p.name= collab[i].name
+            p.age= collab[i].age
+            br
+            p.xp Exp&eacute;rience
+            p.exp= collab[i].experience
+            br
+            p.description
+            p.desc= collab[i].description
+            br
+            .row
+              .lang.col-3
+                i.fab.fa-2x(class=collab[i].techno1)
+              .lang.col-3
+                i.fab.fa-2x(class=collab[i].techno2)
+              .lang.col-3
+                i.fab.fa-2x(class=collab[i].techno3)
+              .lang.col-3
+                i.fab.fa-2x(class=collab[i].techno4)
