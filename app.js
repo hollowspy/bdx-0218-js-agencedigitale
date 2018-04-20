@@ -9,6 +9,7 @@ let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
 let admin = require('./routes/admin');
 let blog = require('./routes/blog');
+let validation = require('./routes/validation');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
@@ -40,6 +41,7 @@ app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/blog', blog);
+app.use('/validation', validation);
 
 
 // catch 404 and forward to error handler
