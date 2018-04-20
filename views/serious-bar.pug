@@ -1,0 +1,10 @@
+section#serious-bar.bg-blue.pt-l.pb-l
+  .container
+    #counter
+      .row.text-center.text-white
+        for bar in barList
+          .col-4
+            i.fas.fa-4x(class=bar.picto)
+            .counter-value(data-count=bar.numbers) 0
+            h2= bar.name
+  // /.container

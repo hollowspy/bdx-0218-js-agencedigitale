@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  body
+    section#admin
+          .container
+            .row
+              .col-2
+                .row
+                  a#modifBar(href='#') Bar
+                .row
+                  a#modifOffres(href='#') Offres Emplois
+              .col-10
+                .row
+                  #contentBar
+                    table.table
+                      - for (var i = 0; i < bar.length; i++)
+                        tr
+                          td= bar[i].name
+                          td= bar[i].picto
+                          td= bar[i].numbers
+                          td
+                            a.modifier Modifier
+                .row
+                  #contentOffres
+                    table.table
+                      - for (var i = 0; i < missions.length; i++)
+                        tr
+                          td= missions[i].nom_poste
+                          td= missions[i].recruteur
+                          td= missions[i].duree
+                          td
+                            a.modifier Modifier
