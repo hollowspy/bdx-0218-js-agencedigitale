@@ -33,10 +33,6 @@ app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
   });
 })
 
-
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -63,6 +59,7 @@ app.use('/admin', admin);
 app.use('/login', login);
 app.use('/blog', blog);
 app.use('/concept', concept);
+app.use('/emploi', emploi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
