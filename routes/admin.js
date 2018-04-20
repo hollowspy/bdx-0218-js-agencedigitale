@@ -19,17 +19,26 @@ router.get('/', function(req, res, next) {
         res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions});
 	  	}
     });
-}); // fin de l'appel au get
+}); // fin de l'appel au getElementsByClassName('className')
 
-let insert = ""
-router.post('/', function(req, res, next) {
+let insert = 'UPDATE bar SET ?;'
+router.post('/updateData', function(req, res, next) {
+  let input = JSON.parse(JSON.stringify(req.body));
+  let id = req.params.id;
+  let data = {
+    name : input.name,
+    numbers : input.numbers
+  };
+  console.log(data);
+  console.log(input);
+  console.log(id);
 
-  connection.query(insert, function(err, rows, fields) {
+  connection.query(insert,[data], function(err, result) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
 
-      res.render();
+      res.send('OK');
     }
   })
 })

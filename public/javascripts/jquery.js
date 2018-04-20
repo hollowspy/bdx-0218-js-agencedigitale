@@ -105,16 +105,9 @@ $(document).ready(function() {
   // //////////////////////
 
   $(".links").click(function(){
+    $(this).parent().addClass('active').siblings().removeClass('active');
     $(".divs:visible").hide();
     $("#"+$(this).attr("data-showdiv")).show();
   });
-
-  $('.modifier').click(function(){
-    $(".edit:visible").hide();
-    //$(".no-edit").hide();
-    $(this).siblings('no-edit').hide();
-    $("#"+$(this).attr("data-showedit")).show();
-  })
-
 
 }); //fin document.ready
