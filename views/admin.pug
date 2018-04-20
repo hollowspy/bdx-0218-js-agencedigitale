@@ -59,26 +59,25 @@ block content
                             .modal-footer
                               button.btn.btn-secondary(type='button', data-dismiss='modal') Close
           #contentOffres.divs
-            table.table
-              thead
-                tr
-                  th Nom du poste
-                  th Recruteur
-                  th Durée
-                  th Localisation
-                  th Diplôme
-                  th Expérience
-                  th
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Nom du poste
+                .d-table-cell Recruteur
+                .d-table-cell Durée
+                .d-table-cell Localisation
+                .d-table-cell Diplôme
+                .d-table-cell Expérience
+                .d-table-cell
               - for (var i = 0; i < missions.length; i++)
                 - let miModal = 'Missions' + i
-                  tr.no-edit
-                    td= missions[i].nom_poste
-                    td= missions[i].recruteur
-                    td= missions[i].duree
-                    td= missions[i].localisation
-                    td= missions[i].diplome
-                    td= missions[i].experience
-                    td
+                  .d-table-row
+                    .d-table-cell= missions[i].nom_poste
+                    .d-table-cell= missions[i].recruteur
+                    .d-table-cell= missions[i].duree
+                    .d-table-cell= missions[i].localisation
+                    .d-table-cell= missions[i].diplome
+                    .d-table-cell= missions[i].experience
+                    .d-table-cell
                       a(href='#', class='modifier btn btn-primary', data-target= '#Missions' + i, data-toggle='modal') Modifier
                   div(id=miModal).modal.fade
                       .modal-dialog.modal-lg
@@ -113,24 +112,23 @@ block content
                           .modal-footer
                             button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
           #contentCollab.divs
-            table.table
-              thead
-                tr
-                  th Nom
-                  th Age
-                  th Technologies
-                  th Expérience
-                  th Image
-                  th
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Nom
+                .d-table-cell Age
+                .d-table-cell Technologies
+                .d-table-cell Expérience
+                .d-table-cell Image
+                .d-table-cell
               - for (var i = 0; i < collab.length; i++)
                 - let coModal = 'Collab' + i
-                  tr
-                    td= collab[i].name
-                    td= collab[i].age
-                    td= collab[i].techno
-                    td= collab[i].experience
-                    td= collab[i].image
-                    td
+                  .d-table-row
+                    .d-table-cell= collab[i].name
+                    .d-table-cell= collab[i].age
+                    .d-table-cell= collab[i].techno
+                    .d-table-cell= collab[i].experience
+                    .d-table-cell= collab[i].image
+                    .d-table-cell
                       a(href='#', class='modifier btn btn-primary', data-target= '#Collab' + i, data-toggle='modal') Modifier
                   div(id=coModal).modal.fade
                       .modal-dialog.modal-lg
