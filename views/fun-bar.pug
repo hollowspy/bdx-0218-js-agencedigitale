@@ -1,47 +1,10 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
-    meta(name='description', content='')
-    meta(name='author', content='')
-    link(rel='icon', href='../../favicon.ico')
-    title Serious Bar
-    // Bootstrap core CSS
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', rel='stylesheet')
-    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.9/css/all.css', integrity='sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1', crossorigin='anonymous')
-    link(href='https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i', rel='stylesheet')
-    link(href='stylesheets/style.css', rel='stylesheet')
-    // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
-      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
-  body
-    .fake
-    section#funBar.bg-red.pt-l.pb-l
-      .container
-        #counter
-          .row.text-center.text-white
-            .col-4
-              i.fas.fa-4x.fa-wine-glass
-              .counter-value(data-count='928') 0
-              h2 Caisses de St Emilion
-            .col-4
-              i.fab.fa-4x.fa-nintendo-switch
-              .counter-value(data-count='221001') 0
-              h2 Heures de Mario-Kart
-            .col-4
-              i.fas.fa-4x.fa-utensils
-              .counter-value(data-count='2137') 0
-              h2 Toasts de foie gras
-      // /.container
-    .fake
-    //
-      Bootstrap core JavaScript
-      ==================================================
-    // Placed at the end of the document so the pages load faster
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-    script(src='/scripts/script.js', type='text/javascript', charset='utf-8', async='', defer='')
+section#funBar.bg-red.pt-l.pb-l
+  .container
+    #counter
+      .row.text-center.text-white
+        for bar in barList
+          .col-4
+            i.fas.fa-4x(class=bar.picto)
+            .counter-value(data-count=bar.numbers) 0
+            h2= bar.name
+  // /.container

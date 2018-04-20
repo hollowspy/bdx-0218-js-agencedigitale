@@ -1,5 +1,5 @@
 /*------------------------
-	    GENERAL
+      GENERAL
 -------------------------*/
 @font-face {
     font-family: 'bebas_neuebold';
@@ -47,48 +47,154 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete_seamless.png");
 }
 
 h1 {
-	font-family: 'bestloversregular';
-	font-size: 5,4em;
+  font-family: 'bestloversregular';
+  font-size: 5,4em;
 }
 h2, h3, h4, h5 {
-	font-family: 'bebas_neuebook';
+  font-family: 'bebas_neuebook';
 }
 
 .bg-blue{
-	background-color: #19112f;
+  background-color: #19112f;
 }
-.bg-red{
-  background-color: #8f201a;
+.bg-white{
+    background-color: #FFF;
 }
 .pt-l{padding-top:5rem;}
 .pb-l{padding-bottom: 5rem;}
 
-/*body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}*/
-
-a {
-  color: #00B7FF;
+.btn-dev{
+  color: #FFF;
+  background-color: #d83832;
+  border-color:transparent;
 }
 
 /*------------------------
-	    SERIOUS BAR
+        NAV BAR
 -------------------------*/
-.counter-value{
-	font-family: 'bebas_neueregular';
-	font-size: 4rem;
-}
-.fake {
-	height: 500px;
-	width: 100%;
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: rgba(0,0,0,0.1);
+  color: #333;
+  transition: all 0.3s;
 }
 
-/* CSS de la section video_header */
+/*logo plus onglet recruteur*/
+.navbar-brand {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100px;
+  display: none;
+  box-shadow: 4px 4px 9px rgba(0,0,0,0.3);
+}
 
+.navbar-recruteur{
+  padding-left: 105px;
+  color: black;
+}
+
+
+.cl-effect-5 a {
+  overflow: hidden;
+}
+
+.cl-effect-5 a span {
+  position: relative;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.3s;
+  -moz-transition: -moz-transform 0.3s;
+  transition: transform 0.3s;
+  color: black;
+}
+
+.cl-effect-5 a span::before {
+  position: absolute;
+  color: #d83832;
+  top: 100%;
+  content: attr(data-hover);
+  font-weight: 500;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.developpeur .cl-effect-5 a span::before {
+color:#0a7893;
+  }
+
+.cl-effect-5 a:hover span,
+.cl-effect-5 a:focus span {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+
+
+/*navbar autres onglets*/
+.navbar-light .navbar-nav .nav-link{
+  color: #fff;
+  margin-right: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link #border a {
+  border : 1px solid white;
+  border-radius: 5px;
+}
+
+
+.navbar #border a:hover {
+  background-color: white;
+  color: black;
+  transition: all 0.2s;
+}
+
+
+#navbarTogglerDemo02.navbar-collapse.collapse.show {
+  text-align: right;
+}
+
+/*navbar after scroll*/
+.navbar.compressed {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  color: black;
+}
+
+.navbar.compressed .navbar-nav .nav-link {
+  color: black;
+  margin-right: 20px;
+}
+
+
+.navbar.compressed #border a {
+  border : 1px solid black;
+  border-radius: 5px;
+}
+
+#header .logo_wild.scroll {
+  background-image: url('images/wny-logo.jpg');
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 303px;
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+/*-----------------------
+    HEADER VIDEO
+-----------------------*/
 
 #header .video_header{
     position:relative;
@@ -119,11 +225,22 @@ a {
     height: 50px;
 }
 
-/* Section portofolio_entreprise / Acceuil entreprise */
+/*------------------------
+    OFFRES D'EMPLOIS
+-------------------------*/
+
+#job h2 {
+    font-family: 'bebas_neuebold';
+}
+#job h3{
+    font-family: 'Lato';
+    font-size: 1.2em;
+}
 
 
-/* Section portofolio_entreprise  */
-
+/* --------------------
+     PORTOFOLIO ENTREPRISE
+------------------------ */
 #portofolio_entreprise{
     margin-top: 5%;
 }
@@ -251,52 +368,273 @@ a {
  transition-delay: 0.2s;
 }
 
+/*------------------------
+        FORMULAIRE
+-------------------------*/
 
-@media screen and (min-width: 960px) and (max-width:1140px){
-   #portofolio_entreprise .content_cadre h3{
-       font-size: 1.7rem;
-   }
-   #portofolio_entreprise .content_cadre p {
-       font-size: 1rem;
-   }
+#formEmploi .form_col{
+  font-family: 'bebas_neueregular';
+  font-size: 1.5em;
+    padding:0.5% 0;
+    display: block;
 }
 
-@media screen and (min-width: 1140px){
-   #portofolio_entreprise .content_cadre h3{
-       font-size: 2rem;
-   }
-   #portofolio_entreprise .content_cadre p {
-       font-size: 1.3rem;
-   }
+#formEmploi h2 {
+    color: #0a7893;
+    font-family: 'bestloversregular';
+    text-align: center;
+    font-size: 3.5em;
+    margin: 3% 0;
 }
 
-/* Nouvelle disposition sur desktop avec la barre de recherche sur la vidéo */
-@media screen and (min-width: 960px) {
-   #header .content_searchbar {
-   position: absolute;
-   top:45%;
- }
-  /* Barre de recherche en une ligne (display flex) sur la vidéo */
-   #header .search_bar{
-   display: flex;
-   }
-   /* activation du filtre hover en version desktop */
-   #portofolio_entreprise .content_cadre figcaption{
-       visibility: visible;
-   }
-   #portofolio_entreprise .content_cadre:before {
-       visibility: visible;
-   }
+#formEmploi .formOffre{
+    padding:1.5%;
 }
+
+#formEmploi .envoiImg{
+    padding:1%;
+}
+
+
+#formEmploi .custom-select {
+    vertical-align: top;
+}
+
+#formEmploi button, input {
+    border: 0.09em dashed black;
+    overflow: hidden;
+    border-right: none;
+    border-left: none;
+    background: none;
+    padding: 0 5%;
+    display: block;
+    width:100%;
+}
+
+#formEmploi .envoiImg input {
+    border:none;
+}
+
+#formEmploi .imgEnt {
+    margin-top:5%;
+}
+
+#formEmploi .formSubmit{
+    margin-top: 2%;
+    text-align: center;
+    font-size:2em;
+}
+
+#formEmploi .formSubmit input {
+    border: 1px solid black;
+    display: inline-block;
+    width: auto;
+    background-color: #19112f;
+    color: white;
+    opacity: 0.8;
+    border-radius: 0.1em;
+    font-size: 0.7em;
+}
+
+#formEmploi textarea{
+    width:100%;
+}
+
+/*------------------------
+         COLLAB
+-------------------------*/
+
+.collab .name{
+    font-variant: small-caps;
+    font-size:1.5em;
+    color:black;
+    margin-top: 20%;
+    text-shadow: 2px 2px 15px darkgray;
+}
+
+.collab .name, .collab .xp, .collab .description {
+    margin-bottom: -5%;
+    text-align: justify;
+}
+.bg-red{
+  background-color: #8f201a;
+}
+
+.collab .dev {
+    margin: auto;
+    margin-left: -1%;
+    max-width: 100%;
+}
+
+.collab .devDesc {
+    margin: 0 3% 0 -4%;
+    padding: 0 5%;
+}
+
+.collab h2 {
+    text-align: center;
+    font-size: 2em;
+    color:rgba(25,17,47);
+    border-bottom:1px dashed rgba(25,17,47);
+    padding-bottom: 5%;
+    margin:0 12%;
+}
+
+/* CSS de la NavBar */
+@import "https://fonts.googleapis.com/css?family=Lato:400,700,900";
+
+
+.collab .img-fluid{
+    margin:auto;
+    border-radius: 0.2em;
+    box-shadow: 2px 2px 20px black;
+}
+
+.collab .lang{
+ color:rgba(10, 120,147, 1);
+}
+
+#log {
+  margin-left: -5em;
+}
+/*------------------------
+        FUN BAR
+-------------------------*/
 
 #funBar .counter-value{
   font-family: 'bebas_neueregular';
   font-size: 4rem;
 }
-#funBar .fake {
-  height: 500px;
-  width: 100%;
+
+/*------------------------
+      SERIOUS BAR
+-------------------------*/
+.counter-value{
+  font-family: 'bebas_neueregular';
+  font-size: 4rem;
 }
+
+/*------------------------
+	         ADMIN
+-------------------------*/
+
+body.admin {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin img{
+  width: 100px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/* --------------------
+     BLOG
+------------------------ */
+
+
+
+
+
+#header_blog .after {
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
+}
+
+
+#header_blog img{
+z-index: 0;
+}
+
+#header_blog .logo_wild{
+z-index: 1;
+  top: 10%;
+  left: 40%;
+}
+
+
+#blog a{
+  color: black;
+}
+
+
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
+
+
+#blog .content{
+  color: #999;
+  margin: 0;
+}
+
+#blog .container{
+  padding-top: 30px;
+}
+
 
 /*_____________________*/
 /* ______ FOOTER ______*/
@@ -318,47 +656,52 @@ a {
 }
 
 #myFooter h3 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #myFooter .container {
-	padding-top: 3em;
-	line-height: 1.8;
+  padding-top: 3em;
+  line-height: 1.8;
 }
 
 #myFooter {
-	color:white; 
-	background-color: #8f201a; /* rouge */
+  color:white;
+  background-color: #8f201a; /* rouge */
+}
+.recruteur #myFooter {
+  color:#fff;
+  background-color: #19112f; /* rouge */
 }
 
 #myFooter a{
-	text-decoration: none;
-	color:white;
+  text-decoration: none;
+  color:white;
 }
-
 #myFooter ul {
-	list-style: none;
-	padding-left: initial;
+  list-style: none;
+  padding-left: initial;
   margin-right: initial;
 }
 #myFooter .myMain {
-	border-top: solid;
-/*	border-bottom: dashed;*/
-	padding-bottom: 1.5em;
-	padding-top:1.5em;
+  border-top: solid;
+/*  border-bottom: dashed;*/
+  padding-bottom: 1.5em;
+  padding-top:1.5em;
 }
 #myFooter .mention {
-	border-top: solid;
-	padding-top: 1em;
+  border-top: solid;
+  padding-top: 1em;
 }
 /* ____ MES ICONS _____*/
 #myFooter .icon {
 font-size: 2em;
 }
 
+
+
 #myFooter .icon a {
-	margin-left: 0.5em;
-	color:white;
+  margin-left: 0.5em;
+  color:white;
 }
 
 #myFooter .icon:hover {
@@ -372,7 +715,7 @@ font-size: 2em;
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
+
   20%, 80% {
     transform: translate3d(2px, 0, 0);
   }
@@ -385,8 +728,6 @@ font-size: 2em;
     transform: translate3d(4px, 0, 0);
   }
 }
-
-
 
 .cl-effect-1 a::before,
 .cl-effect-1 a::after {
@@ -423,8 +764,6 @@ font-size: 2em;
     transform: translateX(0px);
 }
 
-
-
 #myFooter .input {
   position: relative;
   z-index: 1;
@@ -433,6 +772,7 @@ font-size: 2em;
   max-width: 350px;
   width: calc(100% - 1em);
   vertical-align: top;
+  padding-bottom: 0.5em;
 }
 
 #myFooter .input__field {
@@ -492,6 +832,9 @@ font-size: 2em;
 }
 
 /* Yoko */
+.recruteur #myFooter .input__field--yoko{
+  color: #0a7893;
+}
 #myFooter .input__field--yoko { /* Texte écris par l'utilisateur*/
   z-index: 10;
   width: 100%;
@@ -524,7 +867,9 @@ font-size: 2em;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-
+.recruteur #myFooter .input__label--yoko::after{
+  background: #0a7893;
+}
 #myFooter .input__label--yoko::after { /* Barre type span */
   content: '';
   position: absolute;
@@ -577,7 +922,9 @@ font-size: 2em;
   -webkit-filter: url("#filter");
   filter: url("/#filter");
 }
-
+.recruteur #myFooter .form-control{
+  background-color: #0a7893!important;
+}
 #myFooter .form-control {
     margin-bottom: 0;
     background-color: #8f201a; /* rouge */
@@ -595,144 +942,139 @@ font-size: 2em;
   height: 1280px;
   position:relative;
 }
-=======
-
-/* CSS de la NavBar */ 
-@import "https://fonts.googleapis.com/css?family=Lato:400,700,900";
 
 
-.navbar {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: rgba(0,0,0,0.1);
-  color: #333;
-  transition: all 0.3s;
-}
+/* --------------------
+     BLOG
+------------------------ */
 
-/*logo plus onglet recruteur*/
-.navbar-brand {
-  position: absolute;
-  padding: 0;
-  top: 0;
-  left: 0;
-  width: 100px;
-  display: none;
-  box-shadow: 4px 4px 9px rgba(0,0,0,0.3);
-}
 
-.navbar-recruteur{
-  padding-left: 100px;
+#header_blog .writeit{
+  z-index: 1;
   color: black;
+  font-size: 20pt;
+  line-height: 53px;
+  text-align: center;
+  padding: 31.5px 0 70px 0;
+  top: 43%;
+  left: 35%;
 }
 
 
-.cl-effect-5 a {
-  overflow: hidden;
-}
-
-.cl-effect-5 a span {
-  position: relative;
-  display: inline-block;
-  -webkit-transition: -webkit-transform 0.3s;
-  -moz-transition: -moz-transform 0.3s;
-  transition: transform 0.3s;
-}
-
-.cl-effect-5 a span::before {
-  position: absolute;
-  color: black;
-  top: 100%;
-  content: attr(data-hover);
-  font-weight: 700;
-  -webkit-transform: translate3d(0,0,0);
-  -moz-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-}
-
-.cl-effect-5 a:hover span,
-.cl-effect-5 a:focus span {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  transform: translateY(-100%);
+#header_blog .after {
+-webkit-animation-delay: 500ms;
+-moz-animation-delay: 500ms;
+-ms-animation-delay: 500ms;
+-o-animation-delay: 500ms;
+animation-delay: 500ms;
+animation: blink 1.3s infinite;
 }
 
 
-.fred_nav_logo_img {
-  background-image: url('images/wyn-logo.png');
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 303px;
-  position: absolute;
-  top: 20%;
-  left: 45%;
+#header_blog img{
+z-index: 0;
 }
 
-
-/*navbar autres onglets*/
-.navbar-light .navbar-nav .nav-link{
-  color: #fff;
-  margin-right: 20px;
-}
-
-.navbar-light .navbar-nav .nav-link #border a {
-  border : 1px solid white;
-  border-radius: 5px;
-}
-
-
-.navbar #border a:hover {
-  background-color: white;
-  color: black;
-  transition: all 0.2s;
-}
-
-
-#navbarTogglerDemo02.navbar-collapse.collapse.show {
-  text-align: right;
-}
-
-/*navbar after scroll*/
-.navbar.compressed {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: white;
-  color: black;
-}
-
-.navbar.compressed .navbar-nav .nav-link {
-  color: black;
-  margin-right: 20px;
-}
-
-
-.navbar.compressed #border a {
-  border : 1px solid black;
-  border-radius: 5px;
-}
-
-
-
-.fred_nav_logo_img.scroll {
-  background-image: url('images/wny-logo.jpg');
-  background-repeat: no-repeat;
-  width: 160px;
-  height: 303px;
-  position: absolute;
+#header_blog .logo_wild{
+z-index: 1;
   top: 10%;
-  left: 20%;
+  left: 40%;
 }
 
 
-
-
-
-.text-center{
-  padding-top: 100px;
+#blog a{
+  color: black;
 }
 
 
+#blog .picture{
+  position: relative;
+}
+
+#blog .keyword_box{
+  position: absolute;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+#blog .keyword_txt{
+  background-color: #ee4527;
+  color: #fff;
+  padding: 5px;
+}
 
 
+#blog .content{
+  color: #999;
+  margin: 0;
+}
+
+
+/*------------------------
+      MEDIA QUERIES
+-------------------------*/
+
+
+@media screen and (min-width: 960px){
+    .collab h2 {
+        font-size: 2.5em;
+        padding-bottom: 2%;
+        margin : 2% auto;
+    }
+
+    .collab .devDesc {
+        margin:auto auto 10% auto;
+    }
+
+    .collab .perso {
+        margin: 2%;
+    }
+    #header .content_searchbar {
+     position: absolute;
+     top:55%;
+    }
+  /* Barre de recherche en une ligne (display flex) sur la vidéo */
+   #header .search_bar{
+   display: flex;
+   }
+   /* activation du filtre hover en version desktop */
+   #portofolio_entreprise .content_cadre figcaption{
+       visibility: visible;
+   }
+   #portofolio_entreprise .content_cadre:before {
+       visibility: visible;
+   }
+   #header .logo_wild {
+     width: 115px;
+     position: absolute;
+     top: 20%;
+     left: 45%;
+   }
+   #header_blog .logo_wild {
+     background-image: url('../images/wyn-logo.png');
+     background-repeat: no-repeat;
+     width: 160px;
+     height: 303px;
+     position: absolute;
+     top: 18%;
+     left: 45%;
+   }
+
+  #header_blog .writeit{
+    z-index: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    color:rgba(25,17,47);
+    font-size: 4rem;
+    line-height: 53px;
+    text-align: center;
+    padding: 31.5px 0 70px 0;
+    top: 43%;
+    left: 22%;
+  }
+
+}
 
 @media screen and (max-width: 990px){
   .navbar{
@@ -746,5 +1088,35 @@ font-size: 2em;
   }
 }
 
-  
->>>>>>> 1b5c157fc01c6ad387d4dd962398ce111250931b
+@media screen and (max-width: 720px){
+  .video_header{
+      margin-top:60px;
+      }
+}
+
+@media screen and (min-width: 960px) and (max-width:1140px){
+    #portofolio_entreprise .content_cadre h3{
+        font-size: 1.7rem;
+    }
+    #portofolio_entreprise .content_cadre p {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 1140px){
+
+   #portofolio_entreprise .content_cadre h3{
+       font-size: 2rem;
+   }
+   #portofolio_entreprise .content_cadre p {
+       font-size: 1.3rem;
+   }
+}
+
+
+@media screen and (max-width: 960px){
+  #header_blog .logo_wild{
+    display: none
+  }
+}
