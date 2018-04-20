@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     var contactList = [];
     connection.query('SELECT * FROM contact', function(err, rows, fields) {
         if (err) {
-        	console.log("errorrr")
+            console.log("errorrr");
             res.status(500).json({
                 "status_code": 500,
                 "status_message": "internal server error"
@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
         } else {
 
             // for (var i = 0; i < rows.length; i++) {
-            console.log("ok je suis dans le esle")
+            console.log("ok je suis dans le else")
 
             var fullForm = {
                 'horraires': rows.horraires,
