@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var connection = require('../controlBDD/bdd.js')
+var connection = require('../controllers/config.js')
 
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
