@@ -2,7 +2,14 @@
 CSS de la section emploi dans la page emploi
 --------------------------------- */
 #offre_emploi{
-    margin-top: 5%;
+    margin-top: 3%;
+}
+
+
+.titre_missions{
+    text-align: center;
+    margin-top: 7%;
+    font-weight: bold;
 }
 
 /* display flex pour la photo d'un côté, les info de l'autre */

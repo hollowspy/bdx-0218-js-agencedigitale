@@ -1,6 +1,8 @@
 #offre_emploi.container
   .row
     - for (let i =0; i < listEmploi.length; i++)
+         - let date_format = new Date(listEmploi[i].date)
+         - let date_final = date_format.toISOString().slice(0,10);
          - let nbModal = 'Annonce' + i
          - let nom_emploi = listEmploi[i].name_poste
          .col-6.col-md-5.offset-1.content_emploi
@@ -10,8 +12,11 @@
             .detail_emploi
               ul.list_detail
                 li.liste_emploi
+                    i.fa.fa-calendar.mr-2.fa-2x
+                    p= date_final
+                li.liste_emploi
                     i.fa.fa-building.mr-2.fa-2x
-                    p= listEmploi[i].name_poste
+                    p= listEmploi[i].name_recruteur
                 li.liste_emploi
                     i.fa.fa-briefcase.mr-2.fa-2x
                     p= listEmploi[i].duree

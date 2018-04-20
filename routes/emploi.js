@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 
     // Do the query to get data.
-    connection.query('SELECT * FROM missions', function(err, rows, fields) {
+    connection.query('SELECT * FROM missions WHERE valide = 1 ORDER BY date DESC', function(err, rows, fields) {
             if (err) {
                 res.status(500).json({
                     "status_code": 500,
@@ -28,7 +28,8 @@ router.get('/', function(req, res, next) {
                         'txt_poste': rows[i].poste,
                         'txt_entreprise' : rows[i].entreprise,
                         'txt_competences' : rows[i].competences,
-                        'name_recruteur' : rows[i].recruteur
+                        'name_recruteur' : rows[i].recruteur,
+                        'date' : rows[i].date
                     }
                     // Add object into array
                     listEmploi.push(emploi);
