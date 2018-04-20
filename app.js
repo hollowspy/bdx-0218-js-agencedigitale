@@ -11,7 +11,6 @@ let admin = require('./routes/admin');
 let blog = require('./routes/blog');
 let emploi = require('./routes/emploi');
 let login = require('./routes/login');
-let login = require('./routes/login');
 let concept = require('./routes/concept');
 
 const router = express.Router();
@@ -35,7 +34,6 @@ app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
 })
 
 
-var login = require('./routes/login');
 
 
 
