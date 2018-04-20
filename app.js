@@ -4,6 +4,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 let index = require('./routes/index');
 let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
@@ -18,8 +19,6 @@ const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
 
 let app = express();
-
-
 
 // upload de fichier sur le site
 
@@ -44,6 +43,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

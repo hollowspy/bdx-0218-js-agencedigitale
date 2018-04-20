@@ -5,7 +5,6 @@ var connection = require('../controllers/config.js')
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
     const listEmploi = [];
-    console.log('route OK')
 
 
     // Do the query to get data.
@@ -17,7 +16,6 @@ router.get('/', function(req, res, next) {
                 });
             } else {
                 // Loop check on each row
-                console.log('requete SQL ok');
                 for (var i = 0; i < rows.length; i++) {
 
                     // Create an object to save current row's data
@@ -35,7 +33,6 @@ router.get('/', function(req, res, next) {
                     // Add object into array
                     listEmploi.push(emploi);
                 }
-                console.log(listEmploi);
 
                 // Render index.pug page using array
                 res.render('page_emploi', {
