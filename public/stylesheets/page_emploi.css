@@ -25,6 +25,10 @@ CSS de la section emploi dans la page emploi
     padding-bottom: 5%;
 }
 
+#offre_emploi .liste_emploi{
+    display:flex;
+}
+
 /* Controle des dimensions de la fenetre modal */
 #offre_emploi .modal-lg {
     min-width: 75%;
@@ -33,7 +37,6 @@ CSS de la section emploi dans la page emploi
 
 
 #offre_emploi .modal-lg .modal-content {
-    margin-top:5vh;
     min-height: 50vh;
 }
 
@@ -69,6 +72,15 @@ CSS de la section emploi dans la page emploi
 
 #offre_emploi h2, #offre_emploi h3, #offre_emploi h4 {
     font-weight: bold;
+}
+
+
+#offre_emploi .txt_profil_modal{
+    width:30vw;
+    text-align: left;
+    font-size: 1rem;
+    font-family: lato;
+    white-space : pre-wrap;
 }
 
 

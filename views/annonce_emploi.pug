@@ -2,15 +2,22 @@
   .row
     - for (let i =0; i < listEmploi.length; i++)
          - let nbModal = 'Annonce' + i
+         - let nom_emploi = listEmploi[i].name_poste
          .col-6.col-md-5.offset-1.content_emploi
           h2= listEmploi[i].name_poste
           .info_emploi
             img.logo_entreprise(src='http://via.placeholder.com/150x150')
             .detail_emploi
               ul.list_detail
-                li= listEmploi[i].name_poste
-                li= listEmploi[i].duree
-                li= listEmploi[i].ville
+                li.liste_emploi
+                    i.fa.fa-building.mr-2.fa-2x
+                    p= listEmploi[i].name_poste
+                li.liste_emploi
+                    i.fa.fa-briefcase.mr-2.fa-2x
+                    p= listEmploi[i].duree
+                li.liste_emploi
+                    i.fa.fa-map-marker.mr-2.fa-2x
+                    p= listEmploi[i].ville
           button.btn.btn-primary.btn_modal_emploi(type='button' data-toggle='modal' data-target= '#Annonce' + i) En savoir plus..
           div(id=nbModal).modal.fade
             .modal-dialog.modal-lg
@@ -27,7 +34,6 @@
                       .col-12
                         .descri_entreprise
                           p= listEmploi[i].txt_entreprise
-
                   .contexte_annonce
                     .container
                       .row
@@ -40,7 +46,8 @@
 
                           .competence_modal
                             h4  Competence Requise
-                            p= listEmploi[i].txt_competences
+                            p
+                                pre.txt_profil_modal= listEmploi[i].txt_competences
 
                 // Modal footer
                 .modal-footer
