@@ -8,7 +8,7 @@ const querySQL = 'SELECT * FROM bar WHERE type = ? ; SELECT * FROM collab';
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
-	let barList = [];
+	// let barList = [];
 	connection.query(querySQL, ['fun'], function (err, rows, fields) {
 		if (err) {
 			res.status(500).json({ "status_code": 500, "status_message": "internal server error" });
