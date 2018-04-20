@@ -5,6 +5,7 @@ var connection = require('../controllers/config.js')
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
     const listEmploi = [];
+    console.log('route OK')
 
 
     // Do the query to get data.
