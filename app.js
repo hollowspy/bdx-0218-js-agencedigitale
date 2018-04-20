@@ -13,6 +13,7 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
 var login = require('./routes/login');
+let concept = require('./routes/concept');
 
 let app = express();
 
@@ -59,7 +60,7 @@ app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
 app.use('/blog', blog);
-
+app.use('/concept', concept);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
