@@ -113,18 +113,23 @@ h2, h3, h4, h5 {
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
+  color: black;
 }
 
 .cl-effect-5 a span::before {
   position: absolute;
-  color: black;
+  color: #d83832;
   top: 100%;
   content: attr(data-hover);
-  font-weight: 700;
+  font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.developpeur .cl-effect-5 a span::before {
+color:#0a7893;
+  }
 
 .cl-effect-5 a:hover span,
 .cl-effect-5 a:focus span {
@@ -132,6 +137,7 @@ h2, h3, h4, h5 {
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
 
 
 /*navbar autres onglets*/
@@ -488,6 +494,9 @@ h2, h3, h4, h5 {
  color:rgba(10, 120,147, 1);
 }
 
+#log {
+  margin-left: -5em;
+}
 /*------------------------
         FUN BAR
 -------------------------*/
@@ -496,10 +505,6 @@ h2, h3, h4, h5 {
   font-family: 'bebas_neueregular';
   font-size: 4rem;
 }
-/*#funBar .fake {
-  height: 500px;
-  width: 100%;
-}*/
 
 /*------------------------
       SERIOUS BAR
@@ -565,6 +570,13 @@ body.admin {
   border-top-right-radius: 0;
 }
 
+/* --------------------
+     CONCEPT
+------------------------ */
+
+.margin-tibo {
+  margin-top: 4.5em;
+}
 
 /* --------------------
      BLOG
@@ -765,6 +777,7 @@ font-size: 2em;
   max-width: 350px;
   width: calc(100% - 1em);
   vertical-align: top;
+  padding-bottom: 0.5em;
 }
 
 #myFooter .input__field {
