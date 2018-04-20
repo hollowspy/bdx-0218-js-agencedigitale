@@ -1,6 +1,8 @@
 var mysql      = require('mysql');
 
 var connection = mysql.createConnection({
+
+  multipleStatements: true,
   host     : 'sql7.freesqldatabase.com',
   user     : 'sql7233310',
   password : 'uWdk11MDxj',

@@ -9,11 +9,14 @@ let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
 let admin = require('./routes/admin');
 let blog = require('./routes/blog');
+let emploi = require('./routes/emploi');
+let login = require('./routes/login');
+let login = require('./routes/login');
+let concept = require('./routes/concept');
+
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
-var login = require('./routes/login');
-let concept = require('./routes/concept');
 
 let app = express();
 
@@ -59,6 +62,7 @@ app.use('/users', users);
 app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
+app.use('/login', login);
 app.use('/blog', blog);
 app.use('/concept', concept);
 
