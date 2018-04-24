@@ -12,13 +12,17 @@ database : 'sql7233310'
 
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
-  connection.query("SELECT * FROM missions WHERE valide = 1", function(err, rows, fields) {
+  connection.query("SELECT * FROM missions WHERE valide = 0", function(err, rows, fields) {
 	  	if (err) {
 	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
 	  	} else {
-        let validation = rows[0];
-        res.render('validation', {bodyClass: 'validation,', page: 'validation,', validation});
+        let valid= rows[0];
+        let date_format = new Date(valid.date)
+        let date_final = date_format.toISOString().slice(0,10);
+        res.render('validation', {bodyClass: 'validation,', page: 'validation,', valid, date_final});
       }
     })});
+
+
 
 module.exports = router;

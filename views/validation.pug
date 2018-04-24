@@ -1,1 +1,46 @@
+extends layout
 
+block content
+  body
+    .container.boxValid
+      .row
+        .col-10
+          p.title= valid.nom_poste
+        .col-2
+          p.titleDate= date_final
+      .row
+        .col-2
+          p.subtitle= valid.recruteur
+        .col-2
+          p.subtitle= valid.localisation
+        .col-2
+          p.subtitle= valid.departement
+        .col-2
+          p.subtitle= valid.duree
+        .col-2
+          p.subtitle= valid.diplome
+        .col-2
+          p.subtitle= valid.experience
+      .row
+        .col-12
+          p.textTitle Description du poste
+      .row
+        .col-12
+          p.text= valid.poste
+      .row
+        .col-12
+          p.textTitle Description de l'entreprise
+      .row
+        .col-12
+          p.text= valid.entreprise
+      .row
+        .col-12
+          p.textTitle Compétences requises
+      .row
+        .col-12
+          p.text= valid.competences
+      .row
+        .col-6.bordDroit
+          i.fas.fa-times.fa-2x
+        .col-6.bordTop
+          i.fas.fa-check.fa-2x
