@@ -3,8 +3,9 @@ var router = express.Router();
 var connection = require('../controllers/config.js')
 
 /* GET recruteur page */
+
 router.get('/', function(req, res, next) {
-    const listEmploi = [];
+//    const listEmploi = [];
 
 
     // Do the query to get data.
@@ -15,28 +16,14 @@ router.get('/', function(req, res, next) {
                     "status_message": "internal server error"
                 });
             } else {
-                // Loop check on each row
-                for (var i = 0; i < rows.length; i++) {
 
-                    // Create an object to save current row's data
-                    var emploi = {
-                        'id_emploi' : rows[i].id,
-                        'name_poste': rows[i].nom_poste,
-                        'duree': rows[i].duree,
-                        'ville': rows[i].localisation,
-                        'txt_poste': rows[i].poste,
-                        'txt_entreprise' : rows[i].entreprise,
-                        'txt_competences' : rows[i].competences,
-                        'name_recruteur' : rows[i].recruteur,
-                        'date' : rows[i].date
-                    }
-                    // Add object into array
-                    listEmploi.push(emploi);
-                }
+                    let emploi = rows;
 
+
+                console.log('mes objets',emploi);
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    "listEmploi": listEmploi,
+                    emploi
                 });
             }
         });
@@ -45,5 +32,44 @@ router.get('/', function(req, res, next) {
         connection.end();
 
     });
+
+ //GET recruteur page
+router.get('/search', function(req, res, next) {
+    let poste = req.query.poste;
+    let dpt = req.query.Dpt
+    let requeteSQL = '';
+    console.log(poste, dpt);
+    if (dpt)
+    requeteSQL = (`SELECT * FROM missions WHERE departement = ${dpt} AND nom_poste LIKE '%${poste}%' ORDER BY date DESC`)
+    else
+    requeteSQL = (`SELECT * FROM missions WHERE nom_poste LIKE '%${poste}%' ORDER BY date DESC`)
+
+    console.log(requeteSQL);
+
+    connection.query(requeteSQL, function(err, rows, fields) {
+            if (err) {
+                res.status(500).json({
+                    "status_code": 500,
+                    "status_message": "internal server error"
+                });
+            } else {
+
+                    let emploi = rows;
+
+                console.log('mes objets',emploi);
+                // Render index.pug page using array
+                res.render('page_emploi', {
+                    emploi
+                });
+            }
+        });
+
+        // Close the MySQL connection
+        connection.end();
+
+    });
+
+    // Do the query to get data.
+
 
 module.exports = router;

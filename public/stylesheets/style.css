@@ -1043,7 +1043,7 @@ z-index: 1;
   /* Barre de recherche en une ligne (display flex) sur la vidéo */
    #header .search_bar{
    display: flex;
-   }
+     }
    /* activation du filtre hover en version desktop */
    #portofolio_entreprise .content_cadre figcaption{
        visibility: visible;
