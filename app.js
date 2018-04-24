@@ -13,6 +13,7 @@ let blog = require('./routes/blog');
 let emploi = require('./routes/emploi');
 let login = require('./routes/login');
 let concept = require('./routes/concept');
+// let footer = require('./routes/footer');
 
 const router = express.Router();
 const multer = require('multer');
@@ -60,6 +61,7 @@ app.use('/login', login);
 app.use('/blog', blog);
 app.use('/concept', concept);
 app.use('/emploi', emploi);
+// app.use('/footer', footer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -43,3 +43,12 @@
               img.img-fluid.m-1(src='http://givemesport.azureedge.net/images/18/04/03/1ba0972ffd816b35cd192fd59934b9aa/960.jpg', alt='image du personnel de la team')
             .col-12.col-md-6
               img.img-fluid.m-1(src='http://givemesport.azureedge.net/images/18/04/03/1ba0972ffd816b35cd192fd59934b9aa/960.jpg', alt='image du personnel de la team')
+
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+script.
+  $(document).ready(function(){
+  $.ajax({url: "/concept3", success: function(result){
+  alert("ok ajax")
+      //- $("#div1").html(result);
+  }});
+  });

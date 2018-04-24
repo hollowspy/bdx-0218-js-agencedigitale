@@ -1,39 +1,33 @@
-var express = require('express');
-var router = express.Router();
-const connection = require('../controllers/config.js');
+// var express = require('express');
+// var router = express.Router();
+// const connection = require('../controllers/config.js');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
 
-    var contactList = [];
-    connection.query('SELECT * FROM contact', function(err, rows, fields) {
-        if (err) {
-            res.status(500).json({
-                "status_code": 500,
-                "status_message": "internal server error"
-            });
-        } else {
 
-            // for (var i = 0; i < rows.length; i++) {
+//     connection.query('SELECT * FROM contact', function(err, rows, fields) {
+//         if (err) {
+//             res.status(500).json({
+//                 "status_code": 500,
+//                 "status_message": "internal server error"
+//             });
+//         } else {
+//             let valide = rows;
+//             // let adresse = valide.adresse;
+//             // let mail = valide.mail;
+//             // let tel = valide.tel;
 
-            var fullForm = {
-                'horraires': rows.horraires,
-                'adresse': rows.adresse,
-                'tel': rows.tel,
-                'mail': rows.mail
-            }
-            contactList.push(fullForm);
+//             res.render('footer_collab',{valide});
 
-            // }
-            res.render('footer_collab', {
-                'contactList': contactList
-            });
-        } // end else
-    }); // end connection.query
-
-    connection.end();
-}); // end router.get
+//             console.log(valide.length);
+//             // console.log(valide.adresse);
+          
+//         } // end else
+//     }); // end connection.query
+//     connection.end();
+// }); // end router.get
 
 
 
-module.exports = router;
+// module.exports = router;
