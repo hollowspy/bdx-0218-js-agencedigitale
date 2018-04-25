@@ -394,7 +394,7 @@ h2, h3, h4, h5 {
     vertical-align: top;
 }
 
-#formEmploi button, input {
+#formEmploi button, #formEmploi input {
     border-bottom: 0.09em dashed black;
     border-top :none;
     border-right:none;
@@ -406,7 +406,7 @@ h2, h3, h4, h5 {
     width:100%;
 }
 
-#formEmploi button, input:hover, #formEmploi button, input:active, #formEmploi button, input:focus {
+#formEmploi button,#formEmploi input:hover, #formEmploi button, #formEmploi input:active, #formEmploi button, #formEmploi  input:focus {
   background-color: white;
   border-radius: 0.05em;
   border: 2px dashed #19112f;
@@ -1152,3 +1152,12 @@ z-index: 1;
     text-align: center;
     font-weight: bold;
   }
+.boxValid .form-valide {
+  text-align: center;
+  padding-top:2%;
+}
+
+.boxValid button {
+  background: none;
+  border:none;
+}

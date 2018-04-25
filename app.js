@@ -4,6 +4,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+let methodOverride = require('method-override');
 let index = require('./routes/index');
 let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
@@ -34,6 +35,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+app.use(methodOverride('_method'));
 
 app.use('/', index);
 app.use('/users', users);

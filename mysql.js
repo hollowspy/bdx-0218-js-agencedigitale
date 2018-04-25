@@ -6,17 +6,7 @@ var bodyParser = require('body-parser');
 var mysql = require('mysql');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var mySqlClient = mysql.createConnection({
-  host     : "localhost",
-  user     : "root",
-  password : "mdp",
-  database : "projet_digital"
-});
-
-mySqlClient.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+const connection = require('../controllers/config');
 
 app.get('/',function(req,res,next){
 res.sendfile('views/formulaire.pug');
@@ -26,7 +16,7 @@ app.post('/emploi', function(req, res) {
     console.log('req.body');
     console.log(req.body);
     res.end()
-    mySqlClient.query("Insert into missions(nom_poste,duree,localisation,diplome,experience,desc_poste,desc_entreprise,competences) VALUES ('"+req.body.emploi+"','"+req.body.duree+"','"+req.body.lieu+"','"+req.body.diplome+"','"+req.body.experience+"','"+req.body.descEmploi+"','"+req.body.descEnt+"','"+req.body.competences+"')",function(err, result)
+    connection.query("Insert into missions(nom_poste,duree,localisation,diplome,experience,desc_poste,desc_entreprise,competences) VALUES ('"+req.body.emploi+"','"+req.body.duree+"','"+req.body.lieu+"','"+req.body.diplome+"','"+req.body.experience+"','"+req.body.descEmploi+"','"+req.body.descEnt+"','"+req.body.competences+"')",function(err, result)
     {
         if (err)
             throw err;
@@ -36,11 +26,11 @@ app.post('/emploi', function(req, res) {
 
 app.get('/recruteurs', function(req, res) {
 	// Connect to MySQL database.
-	var connection = getMySQLConnection();
-	connection.connect();
+	var connected = getMySQLConnection();
+	connected.connect();
 
 	// Do the query to get data.
-	connection.query('SELECT * FROM collab WHERE id = ' + req.params.id, function(err, rows, fields) {
+	connected.query('SELECT * FROM collab WHERE id = ' + req.params.id, function(err, rows, fields) {
 		var person;
 
 	  	if (err) {
@@ -65,7 +55,7 @@ app.get('/recruteurs', function(req, res) {
 	});
 
 	// Close MySQL connection
-	connection.end();
+	connected.end();
 });
 
 app.listen(3000);

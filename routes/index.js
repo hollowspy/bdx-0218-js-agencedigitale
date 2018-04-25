@@ -4,7 +4,7 @@ const connection = require('../controllers/config');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
+  
   let barList = [];
   connection.query('SELECT * FROM bar WHERE type = ?', ['fun'], function(err, rows, fields) {
 	  	if (err) {

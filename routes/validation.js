@@ -1,28 +1,50 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-
-var connection = mysql.createConnection({
-multipleStatements: true,
-host : 'sql7.freesqldatabase.com',
-user : 'sql7233310',
-password : 'uWdk11MDxj',
-database : 'sql7233310'
-});
+var moment = require('moment');
+const connection = require('../controllers/config');
 
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
-  connection.query("SELECT * FROM missions WHERE valide = 0", function(err, rows, fields) {
+  connection.query("SELECT * FROM missions", function(err, rows, fields) {
+    console.log(rows)
+    if(rows.length === 0 ){
+      res.redirect('../');
+    }else{
 	  	if (err) {
 	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
 	  	} else {
-        let valid= rows[0];
-        let date_format = new Date(valid.date)
-        let date_final = date_format.toISOString().slice(0,10);
-        res.render('validation', {bodyClass: 'validation,', page: 'validation,', valid, date_final});
+        let valid= rows;
+        console.log(valid.length)
+        res.render('validation', {bodyClass: 'validation,', page: 'validation,', valid, moment});
       }
+    }
     })});
 
+router.put('/valider/:id', function(req, res, next) {
+            if (req.body.action === 'add') {
+              connection.query("UPDATE missions SET valide = 1 WHERE id = ?",[id],function(err, result)
+
+              {
+                  if (err)
+                      throw err;
+              else{
+                res.redirect('/validation')
+              }
+            }
+            )}});
+
+router.delete('/delete/:id', function(req, res, next) {
+  if (req.body.action === 'delete') {
+    connection.query("DELETE FROM missions WHERE id = ?",[id],function(err, result)
+    {
+      if (err)
+      throw err;
+    else{
+      res.redirect('/validation')
+    }
+  }
+  )}});
 
 
 module.exports = router;
