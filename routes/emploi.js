@@ -20,7 +20,6 @@ router.get('/', function(req, res, next) {
                     let emploi = rows[0];
                     let contact = rows[1]
 
-
                 console.log('mes objets',emploi);
                 console.log(contact)
                 // Render index.pug page using array
@@ -39,9 +38,9 @@ router.post('/search', function(req, res, next) {
     let requeteSQL = '';
     console.log(poste, dpt);
     if (dpt)
-    requeteSQL = (`SELECT * FROM missions WHERE departement = ${dpt} AND nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC`)
+    requeteSQL = (`SELECT * FROM missions WHERE departement = ${dpt} AND nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC; SELECT * FROM contact`)
     else
-    requeteSQL = (`SELECT * FROM missions WHERE nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC`)
+    requeteSQL = (`SELECT * FROM missions WHERE nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC; SELECT * FROM contact`)
 
     console.log(requeteSQL);
 
@@ -53,12 +52,13 @@ router.post('/search', function(req, res, next) {
                 });
             } else {
 
-                    let emploi = rows;
+                    let emploi = rows[0];
+                    let contact = rows[1];
 
                 console.log('mes objets',emploi);
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    emploi, bodyClass : 'search'
+                    emploi, bodyClass : 'search', contact
                 });
             }
         });
