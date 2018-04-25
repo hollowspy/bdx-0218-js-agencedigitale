@@ -401,14 +401,10 @@ color:#0a7893;
 }
 
 #formEmploi button, #formEmploi input {
-<<<<<<< HEAD
     border-bottom: 0.09em dashed black;
     border-top :none;
     border-right:none;
     border-left:none;
-=======
-    border: 0.09em dashed black;
->>>>>>> 3cc270f16e1f43af7354fbe8723cb46556f67a3a
     overflow: hidden;
     background: none;
     padding: 0 5%;
@@ -507,13 +503,10 @@ color:#0a7893;
  color:rgba(10, 120,147, 1);
 }
 
-<<<<<<< HEAD
+
 .collab .name, .collab .age, .collab .xp, .collab .exp{
   display:inline-block; padding-right: 5%;
-=======
-#log {
-  margin-left: -5em;
->>>>>>> 3cc270f16e1f43af7354fbe8723cb46556f67a3a
+
 }
 /*------------------------
         FUN BAR
@@ -1142,38 +1135,4 @@ z-index: 1;
   #header_blog .logo_wild{
     display: none
   }
-}
-
-
-
-// Partie validation
-
-.boxValid {
-    border: 1px solid black;
-    border-radius: 0.3em;
-  margin-top:2%;
-}
-.bordDroit{border-right:1px dashed black; border-top:1px dashed black;}
-.bordTop{border-top:1px dashed black;}
-.fas{text-align:center; padding:2% 47%;}
-.fa-times{color:red;}
-.fa-check{color:green;}
-.boxValid .title{font-variant:small-caps; font-size:2em; text-align:left;}
-.boxValid .titleDate{font-size:1.3em; padding-top:9%;}
-.boxValid .text{text-align:justify;}
-.boxValid .textTitle{
-    border-top: 1px dashed black;
-    margin: 2% 30%;
-    padding-top: 2%;
-    text-align: center;
-    font-weight: bold;
-  }
-.boxValid .form-valide {
-  text-align: center;
-  padding-top:2%;
-}
-
-.boxValid button {
-  background: none;
-  border:none;
 }

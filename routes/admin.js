@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql');
+var moment = require('moment');
 const connection = require('../controllers/config');
 
-let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions";
+let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions; SELECT * FROM missions WHERE valide = 0";
 /* GET administration page */
 router.get('/', function(req, res, next) {
 
@@ -15,8 +17,9 @@ router.get('/', function(req, res, next) {
         let collab = rows[2];
         let contact = rows[3];
         let missions = rows[4];
+        let valid = rows[5];
 
-        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions});
+        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions, valid, moment});
 	  	}
     });
 }); // fin de l'appel au getElementsByClassName('className')
@@ -34,7 +37,6 @@ router.put('/bar/:id', function(req, res, next) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
-
       res.redirect('/admin');
     }
   })
@@ -119,10 +121,34 @@ router.post('/bar/:id', function(req, res, next) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
-
       res.redirect('/admin');
     }
   })
 })
+
+router.put('/valider/:id', function(req, res, next) {
+            if (req.body.action === 'add') {
+              connection.query("UPDATE missions SET valide = 1 WHERE id = ?",[req.params.id],function(err, result)
+              {
+                  if (err)
+                      throw err;
+              else{
+                res.redirect('/admin')
+              }
+            }
+            )}});
+
+router.delete('/delete/:id', function(req, res, next) {
+  if (req.body.action === 'delete') {
+    connection.query("DELETE FROM missions WHERE id = ?",[req.params.id],function(err, result)
+    {
+      if (err)
+      throw err;
+    else{
+      res.redirect('/admin')
+    }
+  }
+  )}});
+
 
 module.exports = router;

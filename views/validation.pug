@@ -2,13 +2,13 @@ extends layout
 
 block content
   body
-    .container.boxValid
-      - for (var i = 0; i < valid.length; i++)
+    - for (var i = 0; i < valid.length; i++)
+      .container.boxValid
         .row
           .col-10
             p.title= valid[i].nom_poste
-            .col-2
-              p.titleDate= moment(valid[i].date).format('L')
+          .col-2
+            p.titleDate= moment(valid[i].date).format('L')
         .row
           .col-2
             p.subtitle= valid[i].recruteur
@@ -42,10 +42,10 @@ block content
             p.text= valid[i].competences
         .row
           .col-6.bordDroit
-            form#myForm(class='form-valide' method='POST' action='/validation/delete/'+valid[i].id+'?_method=DELETE')
+            form#myForm(class='form-valide' method='POST' action='/admin/delete/'+valid[i].id+'?_method=DELETE')
               button(type='submit', name='action', value='delete')
                 i.fas.fa-times.fa-2x
           .col-6.bordTop
-            form#myForm(class='form-valide' method='POST' action='/validation/valider/'+valid[i].id+'?_method=PUT')
+            form#myForm(class='form-valide' method='POST' action='/admin/valider/'+valid[i].id+'?_method=PUT')
               button(type='submit', name='action', value='add')
                 i.fas.fa-check.fa-2x
