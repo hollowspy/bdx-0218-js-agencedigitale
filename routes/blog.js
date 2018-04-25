@@ -1,8 +1,8 @@
 const express = require('express');
 const moment = require('moment');
 const router = express.Router();
-
 const connection = require('../controllers/config');
+
 const querySQL = 'SELECT * FROM blog ORDER BY date_parution DESC LIMIT 3 ; SELECT * FROM contact';
 
 /* GET blog page. */
@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
 			res.status(500).json({ "status_code": 500, "status_message": "internal server error" });
 		} else {
 			// Loop check on each row
-			console.log(rows);
+			
 			let blogJson = rows[0];
 			let contact= rows[1];
     res.render('blog', { 'blogs': blogJson, title: 'Blog WNY', moment, contact });
