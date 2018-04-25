@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const connection = require('../controllers/config');
+
 let sql = 'SELECT * FROM bar; SELECT * FROM contact';
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -19,6 +20,7 @@ router.get('/', function(req, res, next) {
        console.log(contact);
           }
    });
+
 });
 
 /* GET blog page. */
