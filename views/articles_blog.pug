@@ -3,9 +3,9 @@ section#blog
     .row
       for blog in blogs
         .row
-          .col-xs-12.col-sm-4.col-md-4.col-lg-3
+          .col-xs-12.col-sm-4.col-md-4.col-lg-4
             .picture
-              a(href='#')
+              a(href="/blog/"+blog.id)
                 img.img-fluid(src=blog.images)
               .keyword_box
                 .keyword_txt= blog.category
@@ -17,6 +17,7 @@ section#blog
                 strong Par 
                   = blog.autor
             h4
-              a(href='#')= blog.title
-            p= blog.description
+              a(href="/blog/"+blog.id)= blog.title
+            p
+              a(href="/blog/"+blog.id)= blog.description
         hr
