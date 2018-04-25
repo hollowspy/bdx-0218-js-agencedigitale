@@ -19,8 +19,9 @@ CSS de la section emploi dans la page emploi
 }
 
 #offre_emploi .logo_entreprise{
-    with:150px;
+    width:150px;
     height: 150px;
+    border:2px black double;
 }
 
 #offre_emploi .list_detail{
@@ -55,6 +56,9 @@ CSS de la section emploi dans la page emploi
 #offre_emploi .logo_modal{
     margin-top:5%;
     margin-left: 15%;
+    width:300px;
+    height: 300px;
+    border:2px black double;
 }
 
 #offre_emploi .competence_modal{
