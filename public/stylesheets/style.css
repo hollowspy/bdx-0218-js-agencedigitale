@@ -583,7 +583,7 @@ body.admin {
 position: relative;
 }
 
-.concept .imaggit e {
+.concept .image {
   display: block;
   width: 100%;
   height: auto;
@@ -605,7 +605,30 @@ position: relative;
 }
 .concept .prenom {
   justify-content: center;
-  top:70%;
+  bottom: :20%;
+  font-weight: bold;
+}
+
+.concept .josephine {
+margin-top: 65%;
+}
+
+.concept .aurelien {
+margin-top: 65%;
+}
+
+.concept .greg {
+  color: black;
+  margin-top: 0.5em;
+  margin-left: 2em;
+}
+
+.concept .alexandre {
+  margin-top: 70%;
+}
+
+.concept .elisa {
+  margin-top:1em;
 }
 
 /* --------------------
