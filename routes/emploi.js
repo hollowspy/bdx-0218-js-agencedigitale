@@ -29,15 +29,8 @@ router.get('/', function(req, res, next) {
                 });
             }
         });
-
-<<<<<<< HEAD
-    // Close the MySQL connection
-    connection.end();
-
-});
-=======
     });
->>>>>>> 40ab531f2ec0a81a11986f736c3d6f860ef57d4c
+
 
  //GET recruteur page
 router.post('/search', function(req, res, next) {
