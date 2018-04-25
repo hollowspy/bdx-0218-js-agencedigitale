@@ -576,6 +576,7 @@ body.admin {
 
 .margin-tibo {
   margin-top: 4.5em;
+  margin-bottom: 1em;
 }
 
 .concept .container_josephine {
@@ -604,7 +605,7 @@ position: relative;
 }
 .concept .prenom {
   justify-content: center;
-  top:60%;
+  top:70%;
 }
 
 /* --------------------

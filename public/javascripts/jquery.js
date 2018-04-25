@@ -99,6 +99,14 @@ $(document).ready(function() {
 
   });
 
+// Url image offre emploi
+
+$(".search logo_entreprise").each(function(){
+    let url = $(this).attr('src');
+    console.log(url);
+})
+
+
 
   // //////////////////////
   // PARTIE ADMINISTRATION

@@ -30,21 +30,25 @@ router.get('/', function(req, res, next) {
             }
         });
 
+<<<<<<< HEAD
     // Close the MySQL connection
     connection.end();
 
 });
+=======
+    });
+>>>>>>> 40ab531f2ec0a81a11986f736c3d6f860ef57d4c
 
  //GET recruteur page
-router.get('/search', function(req, res, next) {
-    let poste = req.query.poste;
-    let dpt = req.query.Dpt
+router.post('/search', function(req, res, next) {
+    let poste = req.body.poste;
+    let dpt = req.body.Dpt
     let requeteSQL = '';
     console.log(poste, dpt);
     if (dpt)
-    requeteSQL = (`SELECT * FROM missions WHERE departement = ${dpt} AND nom_poste LIKE '%${poste}%' ORDER BY date DESC`)
+    requeteSQL = (`SELECT * FROM missions WHERE departement = ${dpt} AND nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC`)
     else
-    requeteSQL = (`SELECT * FROM missions WHERE nom_poste LIKE '%${poste}%' ORDER BY date DESC`)
+    requeteSQL = (`SELECT * FROM missions WHERE nom_poste LIKE '%${poste}%' AND valide = 1 ORDER BY date DESC`)
 
     console.log(requeteSQL);
 
@@ -61,13 +65,16 @@ router.get('/search', function(req, res, next) {
                 console.log('mes objets',emploi);
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    emploi
+                    emploi, bodyClass : 'search'
                 });
             }
         });
 
+<<<<<<< HEAD
         // Close the MySQL connection
         connection.end();
+=======
+>>>>>>> 40ab531f2ec0a81a11986f736c3d6f860ef57d4c
     });
 
     // Do the query to get data.

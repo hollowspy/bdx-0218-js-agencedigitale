@@ -30,8 +30,6 @@ router.get('/', function(req, res, next) {
             });
         } // end else
     }); // end connection.query
-
-    connection.end();
 }); // end router.get
 
 
