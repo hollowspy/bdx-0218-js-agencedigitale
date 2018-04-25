@@ -20,10 +20,11 @@ section#myFooter
       .col-12.col-sm-6.col-lg-3.infos
         // 2eme colonne
         h3 Contact
-          ul
-            //- li= contactList.adresse
-            //- li= contactList.mail
-            //- li= contactList.tel
+          - for (var i = 0; i < contact.length; i++)
+            ul
+              li= contact[i].adresse
+              li= contact[i].mail
+              li= contact[i].tel
         h3 Horaires
           ul
             //- li= contactList.horraires

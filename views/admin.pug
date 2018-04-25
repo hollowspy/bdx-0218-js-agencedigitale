@@ -16,8 +16,11 @@ block content
             a.links#modifOffres(href='#', data-showdiv='contentOffres') Offres Emplois
           li
             a.links#modifCollab(href='#', data-showdiv='contentCollab') Collaborateurs
+          li
+            a.links#modifContact(href='#', data-showdiv='contentFooter') Contact
       #page-content-wrapper
         .container-fluid
+          include admin_modal.pug
           #contentBar.divs
             .d-table.w-100
               .d-table-row.head
@@ -25,39 +28,18 @@ block content
                 .d-table-cell Icône
                 .d-table-cell Nombres
                 .d-table-cell
+                .d-table-cell
               - for (var i = 0; i < bar.length; i++)
-                - let baModal = 'Bar' + i
-                  .d-table-row
-                    .d-table-cell= bar[i].name
-                    .d-table-cell= bar[i].picto
-                    .d-table-cell= bar[i].numbers
-                    .d-table-cell
-                      a(href='#', class='modifier btn btn-primary', data-target= '#Bar' + i, data-toggle='modal') Modifier
-                    div(id=baModal).modal
-                      .modal-dialog
-                          .modal-content
-                            .modal-header
-                              h2.modal-title EDITION
-                              |
-                              button.close(type='button', data-dismiss='modal', aria-label='Close')
-                                span(aria-hidden='true') &times;
-                            |
-                            .modal-body
-                              form(method='POST', enctype='multipart/form-data', action='/admin/updateData')
-                                .form-group
-                                  label Name
-                                  |
-                                  input.form-control(type='text', name='name', placeholder=bar[i].name)
-                                |
-                                .form-group
-                                  label Chiffres
-                                  |
-                                  input.form-control(type='text', name='numbers', placeholder=bar[i].numbers)
-                                |
-                                button.btn.btn-primary(type='submit') Submit
-                            |
-                            .modal-footer
-                              button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                .d-table-row
+                  .d-table-cell(data-label='Nom', data-name='name')= bar[i].name
+                  .d-table-cell(data-label='Picto', data-name='picto')= bar[i].picto
+                  .d-table-cell(data-label='Chiffres', data-name='numbers')= bar[i].numbers
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    form(method='POST', action='/admin/bar/'+bar[i].id+)
+                      button(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Bar' + i, data-toggle='modal') Ajouter
           #contentOffres.divs
             .d-table.w-100
               .d-table-row.head
@@ -68,49 +50,20 @@ block content
                 .d-table-cell Diplôme
                 .d-table-cell Expérience
                 .d-table-cell
+                .d-table-cell
               - for (var i = 0; i < missions.length; i++)
-                - let miModal = 'Missions' + i
-                  .d-table-row
-                    .d-table-cell= missions[i].nom_poste
-                    .d-table-cell= missions[i].recruteur
-                    .d-table-cell= missions[i].duree
-                    .d-table-cell= missions[i].localisation
-                    .d-table-cell= missions[i].diplome
-                    .d-table-cell= missions[i].experience
-                    .d-table-cell
-                      a(href='#', class='modifier btn btn-primary', data-target= '#Missions' + i, data-toggle='modal') Modifier
-                  div(id=miModal).modal.fade
-                      .modal-dialog.modal-lg
-                        .modal-content
-                          // Modal Header
-                          .modal-header
-                            h2.modal-title EDITION
-                            button.close(type='button' data-dismiss='modal') &times;
-                          // Modal body
-                          .modal-body
-                            form(method='POST', enctype='multipart/form-data', action='updateData')
-                              .form-group
-                                label Nom du poste
-                                input.form-control(type='text', placeholder=missions[i].nom_poste, name='nom_poste')
-                              .form-group
-                                label Recruteur
-                                input.form-control(type='text', placeholder=missions[i].recruteur, name='recruteur')
-                              .form-group
-                                label Durée
-                                input.form-control(type='text', placeholder=missions[i].duree, name='duree')
-                              .form-group
-                                label Localisation
-                                input.form-control(type='text', placeholder=missions[i].localisation, name='localisation')
-                              .form-group
-                                label Diplôme
-                                input.form-control(type='text', placeholder=missions[i].diplome, name='diplome')
-                              .form-group
-                                label Expérience
-                                input.form-control(type='text', placeholder=missions[i].experience, name='experience')
-                              button.btn.btn-primary(type='submit') Submit
-                          // Modal footer
-                          .modal-footer
-                            button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
+                .d-table-row
+                  .d-table-cell(data-label='Poste', data-name='nom_poste')= missions[i].nom_poste
+                  .d-table-cell(data-label='Recruteur', data-name='recruteur')= missions[i].recruteur
+                  .d-table-cell(data-label='Durée', data-name='duree')= missions[i].duree
+                  .d-table-cell(data-label='Localisation', data-name='localisation')= missions[i].localisation
+                  .d-table-cell(data-label='Diplôme', data-name='diplome')= missions[i].diplome
+                  .d-table-cell(data-label='Expérience', data-name='experience')= missions[i].experience
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Missions' + i, data-toggle='modal') Ajouter
           #contentCollab.divs
             .d-table.w-100
               .d-table-row.head
@@ -118,44 +71,40 @@ block content
                 .d-table-cell Age
                 .d-table-cell Technologies
                 .d-table-cell Expérience
+                .d-table-cell Description
                 .d-table-cell Image
                 .d-table-cell
+                .d-table-cell
               - for (var i = 0; i < collab.length; i++)
-                - let coModal = 'Collab' + i
-                  .d-table-row
-                    .d-table-cell= collab[i].name
-                    .d-table-cell= collab[i].age
-                    .d-table-cell= collab[i].techno
-                    .d-table-cell= collab[i].experience
-                    .d-table-cell= collab[i].image
-                    .d-table-cell
-                      a(href='#', class='modifier btn btn-primary', data-target= '#Collab' + i, data-toggle='modal') Modifier
-                  div(id=coModal).modal.fade
-                      .modal-dialog.modal-lg
-                        .modal-content
-                          // Modal Header
-                          .modal-header
-                            h2.modal-title EDITION
-                            button.close(type='button' data-dismiss='modal') &times;
-                          // Modal body
-                          .modal-body
-                            form(method='POST', enctype='multipart/form-data', action='updateData')
-                              .form-group
-                                label Name
-                                input.form-control(type='text', placeholder=collab[i].name, name='name')
-                              .form-group
-                                label Age
-                                input.form-control(type='text', placeholder=collab[i].age, name='age')
-                              .form-group
-                                label Technologies
-                                input.form-control(type='text', placeholder=collab[i].techno, name='techno')
-                              .form-group
-                                label Expérience
-                                input.form-control(type='text', placeholder=collab[i].experience, name='experience')
-                              .form-group
-                                label Image
-                                input.d-block(type='file', placeholder=collab[i].image, name='image')
-                              button.btn.btn-primary(type='submit') Submit
-                          // Modal footer
-                          .modal-footer
-                            button.btn.btn-secondary(type='button' data-dismiss='modal') Fermer
+                .d-table-row
+                  .d-table-cell(data-label='Nom', data-name='name')= collab[i].name
+                  .d-table-cell(data-label='Age', data-name='age')= collab[i].age
+                  .d-table-cell(data-label='Technologies', data-name='techno')= collab[i].techno
+                  .d-table-cell(data-label='Expérience', data-name='experience')= collab[i].experience
+                  .d-table-cell(data-label='Description', data-name='description')= collab[i].description
+                  .d-table-cell(data-label='Image', data-name='images')= collab[i].images
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Collab' + i, data-toggle='modal') Ajouter
+          #contentFooter.divs
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Horaires
+                .d-table-cell Adresse
+                .d-table-cell Tel
+                .d-table-cell Mail
+                .d-table-cell
+                .d-table-cell
+              - for (var i = 0; i < contact.length; i++)
+                .d-table-row
+                  .d-table-cell(data-label='Horaires', data-name='horaires')= contact[i].horaires
+                  .d-table-cell(data-label='Adresse', data-name='adresse')= contact[i].adresse
+                  .d-table-cell(data-label='Tél', data-name='tel')= contact[i].tel
+                  .d-table-cell(data-label='Mail', data-name='mail')= contact[i].mail
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary contact', data-row-id=contact[i].id, data-target= '#Footer' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Footer' + i, data-toggle='modal') Ajouter

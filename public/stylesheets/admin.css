@@ -7,7 +7,7 @@ body{
 .divs{
   display: none;
 }
-.divs:first-child{
+#contentBar{
   display: block;
 }
 .d-table .head .d-table-cell{

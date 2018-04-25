@@ -110,4 +110,39 @@ $(document).ready(function() {
     $("#"+$(this).attr("data-showdiv")).show();
   });
 
+  // remplir la modal dynamiquement
+  $('.modifier').click(function(e){
+    e.preventDefault;
+    let idModal = $(this).data('target');
+    idModal = idModal.substring(1);
+    $(this).parents().prevAll('.modal').attr('id', idModal);
+
+    let idTable = $(this).data('rowId');
+    $('.modal-id form .form-group').remove();
+
+    $(this).parent().prevAll('.d-table-cell').each(function(){
+      let label = $(this).data('label');
+      let Txt = $(this).text();
+      let name = $(this).data('name');
+      let input = '<div class="form-group"><label>'+label+'</label><input class="form-control" value="'+Txt+'" name="'+name+'" type="text"></input></div>';
+      $('.modal-id form').prepend(input);
+    });
+
+    if ($(this).hasClass('bar')){
+      let action = '/admin/bar/'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
+    } else if ($(this).hasClass('missions')){
+      let action = '/admin/missions'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
+    } else if ($(this).hasClass('collab')) {
+      let action = '/admin/collab'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
+    } else if ($(this).hasClass('contact')) {
+      let action = '/admin/contact'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
+    }
+
+    $(idModal).modal('show');
+  })
+
 }); //fin document.ready
