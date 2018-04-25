@@ -6,7 +6,7 @@ const connection = require('../controllers/config');
 const querySQL = 'SELECT * FROM blog ORDER BY date_parution DESC LIMIT 3';
 
 /* GET blog page. */
-router.get('/', (req, res, next) => {
+router.get('/blog/:id(\\d+)', (req, res, next) => {
 
   connection.query(querySQL, function (err, rows, fields) {
     if (err) {
@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 			// Loop check on each row
 			console.log(rows);
 			var blogJson = rows;
-    res.render('blog', { 'blogs': blogJson, title: 'Blog WNY', moment });
+    res.render('articles', { 'blogs': blogJson, title: 'Blog WNY', moment });
     }
   });
 });
