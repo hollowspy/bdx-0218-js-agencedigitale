@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 	  	
 		  		var bar = rows[0];
 		  		let contact = rows[1];
-		 
+		 console.log(bar)
 	  	res.render('recruteur', {bodyClass: 'recruteur', contact, bar});
 	  	}
 	  	// Render index.pug page using array
