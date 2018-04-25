@@ -578,6 +578,26 @@ body.admin {
   margin-top: 4.5em;
 }
 
+#crossfade{
+position: relative;
+height: 100%;
+width: 100%;
+}
+
+#crossfade img {
+  position: absolute;
+  opacity: 1;
+      -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;    
+    transition: opacity 1s ease-in-out;
+}
+ 
+#crossfade img.top:hover {
+    opacity:0;
+}
+
 /* --------------------
      BLOG
 ------------------------ */
