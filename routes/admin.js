@@ -2,23 +2,23 @@ var express = require('express');
 var router = express.Router();
 const connection = require('../controllers/config');
 
-let sql = "SELECT * FROM bar; SELECT * FROM missions";
+let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions";
 /* GET administration page */
 router.get('/', function(req, res, next) {
-  // let barList = [];
-  connection.query(sql, function(err, rows, fields) {
+
+  connection.query(select, function(err, rows, fields) {
 	  	if (err) {
 	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
 	  	} else {
         let bar = rows[0];
-        let missions = rows[1];
+        let blog = rows[1];
+        let collab = rows[2];
+        let contact = rows[3];
+        let missions = rows[4];
 
-        res.render('admin', { bodyClass:'admin', bar, missions});
+        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions});
 	  	}
-
-
-	  });
-}); // fin de l'appel au get
-
+    });
+}); 
 
 module.exports = router;
