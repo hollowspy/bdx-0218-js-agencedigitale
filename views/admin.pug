@@ -2,24 +2,109 @@ extends layout
 
 block content
   body
-    section#admin
-          .container
-            .row
-              .col-2
-                .row
-                  a#modifBar(href='#') Bar
-                .row
-                  a#modifOffres(href='#') Offres Emplois
-              .col-10
-                .row
-                  #contentBar
-                    table.table
-                      for bar in barList
-                        tr
-                          td= bar.name
-                          td= bar.picto
-                          td= bar.numbers
-                          td
-                            a.modifier Modifier
-                .row
-                  #contentOffres
+    section(id='admin wrapper')
+      #sidebar-wrapper
+        ul.sidebar-nav
+          li.nav-profile
+            .profile-image
+              img(src='/images/dev07.jpg')
+            .profile-name
+              p.name M. Jones
+          li
+            a.links#modifBar(href='#', data-showdiv='contentBar') Bar
+          li
+            a.links#modifOffres(href='#', data-showdiv='contentOffres') Offres Emplois
+          li
+            a.links#modifCollab(href='#', data-showdiv='contentCollab') Collaborateurs
+          li
+            a.links#modifContact(href='#', data-showdiv='contentFooter') Contact
+      #page-content-wrapper
+        .container-fluid
+          include admin_modal.pug
+          #contentBar.divs
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Nom
+                .d-table-cell Icône
+                .d-table-cell Nombres
+                .d-table-cell
+                .d-table-cell
+              - for (var i = 0; i < bar.length; i++)
+                .d-table-row
+                  .d-table-cell(data-label='Nom', data-name='name')= bar[i].name
+                  .d-table-cell(data-label='Picto', data-name='picto')= bar[i].picto
+                  .d-table-cell(data-label='Chiffres', data-name='numbers')= bar[i].numbers
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    form(method='POST', action='/admin/bar/'+bar[i].id+)
+                      button(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Bar' + i, data-toggle='modal') Ajouter
+          #contentOffres.divs
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Nom du poste
+                .d-table-cell Recruteur
+                .d-table-cell Durée
+                .d-table-cell Localisation
+                .d-table-cell Diplôme
+                .d-table-cell Expérience
+                .d-table-cell
+                .d-table-cell
+              - for (var i = 0; i < missions.length; i++)
+                .d-table-row
+                  .d-table-cell(data-label='Poste', data-name='nom_poste')= missions[i].nom_poste
+                  .d-table-cell(data-label='Recruteur', data-name='recruteur')= missions[i].recruteur
+                  .d-table-cell(data-label='Durée', data-name='duree')= missions[i].duree
+                  .d-table-cell(data-label='Localisation', data-name='localisation')= missions[i].localisation
+                  .d-table-cell(data-label='Diplôme', data-name='diplome')= missions[i].diplome
+                  .d-table-cell(data-label='Expérience', data-name='experience')= missions[i].experience
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Missions' + i, data-toggle='modal') Ajouter
+          #contentCollab.divs
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Nom
+                .d-table-cell Age
+                .d-table-cell Technologies
+                .d-table-cell Expérience
+                .d-table-cell Description
+                .d-table-cell Image
+                .d-table-cell
+                .d-table-cell
+              - for (var i = 0; i < collab.length; i++)
+                .d-table-row
+                  .d-table-cell(data-label='Nom', data-name='name')= collab[i].name
+                  .d-table-cell(data-label='Age', data-name='age')= collab[i].age
+                  .d-table-cell(data-label='Technologies', data-name='techno')= collab[i].techno
+                  .d-table-cell(data-label='Expérience', data-name='experience')= collab[i].experience
+                  .d-table-cell(data-label='Description', data-name='description')= collab[i].description
+                  .d-table-cell(data-label='Image', data-name='images')= collab[i].images
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Collab' + i, data-toggle='modal') Ajouter
+          #contentFooter.divs
+            .d-table.w-100
+              .d-table-row.head
+                .d-table-cell Horaires
+                .d-table-cell Adresse
+                .d-table-cell Tel
+                .d-table-cell Mail
+                .d-table-cell
+                .d-table-cell
+              - for (var i = 0; i < contact.length; i++)
+                .d-table-row
+                  .d-table-cell(data-label='Horaires', data-name='horaires')= contact[i].horaires
+                  .d-table-cell(data-label='Adresse', data-name='adresse')= contact[i].adresse
+                  .d-table-cell(data-label='Tél', data-name='tel')= contact[i].tel
+                  .d-table-cell(data-label='Mail', data-name='mail')= contact[i].mail
+                  .d-table-cell
+                    a(href='#', class='modifier btn btn-primary contact', data-row-id=contact[i].id, data-target= '#Footer' + i, data-toggle='modal') Modifier
+                  .d-table-cell
+                    a(href='#', class='delete btn btn-primary') Supprimer
+            button(href='#', class='ajouter btn btn-primary', data-target= '#Footer' + i, data-toggle='modal') Ajouter

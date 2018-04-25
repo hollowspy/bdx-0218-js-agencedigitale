@@ -113,18 +113,23 @@ h2, h3, h4, h5 {
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
+  color: black;
 }
 
 .cl-effect-5 a span::before {
   position: absolute;
-  color: black;
+  color: #d83832;
   top: 100%;
   content: attr(data-hover);
-  font-weight: 700;
+  font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.developpeur .cl-effect-5 a span::before {
+color:#0a7893;
+  }
 
 .cl-effect-5 a:hover span,
 .cl-effect-5 a:focus span {
@@ -132,6 +137,7 @@ h2, h3, h4, h5 {
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
 
 
 /*navbar autres onglets*/
@@ -395,10 +401,14 @@ h2, h3, h4, h5 {
 }
 
 #formEmploi button, #formEmploi input {
+<<<<<<< HEAD
     border-bottom: 0.09em dashed black;
     border-top :none;
     border-right:none;
     border-left:none;
+=======
+    border: 0.09em dashed black;
+>>>>>>> 3cc270f16e1f43af7354fbe8723cb46556f67a3a
     overflow: hidden;
     background: none;
     padding: 0 5%;
@@ -497,8 +507,13 @@ h2, h3, h4, h5 {
  color:rgba(10, 120,147, 1);
 }
 
+<<<<<<< HEAD
 .collab .name, .collab .age, .collab .xp, .collab .exp{
   display:inline-block; padding-right: 5%;
+=======
+#log {
+  margin-left: -5em;
+>>>>>>> 3cc270f16e1f43af7354fbe8723cb46556f67a3a
 }
 /*------------------------
         FUN BAR
@@ -508,10 +523,6 @@ h2, h3, h4, h5 {
   font-family: 'bebas_neueregular';
   font-size: 4rem;
 }
-/*#funBar .fake {
-  height: 500px;
-  width: 100%;
-}*/
 
 /*------------------------
       SERIOUS BAR
@@ -535,8 +546,6 @@ body.admin {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #f5f5f5;
 }
 
@@ -579,6 +588,13 @@ body.admin {
   border-top-right-radius: 0;
 }
 
+/* --------------------
+     CONCEPT
+------------------------ */
+
+.margin-tibo {
+  margin-top: 4.5em;
+}
 
 /* --------------------
      BLOG
