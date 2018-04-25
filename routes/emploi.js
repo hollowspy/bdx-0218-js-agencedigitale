@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var connection = require('../controllers/config.js')
-let sql = 'SELECT * FROM missions WHERE valide = 1 ORDER BY date DESC; SELECT * FROM contact';
+let sql = 'SELECT * FROM contact';
 
 /* GET recruteur page */
 
@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 //    const listEmploi = [];
     // Do the query to get data.
-    connection.query('SELECT * FROM missions WHERE valide = 1 ORDER BY date DESC', function(err, rows, fields) {
+    connection.query('SELECT * FROM missions WHERE valide = 1 ORDER BY date DESC; SELECT * FROM contact', function(err, rows, fields) {
             if (err) {
                 res.status(500).json({
                     "status_code": 500,
@@ -17,13 +17,15 @@ router.get('/', function(req, res, next) {
                 });
             } else {
 
-                    let emploi = rows;
+                    let emploi = rows[0];
+                    let contact = rows[1]
 
 
                 console.log('mes objets',emploi);
+                console.log(contact)
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    emploi
+                    emploi, contact
                 });
             }
         });

@@ -3,10 +3,10 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
 
   multipleStatements: true,
-  host     : 'sql7.freesqldatabase.com',
-  user     : 'sql7233310',
-  password : 'uWdk11MDxj',
-  database : 'sql7233310'
+  host     : 'sql7.freemysqlhosting.net',
+  user     : 'sql7234609',
+  password : 'y1bIBlDERs',
+  database : 'sql7234609'
 });
 connection.connect(function(err){
 if(!err) {
