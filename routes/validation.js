@@ -6,7 +6,7 @@ const connection = require('../controllers/config');
 
 /* GET recruteur page */
 router.get('/', function(req, res, next) {
-  connection.query("SELECT * FROM missions", function(err, rows, fields) {
+  connection.query("SELECT * FROM missions WHERE valid = 0", function(err, rows, fields) {
     console.log(rows)
     if(rows.length === 0 ){
       res.redirect('../');
