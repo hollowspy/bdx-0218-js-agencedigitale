@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql');
 const connection = require('../controllers/config');
 let sql = 'SELECT * FROM bar WHERE type = "serious"; SELECT * FROM contact';
 
@@ -11,10 +12,14 @@ router.get('/', function(req, res, next) {
 	  	if (err) {
 	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
 	  	} else {
-	  	
+
 		  		var bar = rows[0];
 		  		let contact = rows[1];
+<<<<<<< HEAD
 		 console.log(bar)
+=======
+
+>>>>>>> eda47a5e7b6e1cbd4801db097d83925f8ac52e99
 	  	res.render('recruteur', {bodyClass: 'recruteur', contact, bar});
 	  	}
 	  	// Render index.pug page using array

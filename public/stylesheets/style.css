@@ -401,14 +401,23 @@ color:#0a7893;
 }
 
 #formEmploi button, #formEmploi input {
-    border: 0.09em dashed black;
+    border-bottom: 0.09em dashed black;
+    border-top :none;
+    border-right:none;
+    border-left:none;
     overflow: hidden;
-    border-right: none;
-    border-left: none;
     background: none;
     padding: 0 5%;
     display: block;
     width:100%;
+}
+
+#formEmploi button,#formEmploi input:hover, #formEmploi button, #formEmploi input:active, #formEmploi button, #formEmploi  input:focus {
+  background-color: white;
+  border-radius: 0.05em;
+  border: 2px dashed #19112f;
+  padding: 5%;
+  transition-duration:1s;
 }
 
 #formEmploi .envoiImg input {
@@ -494,8 +503,10 @@ color:#0a7893;
  color:rgba(10, 120,147, 1);
 }
 
-#log {
-  margin-left: -5em;
+
+.collab .name, .collab .age, .collab .xp, .collab .exp{
+  display:inline-block; padding-right: 5%;
+
 }
 /*------------------------
         FUN BAR

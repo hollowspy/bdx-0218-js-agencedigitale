@@ -1,7 +1,6 @@
-var mysql      = require('mysql');
+var mysql = require('mysql');
 
 var connection = mysql.createConnection({
-
   multipleStatements: true,
   host     : 'sql7.freemysqlhosting.net',
   user     : 'sql7234609',
@@ -17,5 +16,4 @@ if(!err) {
     console.log("Error while connecting with database");
 }
 });
-
 module.exports = connection;

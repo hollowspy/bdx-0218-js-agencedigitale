@@ -4,7 +4,7 @@ let favicon = require('serve-favicon');
 let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+let methodOverride = require('method-override');
 let index = require('./routes/index');
 let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
@@ -18,20 +18,9 @@ let concept = require('./routes/concept');
 const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
-
 let app = express();
+let login = require('./routes/login');
 
-// upload de fichier sur le site
-
-app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
-  fs.rename(req.file.path, 'public/images/' + req.file.originalname, function(err){
-    if (err) {
-        res.send('problème durant le déplacement');
-    } else {
-        res.send('Fichier uploadé avec succès');
-    }
-  });
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +33,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'))
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -52,12 +40,13 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(methodOverride('_method'));
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
-app.use('/login', login);
 app.use('/blog', blog);
 app.use('/concept', concept);
 app.use('/emploi', emploi);
