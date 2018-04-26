@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
+var mysql = require('mysql');
+var moment = require('moment');
 const connection = require('../controllers/config');
 
-let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions";
+let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions; SELECT * FROM missions WHERE valide = 0";
 /* GET administration page */
 router.get('/', function(req, res, next) {
 
@@ -15,10 +17,138 @@ router.get('/', function(req, res, next) {
         let collab = rows[2];
         let contact = rows[3];
         let missions = rows[4];
+        let valid = rows[5];
 
-        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions});
+        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions, valid, moment});
 	  	}
     });
-}); 
+}); // fin de l'appel au getElementsByClassName('className')
+
+// mise à jour table BAR
+let update1 = 'UPDATE bar SET ? WHERE id = ?'
+router.put('/bar/:id', function(req, res, next) {
+  let input = JSON.parse(JSON.stringify(req.body));
+  let id = req.params.id;
+  let data = {
+    name: input.name,
+    numbers : input.numbers
+  }
+  connection.query(update1,[data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+// mise à jour table MISSIONS
+let update2 = 'UPDATE missions SET ? WHERE id = ?'
+router.put('/missions/:id', function(req, res, next) {
+  let input = JSON.parse(JSON.stringify(req.body));
+  let id = req.params.id;
+  let data = {
+    nom_poste: input.nom_poste,
+    recruteur: input.recruteur,
+    duree: input.duree,
+    localisation: input.localisation,
+    diplome: input.diplome,
+    experience: input.experience
+  }
+  connection.query(update2,[data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+
+      res.redirect('/admin');
+    }
+  })
+})
+
+// mise à jour table COLLAB
+let update3 = 'UPDATE collab SET ? WHERE id = ?'
+router.put('/collab/:id', function(req, res, next) {
+  let input = JSON.parse(JSON.stringify(req.body));
+  let id = req.params.id;
+  let data = {
+    name: input.name,
+    age: input.age,
+    techno: input.techno,
+    experience: input.experience,
+    image: input.image
+  }
+  connection.query(update3,[data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+
+      res.redirect('/admin');
+    }
+  })
+})
+
+// mise à jour table CONTACT
+let update4 = 'UPDATE contact SET ? WHERE id = ?'
+router.put('/contact/:id', function(req, res, next) {
+  let input = JSON.stringify(req.body);
+  let id = req.params.id;
+  let data = {
+    horaires: input.horaires,
+    adresse: input.adresse,
+    tel: input.tel,
+    mail: input.mail
+  }
+  connection.query(update4,[data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+
+      res.redirect('/admin');
+    }
+  })
+})
+
+// ajout à la table BAR
+let insert = 'INSERT INTO bar SET ? WHERE id = ?'
+router.post('/bar/:id', function(req, res, next) {
+  let input = JSON.stringify(req.body);
+  let id = req.params.id;
+  let data = {
+    name: input.name,
+    numbers : input.numbers
+  }
+  connection.query(update,[table, data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+router.put('/valider/:id', function(req, res, next) {
+            if (req.body.action === 'add') {
+              connection.query("UPDATE missions SET valide = 1 WHERE id = ?",[req.params.id],function(err, result)
+              {
+                  if (err)
+                      throw err;
+              else{
+                res.redirect('/admin')
+              }
+            }
+            )}});
+
+router.delete('/delete/:id', function(req, res, next) {
+  if (req.body.action === 'delete') {
+    connection.query("DELETE FROM missions WHERE id = ?",[req.params.id],function(err, result)
+    {
+      if (err)
+      throw err;
+    else{
+      res.redirect('/admin')
+    }
+  }
+  )}});
+
 
 module.exports = router;
