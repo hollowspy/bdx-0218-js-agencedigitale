@@ -121,7 +121,7 @@ body{
 .bordTop{
   border-top:1px dashed black;
 }
-.fas{
+#admin .fas{
   text-align:center;
   padding:2% 47%;
 }
