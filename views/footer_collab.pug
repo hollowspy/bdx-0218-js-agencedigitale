@@ -20,13 +20,14 @@ section#myFooter
       .col-12.col-sm-6.col-lg-3.infos
         // 2eme colonne
         h3 Contact
-        ul
-          li 68 Cours de Verdun Bordeaux 33000 FRANCE
-          li alex.lorion@wildcodeschol.fr
-          li 06 66 96 17 77
+        - for (var i = 0; i < contact.length; i++)
+          ul
+            li= contact[i].adresse
+            li= contact[i].mail
+            li= contact[i].tel
         h3 Horaires
         ul
-          li Semaine : 9h00 - 18h30
+          li 09h00-18h00
           li Week-end : Ferm&eacute;
       .col-12.col-sm-6.col-lg-3.infos
         // 3eme colonne
@@ -68,7 +69,7 @@ section#myFooter
           i.fab.fa-facebook-square
     .row.mention(style='text-align: center;')
       .col
-        p Alex et Greg sont géniaux
+        p Wow is magic
       .col.cl-effect-1
         a(href='https://www.service-public.fr/professionnels-entreprises/vosdroits/F31228' target='_blank') Mentions l&eacute;gales
       .col.cl-effect-1

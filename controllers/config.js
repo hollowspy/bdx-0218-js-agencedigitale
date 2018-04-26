@@ -1,4 +1,4 @@
-var mysql      = require('mysql');
+var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   multipleStatements: true,
@@ -7,6 +7,7 @@ var connection = mysql.createConnection({
   password : 'y1bIBlDERs',
   database : 'sql7234609'
 });
+
 connection.connect(function(err){
 if(!err) {
     console.log("Database is connected");

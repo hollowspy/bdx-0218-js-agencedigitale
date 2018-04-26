@@ -113,18 +113,23 @@ h2, h3, h4, h5 {
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
+  color: black;
 }
 
 .cl-effect-5 a span::before {
   position: absolute;
-  color: black;
+  color: #d83832;
   top: 100%;
   content: attr(data-hover);
-  font-weight: 700;
+  font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.developpeur .cl-effect-5 a span::before {
+color:#0a7893;
+  }
 
 .cl-effect-5 a:hover span,
 .cl-effect-5 a:focus span {
@@ -132,6 +137,7 @@ h2, h3, h4, h5 {
   -moz-transform: translateY(-100%);
   transform: translateY(-100%);
 }
+
 
 
 /*navbar autres onglets*/
@@ -394,15 +400,24 @@ h2, h3, h4, h5 {
     vertical-align: top;
 }
 
-#formEmploi button, input {
-    border: 0.09em dashed black;
+#formEmploi button, #formEmploi input {
+    border-bottom: 0.09em dashed black;
+    border-top :none;
+    border-right:none;
+    border-left:none;
     overflow: hidden;
-    border-right: none;
-    border-left: none;
     background: none;
     padding: 0 5%;
     display: block;
     width:100%;
+}
+
+#formEmploi button,#formEmploi input:hover, #formEmploi button, #formEmploi input:active, #formEmploi button, #formEmploi  input:focus {
+  background-color: white;
+  border-radius: 0.05em;
+  border: 2px dashed #19112f;
+  padding: 5%;
+  transition-duration:1s;
 }
 
 #formEmploi .envoiImg input {
@@ -488,6 +503,11 @@ h2, h3, h4, h5 {
  color:rgba(10, 120,147, 1);
 }
 
+
+.collab .name, .collab .age, .collab .xp, .collab .exp{
+  display:inline-block; padding-right: 5%;
+
+}
 /*------------------------
         FUN BAR
 -------------------------*/
@@ -496,10 +516,6 @@ h2, h3, h4, h5 {
   font-family: 'bebas_neueregular';
   font-size: 4rem;
 }
-/*#funBar .fake {
-  height: 500px;
-  width: 100%;
-}*/
 
 /*------------------------
       SERIOUS BAR
@@ -523,8 +539,6 @@ body.admin {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #f5f5f5;
 }
 
@@ -567,6 +581,91 @@ body.admin {
   border-top-right-radius: 0;
 }
 
+/* --------------------
+     CONCEPT
+------------------------ */
+
+.margin-tibo {
+  margin-top: 5.5em;
+  margin-bottom: 1em;
+}
+
+.concept h4 {
+  color: white;
+  background-color: #8f201a;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border-radius: 0.1em;
+  box-shadow: 2px 2px 20px black;
+}
+}
+
+.concept h1 {
+  color: #8f201a;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.team h1 {
+  color: #8f201a;
+  margin-top: 1em;
+  margin-left: 35%;
+  margin-bottom:0.2em;
+} 
+.concept .container_josephine {
+position: relative;
+}
+
+
+.concept .image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.concept .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+.concept .container_josephine:hover .overlay {
+  opacity: 1;
+}
+
+.concept .prenom {
+  justify-content: center;
+  bottom: :20%;
+  font-weight: bold;
+}
+
+.concept .josephine {
+margin-top: 65%;
+}
+
+.concept .aurelien {
+margin-top: 65%;
+}
+
+.concept .greg {
+  color: black;
+  margin-top: 0.5em;
+  margin-left: 2em;
+}
+
+.concept .alexandre {
+  margin-top: 70%;
+}
+
+.concept .elisa {
+  margin-top:1em;
+}
 
 /* --------------------
      BLOG
@@ -767,6 +866,7 @@ font-size: 2em;
   max-width: 350px;
   width: calc(100% - 1em);
   vertical-align: top;
+  padding-bottom: 0.5em;
 }
 
 #myFooter .input__field {
@@ -1032,7 +1132,7 @@ z-index: 1;
   /* Barre de recherche en une ligne (display flex) sur la vidéo */
    #header .search_bar{
    display: flex;
-   }
+     }
    /* activation du filtre hover en version desktop */
    #portofolio_entreprise .content_cadre figcaption{
        visibility: visible;

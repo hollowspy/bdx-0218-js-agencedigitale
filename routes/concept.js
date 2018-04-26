@@ -1,12 +1,11 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 const connection = require('../controllers/config');
+let sql = 'SELECT * FROM contact';
 
-
-let sql = 'SELECT * FROM bar WHERE type = "fun"; SELECT * FROM missions WHERE valide = 1; SELECT * FROM contact';
-/* GET home page. */
+/* GET administration page */
 router.get('/', function(req, res, next) {
-    let barList = [];
+
     connection.query(sql, function(err, rows, fields) {
         if (err) {
             res.status(500).json({
@@ -15,20 +14,15 @@ router.get('/', function(req, res, next) {
             });
         } else {
             // Loop check on each row
-            let fun = rows[0];
-            let emploi = rows[1];
-            let contact = rows[2];
+            let contact = rows;
 
-            res.render('index', {
+            res.render('concept3', {
                 bodyClass: 'developpeur',
-                page: 'developpeur',
-                fun,
-                emploi,
                 contact
             });
+            console.log(contact);
         }
     });
 });
-
 
 module.exports = router;

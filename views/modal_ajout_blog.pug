@@ -1,0 +1,34 @@
+div.modal.modal-id(id='modalAjoutBlog')
+  .modal-dialog
+      .modal-content
+        .modal-header
+          h2.modal-title AJOUT OFFRES EMPLOIS
+          |
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        |
+        .modal-body
+          form(method='POST', action='/admin/blog/add')
+            .form-group
+              label Titre
+              input.form-control(type='text', name='titleAdd')
+            .form-group
+              label Contenu
+              textarea.form-control( name='contentAdd')
+            .form-group
+              label Images
+              input.form-control(type='file', name='imagesAdd')
+            .form-group
+              label Auteur
+              input.form-control(type='text', name='autorAdd')
+            .form-group
+              label Catégorie
+              input.form-control(type='text', name='categoryAdd')
+            .form-group
+              label Description
+              input.form-control(type='text', name='descriptionAdd')
+            |
+            button.btn.btn-primary(type='submit') Envoyer
+        |
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer

@@ -1,0 +1,34 @@
+div.modal.modal-id(id='modalAjoutCollab')
+  .modal-dialog
+      .modal-content
+        .modal-header
+          h2.modal-title AJOUT COLLABORATEURS
+          |
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        |
+        .modal-body
+          form(method='POST', action='/admin/collab/add')
+            .form-group
+              label Nom
+              input.form-control(type='text', name='nameAdd')
+            .form-group
+              label Age
+              input.form-control(type='text', name='ageAdd')
+            .form-group
+              label Technologies
+              input.form-control(type='text', name='technoAdd')
+              .form-group
+              label Expérience
+              input.form-control(type='text', name='experienceAdd')
+            .form-group
+              label Description
+              input.form-control(type='text', name='descriptionAdd')
+            .form-group
+              label Image
+              input.form-control(type='text', name='imagesAdd')
+            |
+            button.btn.btn-primary(type='submit') Envoyer
+        |
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer
