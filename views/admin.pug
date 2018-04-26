@@ -18,8 +18,6 @@ block content
             a.links#modifCollab(href='#', data-showdiv='contentCollab') Collaborateurs
           li
             a.links#modifContact(href='#', data-showdiv='contentFooter') Contact
-          li
-            a.links#modifValidation(href='#', data-showdiv='contentValidation') Validation
       #page-content-wrapper
         .container-fluid
           include admin_modal.pug
@@ -39,7 +37,7 @@ block content
                   .d-table-cell
                     a(href='#', class='modifier btn btn-primary bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal') Modifier
                   .d-table-cell
-                    form(method='POST', action='/admin/bar/'+bar[i].id)
+                    form(method='POST', action='/admin/bar/'+bar[i].id+)
                       button(href='#', class='delete btn btn-primary') Supprimer
             button(href='#', class='ajouter btn btn-primary', data-target= '#Bar' + i, data-toggle='modal') Ajouter
           #contentOffres.divs
@@ -110,5 +108,3 @@ block content
                   .d-table-cell
                     a(href='#', class='delete btn btn-primary') Supprimer
             button(href='#', class='ajouter btn btn-primary', data-target= '#Footer' + i, data-toggle='modal') Ajouter
-          #contentValidation.divs
-            include validation.pug
