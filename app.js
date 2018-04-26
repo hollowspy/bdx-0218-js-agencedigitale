@@ -19,7 +19,6 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer({dest : 'tmp/'})
 let app = express();
-let login = require('./routes/login');
 
 
 // view engine setup

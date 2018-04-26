@@ -15,11 +15,7 @@ router.get('/', function(req, res, next) {
 
 		  		var bar = rows[0];
 		  		let contact = rows[1];
-<<<<<<< HEAD
-		 console.log(bar)
-=======
-
->>>>>>> eda47a5e7b6e1cbd4801db097d83925f8ac52e99
+		  		
 	  	res.render('recruteur', {bodyClass: 'recruteur', contact, bar});
 	  	}
 	  	// Render index.pug page using array
