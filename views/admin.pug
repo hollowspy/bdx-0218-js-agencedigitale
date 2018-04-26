@@ -37,9 +37,10 @@ block content
                   .d-table-cell
                     a(href='#', class='modifier btn btn-primary bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal') Modifier
                   .d-table-cell
-                    form(method='POST', action='/admin/bar/'+bar[i].id+)
-                      button(href='#', class='delete btn btn-primary') Supprimer
-            button(href='#', class='ajouter btn btn-primary', data-target= '#Bar' + i, data-toggle='modal') Ajouter
+                    form(method='POST', action='/admin/bar/'+bar[i].id+'?_method=DELETE')
+                      button(class='delete btn btn-primary', data-id=bar[i].id, data-table='bar') Supprimer
+            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjout') Ajouter
+            include modal_ajout_ba.pug
           #contentOffres.divs
             .d-table.w-100
               .d-table-row.head

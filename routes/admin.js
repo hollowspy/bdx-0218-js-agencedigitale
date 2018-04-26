@@ -107,15 +107,29 @@ router.put('/contact/:id', function(req, res, next) {
 })
 
 // ajout à la table BAR
-let insert = 'INSERT INTO bar SET ? WHERE id = ?'
-router.post('/bar/:id', function(req, res, next) {
+let insert = 'INSERT INTO bar SET ?'
+router.post('/bar/add', function(req, res, next) {
   let input = JSON.stringify(req.body);
-  let id = req.params.id;
   let data = {
-    name: input.name,
-    numbers : input.numbers
+    name: input.nameAdd,
+    picto: input.pictoAdd,
+    numbers : input.numbersAdd
   }
-  connection.query(update,[table, data, id], function(err, result) {
+  console.log(data);
+  connection.query(insert,[data], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+// suppression à la table BAR
+let del = 'DELETE FROM bar WHERE id = ?'
+router.delete('/bar/:id', function(req, res, next) {
+  let id = req.params.id;
+  connection.query(del,[id], function(err, result) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {

@@ -143,6 +143,7 @@ $(document).ready(function() {
     }
 
     $(idModal).modal('show');
+
   })
 
 }); //fin document.ready
