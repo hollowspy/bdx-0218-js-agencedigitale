@@ -24,10 +24,14 @@ router.get('/', function(req, res, next) {
     });
 }); // fin de l'appel au getElementsByClassName('className')
 
+//                        //
+// MISE A JOUR DES TABLES //
+//                        //
+
 // mise à jour table BAR
 let update1 = 'UPDATE bar SET ? WHERE id = ?'
 router.put('/bar/:id', function(req, res, next) {
-  let input = JSON.parse(JSON.stringify(req.body));
+  let input = JSON.stringify(req.body);
   let id = req.params.id;
   let data = {
     name: input.name,
@@ -42,24 +46,51 @@ router.put('/bar/:id', function(req, res, next) {
   })
 })
 
+// mise à jour table BLOG
+let update5 = 'UPDATE blog SET ? WHERE id = ?'
+router.put('/blog/:id', function(req, res, next) {
+  let input = JSON.stringify(req.body);
+  let id = req.params.id;
+  let data = {
+    title: input.title,
+    date_parution : input.date_parution,
+    content: input.content,
+    images: input.images,
+    autor: input.autor,
+    category: input.category,
+    description: input.description
+  }
+  connection.query(update5,[data, id], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
 // mise à jour table MISSIONS
 let update2 = 'UPDATE missions SET ? WHERE id = ?'
 router.put('/missions/:id', function(req, res, next) {
-  let input = JSON.parse(JSON.stringify(req.body));
+  let input = JSON.stringify(req.body);
   let id = req.params.id;
   let data = {
     nom_poste: input.nom_poste,
     recruteur: input.recruteur,
     duree: input.duree,
     localisation: input.localisation,
+    departement: input.departement,
     diplome: input.diplome,
-    experience: input.experience
+    experience: input.experience,
+    poste: input.poste,
+    entreprise: input.entreprise,
+    competences: input.competences,
+    logo: input.logo,
   }
   connection.query(update2,[data, id], function(err, result) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
-
       res.redirect('/admin');
     }
   })
@@ -68,20 +99,20 @@ router.put('/missions/:id', function(req, res, next) {
 // mise à jour table COLLAB
 let update3 = 'UPDATE collab SET ? WHERE id = ?'
 router.put('/collab/:id', function(req, res, next) {
-  let input = JSON.parse(JSON.stringify(req.body));
+  let input = JSON.stringify(req.body);
   let id = req.params.id;
   let data = {
     name: input.name,
+    images: input.images,
     age: input.age,
+    description: input.description,
     techno: input.techno,
     experience: input.experience,
-    image: input.image
   }
   connection.query(update3,[data, id], function(err, result) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
-
       res.redirect('/admin');
     }
   })
@@ -102,22 +133,104 @@ router.put('/contact/:id', function(req, res, next) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
-
       res.redirect('/admin');
     }
   })
 })
 
-// ajout à la table BAR
-let insert = 'INSERT INTO bar SET ? WHERE id = ?'
-router.post('/bar/:id', function(req, res, next) {
-  let input = JSON.stringify(req.body);
-  let id = req.params.id;
+//-----------------------//
+// AJOUT DANS LES TABLES //
+//-----------------------//
+
+// ajout dans la table BAR
+let insert = 'INSERT INTO bar SET ?'
+router.post('/bar/add', function(req, res, next) {
   let data = {
-    name: input.name,
-    numbers : input.numbers
+    name: req.body.nameAdd,
+    picto: req.body.pictoAdd,
+    numbers : req.body.numbersAdd
   }
-  connection.query(update,[table, data, id], function(err, result) {
+  connection.query(insert,[data], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+// ajout dans la table MISSIONS
+let insert2 = 'INSERT INTO missions SET ?'
+router.post('/missions/add', function(req, res, next) {
+  let data2 = {
+    nom_poste: req.body.nom_posteAdd,
+    recruteur: req.body.recruteurAdd,
+    duree: req.body.dureeAdd,
+    localisation: req.body.localisationAdd,
+    departement: req.body.departementAdd,
+    diplome: req.body.diplomeAdd,
+    experience: req.body.experienceAdd,
+    poste: req.body.posteAdd,
+    entreprise: req.body.entrepriseAdd,
+    competences: req.bodu.competencesAdd,
+    logo: req.body.logoAdd
+  }
+  connection.query(insert2,[data2], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+// ajout dans la table COLLAB
+let insert3 = 'INSERT INTO collab SET ?'
+router.post('/collab/add', function(req, res, next) {
+  let data3 = {
+    name: req.body.nameAdd,
+    age: req.body.ageAdd,
+    techno: req.body.technoAdd,
+    experience: req.body.experienceAdd,
+    description: req.body.descriptionAdd,
+    images: req.body.imagesAdd
+  }
+  connection.query(insert3,[data3], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+// AJOUT CONTACT
+let insert4 = 'INSERT INTO collab SET ?'
+router.post('/contact/add', function(req, res, next) {
+  let data4 = {
+    horaires: req.body.horairesAdd,
+    adresse: req.body.adresseAdd,
+    tel: req.body.telAdd,
+    mail: req.body.mailAdd
+  }
+  connection.query(insert4,[data4], function(err, result) {
+    if (err){
+      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+    } else {
+      res.redirect('/admin');
+    }
+  })
+})
+
+//-----------------------------//
+// SUPPRESSION DANS LES TABLES //
+//-----------------------------//
+
+// suppression à la table BAR
+let del = 'DELETE FROM bar WHERE id = ?'
+router.delete('/bar/:id', function(req, res, next) {
+  let id = req.params.id;
+  connection.query(del,[id], function(err, result) {
     if (err){
       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
     } else {
