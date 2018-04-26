@@ -148,6 +148,9 @@ $(".search logo_entreprise").each(function(){
     } else if ($(this).hasClass('contact')) {
       let action = '/admin/contact/'+idTable+'?_method=PUT';
       $('.modal-id form').attr('action', action);
+    } else if ($(this).hasClass('blog')) {
+      let action = '/admin/blog/'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
     }
 
     $(idModal).modal('show');
