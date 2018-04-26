@@ -1,0 +1,28 @@
+div.modal.modal-id(id='modalAjoutContact')
+  .modal-dialog
+      .modal-content
+        .modal-header
+          h2.modal-title AJOUT CONTACT
+          |
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        |
+        .modal-body
+          form(method='POST', action='/admin/contact/add')
+            .form-group
+              label Horaires
+              input.form-control(type='text', name='horairesAdd')
+            .form-group
+              label Adresse
+              input.form-control(type='text', name='adresseAdd')
+            .form-group
+              label Tél
+              input.form-control(type='text', name='telAdd')
+              .form-group
+              label Mail
+              input.form-control(type='text', name='mailAdd')
+            |
+            button.btn.btn-primary(type='submit') Envoyer
+        |
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer
