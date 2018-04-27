@@ -123,7 +123,7 @@ h2, h3, h4, h5 {
   content: attr(data-hover);
   font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
-  -moz-transform: translate3d(0,0,0);
+  -moz-transformlog: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
 
@@ -190,6 +190,10 @@ color:#0a7893;
   position: absolute;
   top: 10%;
   left: 20%;
+}
+
+#log{
+    margin-left : -100px;
 }
 
 /*-----------------------
@@ -612,7 +616,7 @@ body.admin {
   margin-top: 1em;
   margin-left: 35%;
   margin-bottom:0.2em;
-} 
+}
 .concept .container_josephine {
 position: relative;
 }
