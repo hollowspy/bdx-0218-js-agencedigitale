@@ -47,8 +47,8 @@ var smtpTransport = nodemailer.createTransport({
     }
 });
 
-
-
+// route Nodemailer
+/*
 router.get('/addEmploi', function(req, res, next) {
 
     connection.query(sql, function(err, rows, fields) {
@@ -81,8 +81,32 @@ router.get('/addEmploi', function(req, res, next) {
         }
     });
 });
+*/
 
+// Route test page nodemailer
+router.get('/addEmploi', function(req, res, next) {
+    connection.query(sql, function(err, rows, fields) {
+        if (err) {
+            res.status(500).json({
+                "status_code": 500,
+                "status_message": "internal server error"
+            });
+        } else {
 
+    let fun = rows[0];
+    let emploi = rows[1];
+    let contact = rows[2];
+
+    res.render('confirm_emploi', {
+        bodyClass: 'developpeur',
+        page: 'developpeur',
+        fun,
+        emploi,
+        contact
+        });
+    }
+});
+});
 
 
 

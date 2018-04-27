@@ -4,7 +4,13 @@ block content
     header
         include nav.pug
     body
-        p#confirEmploi Votre demande vient d'être ajouté. Un mail vient d'être envoyé à l'administrateur. Une fois qu'elle sera validé, vous pourrez la voir sur le site. 
+        #confirm_emploi.container
+          .row
+            .col-8.offset-2.txt_confirm
+                div
+                    p Votre demande vient d'être ajouté. Un mail vient d'être envoyé à l'administrateur. Une fois qu'elle sera validé, vous pourrez la voir sur le site. 
+                div
+                    <a href="/" class="btn btn-primary btn-lg active text-right" role="button" aria-pressed="true">Primary link</a>
     footer
         include footer_collab.pug
         

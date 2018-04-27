@@ -734,6 +734,16 @@ z-index: 1;
 }
 
 
+/* ------------------ */
+/* CONFIRMATION ENVOI MAIL */
+/* ---------------- */
+
+#confirm_emploi .txt_confirm{
+    border:2px red solid;
+    margin-top : 100px;
+}
+
+
 /*_____________________*/
 /* ______ FOOTER ______*/
 /*_____________________*/
