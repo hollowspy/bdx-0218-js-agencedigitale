@@ -60,7 +60,7 @@ block content
                 .d-table-row
                   .d-table-cell(data-label='Titre', data-name='title')= blog[i].title
                   .d-table-cell(data-label='Contenu', data-name='content')= blog[i].content
-                  .d-table-cell(data-label='Images', data-name='images')= blog[i].images
+                  .d-table-cell(data-label='Images', data-name='images', data-type='file')= blog[i].images
                   .d-table-cell(data-label='Auteur', data-name='autor')= blog[i].autor
                   .d-table-cell(data-label='Categorie', data-name='category')= blog[i].category
                   .d-table-cell(data-label='Description', data-name='description')= blog[i].description
@@ -97,7 +97,7 @@ block content
                   .d-table-cell(data-label='Expérience', data-name='experience')= missions[i].experience
                   .d-table-cell(data-label='Poste', data-name='poste')= missions[i].poste
                   .d-table-cell(data-label='Compétences', data-name='competences')= missions[i].competences
-                  .d-table-cell(data-label='Logo', data-name='logo')= missions[i].logo
+                  .d-table-cell(data-label='Logo', data-name='logo', data-type="file")= missions[i].logo
                   .d-table-cell
                     a(href='#', class='modifier btn btn-primary missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal') Modifier
                   .d-table-cell
@@ -123,7 +123,7 @@ block content
                   .d-table-cell(data-label='Technologies', data-name='techno')= collab[i].techno
                   .d-table-cell(data-label='Expérience', data-name='experience')= collab[i].experience
                   .d-table-cell(data-label='Description', data-name='description')= collab[i].description
-                  .d-table-cell(data-label='Image', data-name='images')= collab[i].images
+                  .d-table-cell(data-label='Image', data-name='images', data-type="file")= collab[i].images
                   .d-table-cell
                     a(href='#', class='modifier btn btn-primary collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal') Modifier
                   .d-table-cell
