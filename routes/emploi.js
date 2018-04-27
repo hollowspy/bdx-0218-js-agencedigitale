@@ -65,4 +65,3 @@ router.post('/search', function(req, res, next) {
     // Do the query to get data.
 
 module.exports = router;
-
