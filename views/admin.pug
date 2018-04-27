@@ -54,8 +54,8 @@ block content
                 .d-table-cell Auteur
                 .d-table-cell Categorie
                 .d-table-cell Description
-                .d-table-cell 
-                .d-table-cell 
+                .d-table-cell
+                .d-table-cell
               - for (var i = 0; i < blog.length; i++)
                 .d-table-row
                   .d-table-cell(data-label='Titre', data-name='title')= blog[i].title
@@ -153,3 +153,5 @@ block content
                       button(class='delete btn btn-primary', data-id=contact[i].id, data-table='contact') Supprimer
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutContact') Ajouter
             include modal_ajout_collab.pug
+          #contentValidation.divs
+            include validation.pug

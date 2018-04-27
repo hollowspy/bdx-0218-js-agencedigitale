@@ -434,7 +434,7 @@ color:#0a7893;
     font-size:2em;
 }
 
-#formEmploi .formSubmit input {
+#formEmploi .formSubmit input, #formEmploi .formSubmit input:active{
     border: 1px solid black;
     display: inline-block;
     width: auto;
@@ -443,6 +443,8 @@ color:#0a7893;
     opacity: 0.8;
     border-radius: 0.1em;
     font-size: 0.7em;
+    padding: 1% 5%;
+    transition: none;
 }
 
 #formEmploi textarea{
@@ -612,7 +614,7 @@ body.admin {
   margin-top: 1em;
   margin-left: 35%;
   margin-bottom:0.2em;
-} 
+}
 .concept .container_josephine {
 position: relative;
 }
