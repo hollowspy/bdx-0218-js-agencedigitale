@@ -7,10 +7,12 @@ block content
         ul.sidebar-nav
           li.nav-profile
             .profile-image
-              img(src='/images/dev07.jpg')
+              img(src='/images/alex.jpg')
             .profile-name
-              p.name M. Jones
-          li
+              p.name Alexandre Lorion
+            .profile-name
+              a(href='/', class='deconnexion btn btn-primary') Deconnexion
+          li.mt-4
             a.links#modifBar(href='#contentBar', data-showdiv='contentBar') Bar
           li
             a.links#modifBlog(href='#contentBlog', data-showdiv='contentBlog') Blog
@@ -39,10 +41,12 @@ block content
                   .d-table-cell(data-label='Picto', data-name='picto')= bar[i].picto
                   .d-table-cell(data-label='Chiffres', data-name='numbers')= bar[i].numbers
                   .d-table-cell
-                    a(href='#', class='modifier btn btn-primary bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal') Modifier
+                    a(href='#', class='modifier bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal')
+                      i.far.fa-edit.fa-2x
                   .d-table-cell
                     form(method='POST', action='/admin/bar/'+bar[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=bar[i].id, data-table='bar') Supprimer
+                      button(class='delete', data-id=bar[i].id, data-table='bar')
+                        i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBa') Ajouter
             include modal_ajout_ba.pug
           #contentBlog.divs
@@ -65,10 +69,12 @@ block content
                   .d-table-cell(data-label='Categorie', data-name='category')= blog[i].category
                   .d-table-cell(data-label='Description', data-name='description')= blog[i].description
                   .d-table-cell
-                    a(href='#', class='modifier btn btn-primary blog', data-row-id=blog[i].id, data-target= '#Blog' + i, data-toggle='modal') Modifier
+                    a(href='#', class='modifier blog', data-row-id=blog[i].id, data-target= '#Blog' + i, data-toggle='modal')
+                      i.far.fa-edit.fa-2x
                   .d-table-cell
                     form(method='POST', action='/admin/blog/'+blog[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=blog[i].id, data-table='blog') Supprimer
+                      button(class='delete', data-id=blog[i].id, data-table='blog')
+                        i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBlog') Ajouter
             include modal_ajout_blog.pug
           #contentOffres.divs
@@ -99,10 +105,12 @@ block content
                   .d-table-cell(data-label='Compétences', data-name='competences')= missions[i].competences
                   .d-table-cell(data-label='Logo', data-name='logo')= missions[i].logo
                   .d-table-cell
-                    a(href='#', class='modifier btn btn-primary missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal') Modifier
+                    a(href='#', class='modifier missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal')
+                      i.far.fa-edit.fa-2x
                   .d-table-cell
                     form(method='POST', action='/admin/missions/'+missions[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=missions[i].id, data-table='missions') Supprimer
+                      button(class='delete btn btn-primary', data-id=missions[i].id, data-table='missions')
+                        i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutMission') Ajouter
             include modal_ajout_offres.pug
           #contentCollab.divs
@@ -125,10 +133,12 @@ block content
                   .d-table-cell(data-label='Description', data-name='description')= collab[i].description
                   .d-table-cell(data-label='Image', data-name='images')= collab[i].images
                   .d-table-cell
-                    a(href='#', class='modifier btn btn-primary collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal') Modifier
+                    a(href='#', class='modifier collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal')
+                      i.far.fa-edit.fa-2x
                   .d-table-cell
                     form(method='POST', action='/admin/collab/'+collab[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=collab[i].id, data-table='collab') Supprimer
+                      button(class='delete', data-id=collab[i].id, data-table='collab')
+                        i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutCollab') Ajouter
             include modal_ajout_collab.pug
           #contentFooter.divs
@@ -147,9 +157,11 @@ block content
                   .d-table-cell(data-label='Tél', data-name='tel')= contact[i].tel
                   .d-table-cell(data-label='Mail', data-name='mail')= contact[i].mail
                   .d-table-cell
-                    a(href='#', class='modifier btn btn-primary contact', data-row-id=contact[i].id, data-target= '#Footer' + i, data-toggle='modal') Modifier
+                    a(href='#', class='modifier contact', data-row-id=contact[i].id, data-target= '#Footer' + i, data-toggle='modal')
+                      i.far.fa-edit.fa-2x
                   .d-table-cell
                     form(method='POST', action='/admin/contact/'+contact[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=contact[i].id, data-table='contact') Supprimer
+                      button(class='delete', data-id=contact[i].id, data-table='contact')
+                        i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutContact') Ajouter
-            include modal_ajout_collab.pug
+            include modal_ajout_contact.pug
