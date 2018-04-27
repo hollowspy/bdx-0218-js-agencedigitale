@@ -10,6 +10,9 @@ div.modal.modal-id(id='modalAjoutBlog')
         .modal-body
           form(method='POST', action='/admin/blog/add')
             .form-group
+              label Date
+              input.form-control(type='text', name='dateAdd', placeholder='YYYY-MM-DD')
+            .form-group
               label Titre
               input.form-control(type='text', name='titleAdd')
             .form-group
