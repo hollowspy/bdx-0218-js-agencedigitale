@@ -39,6 +39,15 @@ body{
   top :0;
   right:0;
 }
+.delete{
+  border: none;
+  color:#007bff;
+  background: none;
+  cursor: pointer;
+}
+.delete:hover{
+  color:#0056b3;
+}
 
 /* Sidebar Styles */
 .nav-profile{
@@ -46,8 +55,8 @@ body{
   margin-top: 20px;
 }
 .profile-image{
-  width: 70px;
-  height: 70px;
+  width: 105px;
+  height: 105px;
   margin: auto;
 }
 .profile-image img{
@@ -74,17 +83,17 @@ body{
   line-height: 40px;
 }
 
-.sidebar-nav li a {
+.sidebar-nav li > a {
   display: block;
   text-decoration: none;
   color: #4a4949;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li > a:hover {
   text-decoration: none;
   background: #f1f6ff;
 }
-.sidebar-nav li.active a{
+.sidebar-nav li.active > a{
   color: #1991EB;
 }
 

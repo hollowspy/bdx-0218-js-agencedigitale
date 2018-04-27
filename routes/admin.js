@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var moment = require('moment');
 const connection = require('../controllers/config');
 
-let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions; SELECT * FROM missions WHERE valide = 0";
+let select = "SELECT * FROM bar; SELECT * FROM blog; SELECT * FROM collab; SELECT * FROM contact; SELECT * FROM missions; SELECT * FROM missions WHERE valide = 0; SELECT * FROM login";
 /* GET administration page */
 router.get('/', function(req, res, next) {
 
@@ -18,8 +18,9 @@ router.get('/', function(req, res, next) {
         let contact = rows[3];
         let missions = rows[4];
         let valid = rows[5];
+        let login = rows[6];
 
-        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions, valid, moment});
+        res.render('admin', { bodyClass:'admin', bar, blog, collab, contact, missions, valid, login ,moment});
 	  	}
     });
 }); // fin de l'appel au getElementsByClassName('className')
