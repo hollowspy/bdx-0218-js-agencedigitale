@@ -1,24 +1,37 @@
-let express = require('express');
-let path = require('path');
-let favicon = require('serve-favicon');
-let logger = require('morgan');
-let cookieParser = require('cookie-parser');
-let bodyParser = require('body-parser');
-let methodOverride = require('method-override');
-let index = require('./routes/index');
-let users = require('./routes/users');
-let recruteur = require('./routes/recruteur');
-let admin = require('./routes/admin');
-let blog = require('./routes/blog');
-let emploi = require('./routes/emploi');
-let login = require('./routes/login');
-let concept = require('./routes/concept');
-// let footer = require('./routes/footer');
-
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const recruteur = require('./routes/recruteur');
+const admin = require('./routes/admin');
+const blog = require('./routes/blog');
+const emploi = require('./routes/emploi');
+const login = require('./routes/login');
+const concept = require('./routes/concept');
+// const footer = require('./routes/footer');
 const router = express.Router();
+const app = express();
+const fs = require('fs');
 const multer = require('multer');
-const upload = multer({dest : 'tmp/'})
-let app = express();
+const upload = multer({
+    dest: 'tmp/',
+    limits: {
+        fileSize: 3145728
+    },
+    fileFilter: (req, file, callback)=> {
+        let ext = path.extname(file.originalname);
+        if (ext !== '.png') {
+            return callback(new Error('Sorry, only images are allowed'))
+        }
+        callback(null, true)
+    }
+});
+
 
 
 // view engine setup
@@ -32,6 +45,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Start Upload
+// app.put('/contact/:id', upload.single('monfichier'), (req, res, next) => {
+//             fs.rename(req.file.path, 'public/images/' + req.file.originalname, (err) => {
+//                 if (err) {
+//                     res.send('Error during moving');
+//                 } else {
+//                     console.log('Upload ok');
+//                 }
+//             });
+//             res.end(`ok`)       
+//     }),
+
+
+// End Upload
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
