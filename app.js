@@ -9,11 +9,12 @@ let index = require('./routes/index');
 let users = require('./routes/users');
 let recruteur = require('./routes/recruteur');
 let admin = require('./routes/admin');
+let adminBar = require('./routes/admin_bar');
 let blog = require('./routes/blog');
 let emploi = require('./routes/emploi');
 let login = require('./routes/login');
 let concept = require('./routes/concept');
-// let footer = require('./routes/footer');
+let test = require('./routes/test');
 
 const router = express.Router();
 const multer = require('multer');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS")
     next();
 });
 
@@ -46,10 +48,11 @@ app.use('/users', users);
 app.use('/recruteur', recruteur);
 app.use('/login', login);
 app.use('/admin', admin);
+app.use('/admin/bar', adminBar);
 app.use('/blog', blog);
 app.use('/concept', concept);
 app.use('/emploi', emploi);
-// app.use('/footer', footer);
+app.use('/users', test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

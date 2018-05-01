@@ -13,7 +13,7 @@ block content
             .profile-name
               a(href='/', class='deconnexion btn btn-primary') Deconnexion
           li.mt-4
-            a.links#modifBar(href='#contentBar', data-showdiv='contentBar') Bar
+            a.links#modifBar(href='#', data-showdiv='contentBar') Bar
           li
             a.links#modifBlog(href='#contentBlog', data-showdiv='contentBlog') Blog
           li
@@ -27,28 +27,7 @@ block content
       #page-content-wrapper
         .container-fluid
           include admin_modal.pug
-          #contentBar.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Nom
-                .d-table-cell Icône
-                .d-table-cell Nombres
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < bar.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Nom', data-name='name')= bar[i].name
-                  .d-table-cell(data-label='Picto', data-name='picto')= bar[i].picto
-                  .d-table-cell(data-label='Chiffres', data-name='numbers')= bar[i].numbers
-                  .d-table-cell
-                    a(href='#', class='modifier bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/bar/'+bar[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=bar[i].id, data-table='bar')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBa') Ajouter
-            include modal_ajout_ba.pug
+          include admin_bar.pug
           #contentBlog.divs
             .d-table.w-100
               .d-table-row.head

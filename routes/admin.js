@@ -25,27 +25,34 @@ router.get('/', function(req, res, next) {
     });
 }); // fin de l'appel au getElementsByClassName('className')
 
+/* GET userlist. */
+router.get('/userlist', function(req, res) {
+  connection.query('SELECT * FROM bar', function(err, docs) {
+    res.json(docs);
+  });
+});
+
 //                        //
 // MISE A JOUR DES TABLES //
 //                        //
 
 // mise à jour table BAR
-let update1 = 'UPDATE bar SET ? WHERE id = ?'
-router.put('/bar/:id', function(req, res, next) {
-  // let input = JSON.stringify(req.body);
-  let id = req.params.id;
-  let dataBar = {
-    name: req.body.name,
-    numbers : req.body.numbers
-  }
-  connection.query(update1,[dataBar, id], function(err, result) {
-    if (err){
-      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
-    } else {
-      res.redirect('/admin');
-    }
-  })
-})
+// let update1 = 'UPDATE bar SET ? WHERE id = ?'
+// router.put('/bar/:id', function(req, res, next) {
+//   // let input = JSON.stringify(req.body);
+//   let id = req.params.id;
+//   let dataBar = {
+//     name: req.body.name,
+//     numbers : req.body.numbers
+//   }
+//   connection.query(update1,[dataBar, id], function(err, result) {
+//     if (err){
+//       res.status(500).json({"status_code": 500,"status_message": "internal server error"});
+//     } else {
+//       res.redirect('/admin');
+//     }
+//   })
+// })
 
 // mise à jour table BLOG
 let update5 = 'UPDATE blog SET ? WHERE id = ?'
@@ -154,23 +161,6 @@ router.put('/valider/:id', function(req, res, next) {
 //-----------------------//
 // AJOUT DANS LES TABLES //
 //-----------------------//
-
-// ajout dans la table BAR
-let insert = 'INSERT INTO bar SET ?'
-router.post('/bar/add', function(req, res, next) {
-  let data = {
-    name: req.body.nameAdd,
-    picto: req.body.pictoAdd,
-    numbers : req.body.numbersAdd
-  }
-  connection.query(insert,[data], function(err, result) {
-    if (err){
-      res.status(500).json({"status_code": 500,"status_message": "internal server error"});
-    } else {
-      res.redirect('/admin');
-    }
-  })
-})
 
 // ajout dans la table MISSIONS
 let insert2 = 'INSERT INTO missions SET ?'

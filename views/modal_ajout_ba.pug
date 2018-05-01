@@ -8,18 +8,16 @@ div.modal.modal-id(id='modalAjoutBa')
             span(aria-hidden='true') &times;
         |
         .modal-body
-          form(method='POST', action='/admin/bar/add')
+          form(action='/admin/bar/add')#createBa
             .form-group
               label Nom
-              input.form-control(type='text', name='nameAdd')
+              input#nameAdd.form-control(type='text', placeholder='Nom')
             .form-group
               label Picto
-              input.form-control(type='text', name='pictoAdd')
+              input#pictoAdd.form-control(type='text', placeholder='Picto')
             .form-group
               label Chiffres
-              input.form-control(type='text', name='numbersAdd')
-            |
-            button.btn.btn-primary(type='submit') Envoyer
+              input#numbersAdd.form-control(type='text', placeholder='Chiffres')
         |
         .modal-footer
           button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer
