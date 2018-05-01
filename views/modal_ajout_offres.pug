@@ -1,0 +1,49 @@
+div.modal.modal-id(id='modalAjoutMission')
+  .modal-dialog
+      .modal-content
+        .modal-header
+          h2.modal-title AJOUT OFFRES EMPLOIS
+          |
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        |
+        .modal-body
+          form(method='POST', action='/admin/missions/add')
+            .form-group
+              label Nom du poste
+              input.form-control(type='text', name='nom_posteAdd')
+            .form-group
+              label Recruteur
+              input.form-control(type='text', name='recruteurAdd')
+            .form-group
+              label Durée
+              input.form-control(type='text', name='dureeAdd')
+            .form-group
+              label Localisation
+              input.form-control(type='text', name='localisationAdd')
+            .form-group
+              label Département
+              input.form-control(type='text', name='departementAdd')
+            .form-group
+              label Diplôme
+              input.form-control(type='text', name='diplomeAdd')
+            .form-group
+              label Expérience
+              input.form-control(type='text', name='experienceAdd')
+            .form-group
+              label Poste
+              input.form-control(type='text', name='posteAdd')
+            .form-group
+              label Entreprise
+              input.form-control(type='text', name='entrepriseAdd')
+            .form-group
+              label Compétences
+              input.form-control(type='text', name='competencesAdd')
+            .form-group
+              label Logo
+              input.form-control(type='file', name='logoAdd')
+            |
+            button.btn.btn-primary(type='submit') Envoyer
+        |
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer

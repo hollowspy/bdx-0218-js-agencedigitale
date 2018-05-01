@@ -39,6 +39,15 @@ body{
   top :0;
   right:0;
 }
+.delete{
+  border: none;
+  color:#007bff;
+  background: none;
+  cursor: pointer;
+}
+.delete:hover{
+  color:#0056b3;
+}
 
 /* Sidebar Styles */
 .nav-profile{
@@ -46,8 +55,8 @@ body{
   margin-top: 20px;
 }
 .profile-image{
-  width: 70px;
-  height: 70px;
+  width: 105px;
+  height: 105px;
   margin: auto;
 }
 .profile-image img{
@@ -74,17 +83,17 @@ body{
   line-height: 40px;
 }
 
-.sidebar-nav li a {
+.sidebar-nav li > a {
   display: block;
   text-decoration: none;
   color: #4a4949;
 }
 
-.sidebar-nav li a:hover {
+.sidebar-nav li > a:hover {
   text-decoration: none;
   background: #f1f6ff;
 }
-.sidebar-nav li.active a{
+.sidebar-nav li.active > a{
   color: #1991EB;
 }
 
@@ -109,13 +118,27 @@ body{
 // Partie validation
 
 .boxValid {
-    border: 1px solid black;
-    border-radius: 0.3em;
-  margin-top:2%;
+  background-color: white;
+  border-radius: 0.3em;
+  margin-top:5%;
+  padding:5%;
 }
-.bordDroit{border-right:1px dashed black; border-top:1px dashed black;}
-.bordTop{border-top:1px dashed black;}
-.fas{text-align:center; padding:2% 47%;}
+.bordDroit{
+  border-right:1px dashed black;
+  border-top:1px dashed black;
+}
+.bordTop{
+  border-top:1px dashed black;
+}
+#admin .fas{
+  text-align:center;
+  padding:2% 47%;
+}
+
+.fas{
+  text-align:center;
+  padding:2% 47%;
+}
 .fa-times{color:red;}
 .fa-check{color:green;}
 .boxValid .title{font-variant:small-caps; font-size:2em; text-align:left;}

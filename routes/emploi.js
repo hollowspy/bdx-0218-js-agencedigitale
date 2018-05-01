@@ -20,8 +20,6 @@ router.get('/', function(req, res, next) {
                     let emploi = rows[0];
                     let contact = rows[1]
 
-                console.log('mes objets',emploi);
-                console.log(contact)
                 // Render index.pug page using array
                 res.render('page_emploi', {
                     emploi, contact
@@ -67,4 +65,3 @@ router.post('/search', function(req, res, next) {
     // Do the query to get data.
 
 module.exports = router;
-

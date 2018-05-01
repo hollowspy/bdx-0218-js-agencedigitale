@@ -23,15 +23,15 @@ let app = express();
 
 // upload de fichier sur le site
 
-app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
-  fs.rename(req.file.path, 'public/images/' + req.file.originalname, function(err){
-    if (err) {
-        res.send('problème durant le déplacement');
-    } else {
-        res.send('Fichier uploadé avec succès');
-    }
-  });
-})
+// app.post('/emploi', upload.single('monfichier'), function (req, res, next) {
+//   fs.rename(req.file.path, 'public/images/' + req.file.originalname, function(err){
+//     if (err) {
+//         res.send('problème durant le déplacement');
+//     } else {
+//         res.send('Fichier uploadé avec succès');
+//     }
+//   });
+// })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -64,7 +64,7 @@ app.use('/blog', blog);
 app.use('/concept', concept);
 app.use('/emploi', emploi);
 // app.use('/footer', footer);
-app.use('/validation', validation);
+// app.use('/validation', validation);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -140,17 +140,21 @@ $(".search logo_entreprise").each(function(){
       let action = '/admin/bar/'+idTable+'?_method=PUT';
       $('.modal-id form').attr('action', action);
     } else if ($(this).hasClass('missions')){
-      let action = '/admin/missions'+idTable+'?_method=PUT';
+      let action = '/admin/missions/'+idTable+'?_method=PUT';
       $('.modal-id form').attr('action', action);
     } else if ($(this).hasClass('collab')) {
-      let action = '/admin/collab'+idTable+'?_method=PUT';
+      let action = '/admin/collab/'+idTable+'?_method=PUT';
       $('.modal-id form').attr('action', action);
     } else if ($(this).hasClass('contact')) {
-      let action = '/admin/contact'+idTable+'?_method=PUT';
+      let action = '/admin/contact/'+idTable+'?_method=PUT';
+      $('.modal-id form').attr('action', action);
+    } else if ($(this).hasClass('blog')) {
+      let action = '/admin/blog/'+idTable+'?_method=PUT';
       $('.modal-id form').attr('action', action);
     }
 
     $(idModal).modal('show');
+
   })
 
 }); //fin document.ready

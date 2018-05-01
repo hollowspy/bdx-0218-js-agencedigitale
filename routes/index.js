@@ -1,21 +1,32 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const connection = require('../controllers/config');
-let sql = 'SELECT * FROM bar WHERE type = "fun"; SELECT * FROM contact';
+
+let sql = 'SELECT * FROM bar WHERE type = "fun"; SELECT * FROM missions WHERE valide = 1; SELECT * FROM contact';
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  connection.query(sql, function(err, rows, fields) {
-	  	if (err) {
-	  		res.status(500).json({"status_code": 500,"status_message": "internal server error"});
-	  	} else {
-	  		// Loop check on each row
-        let fun = rows[0];
-        let contact = rows[1]
+    let barList = [];
+    connection.query(sql, function(err, rows, fields) {
+        if (err) {
+            res.status(500).json({
+                "status_code": 500,
+                "status_message": "internal server error"
+            });
+        } else {
+            // Loop check on each row
+            let fun = rows[0];
+            let emploi = rows[1];
+            let contact = rows[2];
 
-        // Render index.pug page using array
-  	  	res.render('index', {bodyClass: 'developpeur', page: 'developpeur', fun, contact});
-	  	}
+            res.render('index', {
+                bodyClass: 'developpeur',
+                page: 'developpeur',
+                fun,
+                emploi,
+                contact
+            });
+        }
     });
 });
 
