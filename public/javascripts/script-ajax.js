@@ -5,10 +5,12 @@ var userListData = [];
 $(document).ready(function() {
 
   // Populate the user table on initial page load
-  populateTable();
+  populateTableBar();
+  populateTableBlog();
 
   // Add User button click
-  $('#btnAddUser').on('click', addUser);
+  $('#btnAddBa').on('click', addUser);
+  $('#btnAddBlog').on('click', addUser);
 
   // Update
   $('#updateUser').on('click', updateUser);
@@ -24,7 +26,7 @@ $(document).ready(function() {
 // Functions =============================================================
 
 // Fill table with data
-function populateTable() {
+function populateTableBar() {
 
   // Empty content string
   var tableContent = '';
@@ -51,6 +53,37 @@ function populateTable() {
   });
 };
 
+// Fill table with data
+function populateTableBlog() {
+
+  // Empty content string
+  var tableContent = '';
+
+  // jQuery AJAX call for JSON
+  $.getJSON( '/admin/blog', function( data ) {
+
+    // Stick our user data array into a userlist variable in the global object
+    userListData = data;
+
+    // For each item in our JSON, add a table row and cells to the content string
+    $.each(data, function(){
+      tableContent += '<tr>';
+      tableContent += '<td data-label="Titre" data-name="title">' + this.title + '</td>';
+      tableContent += '<td data-label="Contenu" data-name="content">' + this.content + '</td>';
+      tableContent += '<td data-label="Images" data-name="images">'+ this.images +'</td>';
+      tableContent += '<td data-label="Auteur" data-name="autor">'+ this.autor +'</td>';
+      tableContent += '<td data-label="Catégorie" data-name="category">'+ this.category +'</td>';
+      tableContent += '<td data-label="Description" data-name="description">'+ this.description +'</td>';
+      tableContent += '<td><a alt="Modifier" href="#" class="modifier blog" data-row-id="'+this.id+'" data-target="#Blog'+this.id+'" data-toggle="modal"><i class="far fa-edit fa-2x"></i></a></td>';
+      tableContent += '<td><a alt="Supprimer" href="#" class="linkdeleteuser" rel="' + this.id + '"><i class="far fa-trash-alt fa-2x"></i></a></td>';
+      tableContent += '</tr>';
+    });
+
+    // Inject the whole content string into our existing HTML table
+    $('#contentBlog table tbody').html(tableContent);
+  });
+};
+
 // Show User Info
 function updateUser(e) {
 
@@ -73,8 +106,9 @@ function updateUser(e) {
     // Check for successful (blank) response
     if (response.msg === '') {
 
+      $('#modalAjoutBa input').val('');
       // Update the table
-      populateTable();
+      populateTableBar();
 
     }
     else {
@@ -106,7 +140,6 @@ function addUser(event) {
       'picto': $('#createBa input#pictoAdd').val(),
       'numbers': $('#createBa input#numbersAdd').val(),
     }
-    console.log(newUser)
     // Use AJAX to post the object to our adduser service
     $.ajax({
       type: 'POST',
@@ -115,7 +148,6 @@ function addUser(event) {
       dataType: 'JSON'
     }).done(function( response ) {
       // Check for successful (blank) response
-      console.log(response)
       if (response.msg === '') {
 
         // Clear the form inputs
@@ -123,7 +155,7 @@ function addUser(event) {
         $('#modalAjoutBa').hide();
 
         // Update the table
-        populateTable();
+        populateTableBar();
 
       }
       else {
@@ -166,7 +198,7 @@ function deleteUser(event) {
       }
 
       // Update the table
-      populateTable();
+      populateTableBar();
 
     });
 
@@ -201,18 +233,18 @@ function updateModal(e) {
 
   if ($(this).hasClass('bar')){
     let action = '/admin/bar/'+idTable;
-    $('.modal-id form').attr('id', 'updateModalBa');
+    $('.modal-id form').attr('action', action).attr('id', 'updateModalBa');
   } else if ($(this).hasClass('missions')){
-    let action = '/admin/missions/'+idTable+'?_method=PUT';
+    let action = '/admin/missions/'+idTable;
     $('.modal-id form').attr('action', action).attr('id', 'updateModalMi');
   } else if ($(this).hasClass('collab')) {
-    let action = '/admin/collab/'+idTable+'?_method=PUT';
+    let action = '/admin/collab/'+idTable;
     $('.modal-id form').attr('action', action).attr('id', 'updateModalCol');
   } else if ($(this).hasClass('contact')) {
-    let action = '/admin/contact/'+idTable+'?_method=PUT';
+    let action = '/admin/contact/'+idTable;
     $('.modal-id form').attr('action', action).attr('id', 'updateModalCon');
   } else if ($(this).hasClass('blog')) {
-    let action = '/admin/blog/'+idTable+'?_method=PUT';
+    let action = '/admin/blog/'+idTable;
     $('.modal-id form').attr('action', action).attr('id', 'updateModalBlo');
   }
 

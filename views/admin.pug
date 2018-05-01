@@ -15,47 +15,20 @@ block content
           li.mt-4
             a.links#modifBar(href='#', data-showdiv='contentBar') Bar
           li
-            a.links#modifBlog(href='#contentBlog', data-showdiv='contentBlog') Blog
+            a.links#modifBlog(href='#', data-showdiv='contentBlog') Blog
           li
-            a.links#modifOffres(href='#contentOffres', data-showdiv='contentOffres') Offres Emplois
+            a.links#modifOffres(href='#', data-showdiv='contentOffres') Offres Emplois
           li
-            a.links#modifCollab(href='#contentCollab', data-showdiv='contentCollab') Collaborateurs
+            a.links#modifCollab(href='#', data-showdiv='contentCollab') Collaborateurs
           li
-            a.links#modifContact(href='#contentFooter', data-showdiv='contentFooter') Contact
+            a.links#modifContact(href='#', data-showdiv='contentFooter') Contact
           li
-            a.links#modifValidation(href='#contentValidation', data-showdiv='contentValidation') Validation
+            a.links#modifValidation(href='#', data-showdiv='contentValidation') Validation
       #page-content-wrapper
         .container-fluid
           include admin_modal.pug
           include admin_bar.pug
-          #contentBlog.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Titre
-                .d-table-cell Contenu
-                .d-table-cell Images
-                .d-table-cell Auteur
-                .d-table-cell Categorie
-                .d-table-cell Description
-                .d-table-cell 
-                .d-table-cell 
-              - for (var i = 0; i < blog.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Titre', data-name='title')= blog[i].title
-                  .d-table-cell(data-label='Contenu', data-name='content')= blog[i].content
-                  .d-table-cell(data-label='Images', data-name='images')= blog[i].images
-                  .d-table-cell(data-label='Auteur', data-name='autor')= blog[i].autor
-                  .d-table-cell(data-label='Categorie', data-name='category')= blog[i].category
-                  .d-table-cell(data-label='Description', data-name='description')= blog[i].description
-                  .d-table-cell
-                    a(href='#', class='modifier blog', data-row-id=blog[i].id, data-target= '#Blog' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/blog/'+blog[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=blog[i].id, data-table='blog')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBlog') Ajouter
-            include modal_ajout_blog.pug
+          include admin_blog.pug
           #contentOffres.divs
             .d-table.w-100
               .d-table-row.head
