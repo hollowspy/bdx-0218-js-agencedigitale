@@ -58,8 +58,8 @@ block content
                 .d-table-cell Auteur
                 .d-table-cell Categorie
                 .d-table-cell Description
-                .d-table-cell 
-                .d-table-cell 
+                .d-table-cell
+                .d-table-cell
               - for (var i = 0; i < blog.length; i++)
                 .d-table-row
                   .d-table-cell(data-label='Titre', data-name='title')= blog[i].title
@@ -165,3 +165,5 @@ block content
                         i.far.fa-trash-alt.fa-2x
             a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutContact') Ajouter
             include modal_ajout_contact.pug
+          #contentValidation.divs
+            include validation.pug
