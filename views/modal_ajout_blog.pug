@@ -11,22 +11,22 @@ div.modal.modal-id(id='modalAjoutBlog')
           form(action='/admin/blog/add')#createBlog
             .form-group
               label Titre
-              input.form-control(type='text', placeholder='Titre')
+              input#titreAdd.form-control(type='text')
             .form-group
               label Contenu
-              input.form-control(type='text', placeholder='Contenu')
+              input#contAdd.form-control(type='text')
             .form-group
               label Images
-              input.form-control(type='file', placeholder='Images')
+              input#imgAdd.form-control(type='file')
             .form-group
               label Auteur
-              input.form-control(type='text', placeholder='Auteur')
+              input#autAdd.form-control(type='text')
             .form-group
               label Catégorie
-              input.form-control(type='text', placeholder='Catégorie')
+              input#catAdd.form-control(type='text')
             .form-group
               label Description
-              input.form-control(type='text', placeholder='Description')
+              input#descAdd.form-control(type='text')
             |
             button#btnAddBlog.btn.btn-primary(type='submit', data-dismiss='modal') Envoyer
         |

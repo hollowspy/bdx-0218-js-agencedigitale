@@ -3,44 +3,42 @@ var router = express.Router();
 var mysql = require('mysql');
 const connection = require('../controllers/config');
 
-// AFFICHAGE table BLOG
+// AFFICHAGE table CONTACT
 router.get('/', function(req, res) {
-  connection.query('SELECT * FROM blog', function(err, docs) {
+  connection.query('SELECT * FROM contact', function(err, docs) {
     res.json(docs);
   });
 });
 
-// AJOUT table BLOG
+// AJOUT table CONTACT
 router.post('/add', function(req, res) {
-  connection.query('INSERT INTO blog SET ?',req.body, function(err, result) {
+  connection.query('INSERT INTO contact SET ?',req.body, function(err, result) {
     res.send(
       (err === null) ? { msg: '' } : { msg: err }
     );
   });
 });
 
-// mise à jour table BLOG
+// mise à jour table CONTACT
 router.put('/update/:id', function(req, res, next) {
   let id = req.params.id;
-  let dataBlog = {
-    title: req.body.title,
-    content: req.body.content,
-    images : req.body.images,
-    autor: req.body.autor,
-    category: req.body.category,
-    description : req.body.description
+  let dataCon = {
+    horaires: req.body.horaires,
+    adresse: req.body.adresse,
+    tel: req.body.tel,
+    mail: req.body.mail
   }
-  connection.query('UPDATE blog SET ? WHERE id = ?',[dataBlog, id], function(err, result) {
+  connection.query('UPDATE contact SET ? WHERE id = ?',[dataCon, id], function(err, result) {
     res.send(
       (err === null) ? { msg: '' } : { msg: err }
     );
   })
 })
 
-// DELETE table BLOG
+// DELETE table CONTACT
 router.delete('/delete/:id', function(req, res) {
   let id = req.params.id;
-  connection.query('DELETE FROM blog WHERE id = ?', [id], function(err) {
+  connection.query('DELETE FROM contact WHERE id = ?', [id], function(err) {
     res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });
   });
 });
