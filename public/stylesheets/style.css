@@ -196,9 +196,7 @@ color:#0a7893;
   display:none;
 }
 
-#log{
-    margin-left : -100px;
-}
+
 
 /*-----------------------
     HEADER VIDEO
@@ -232,6 +230,15 @@ color:#0a7893;
 #header .custom-select{
     height: 50px;
 }
+
+#log > img {
+    position : fixed;
+    height: 100px;
+    width: 50px;
+    top:1%;
+    left:1%;
+}
+
 
 /*------------------------
     OFFRES D'EMPLOIS
@@ -1210,6 +1217,13 @@ z-index: 1;
     padding: 31.5px 0 70px 0;
     top: 43%;
     left: 22%;
+  }
+
+  #log > img {
+      display:block;
+      width:120px;
+      height:230px;
+      margin-left: 25px;
   }
 
 }
