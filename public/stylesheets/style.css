@@ -84,6 +84,8 @@ h2, h3, h4, h5 {
   background: rgba(0,0,0,0.1);
   color: #333;
   transition: all 0.3s;
+  font-family: 'bebas_neuebold';
+  font-size: 1.5em;
 }
 
 /*logo plus onglet recruteur*/
@@ -196,9 +198,7 @@ color:#0a7893;
   display:none;
 }
 
-#log{
-    margin-left : -100px;
-}
+
 
 /*-----------------------
     HEADER VIDEO
@@ -217,21 +217,37 @@ color:#0a7893;
       height:100px;
       opacity: 0.7;
   }
-#header .icon_search{
-      background-color: rgba(0,0,0,0.7)
+  #header .icon_search {
+      background-color: white;
+      font-size: 1.5em;
+      border: none;
+      color: #d83832;
   }
 #header .btn_header_emploi, #header .btn_header_developpeur{
       margin-bottom: 5%;
   }
 
-#header .input-group{
-    border:1px gray solid;
-    margin-top:2%;
+  #header .input-group {
+      color: black;
+      margin-top: 8%;
+      font-size: 1.2em;
+    }
+
+#header .custom-select {
+    height: 100%;
+    border: none;
+    margin: 0 -0.2em;
+    padding: 0 10%;
+  }
+
+#log > img {
+    position : fixed;
+    height: 100px;
+    width: 50px;
+    top:1%;
+    left:1%;
 }
 
-#header .custom-select{
-    height: 50px;
-}
 
 /*------------------------
     OFFRES D'EMPLOIS
@@ -1210,6 +1226,13 @@ z-index: 1;
     padding: 31.5px 0 70px 0;
     top: 43%;
     left: 22%;
+  }
+
+  #log > img {
+      display:block;
+      width:120px;
+      height:230px;
+      margin-left: 25px;
   }
 
 }
