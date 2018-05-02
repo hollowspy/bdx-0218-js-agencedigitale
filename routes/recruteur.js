@@ -47,8 +47,8 @@ var smtpTransport = nodemailer.createTransport({
     port: 587,
     host: 'smtp-relay.gmail.com',
     auth: {
-        user: "julien.nied@gmail.com",
-        pass: "JargefoN1"
+        user: "wild.not.you@gmail.com",
+        pass: "wow&wow11"
     }
 });
 
@@ -56,7 +56,7 @@ var smtpTransport = nodemailer.createTransport({
 let sqlAddEmploi = 'SELECT * FROM bar WHERE type = "serious"; SELECT * FROM collab ;SELECT * FROM contact; INSERT INTO missions SET ?';
 router.post('/addEmploi', function(req, res, next) {
     connection.query(sqlAddEmploi, req.body, function(err, rows, fields) {
-        console.log(req.body);
+        //console.log(req.body);
         //console.log(req.body.recruteur);
         if (err) {
             res.status(500).json({
@@ -65,7 +65,7 @@ router.post('/addEmploi', function(req, res, next) {
             });
         } else {
             smtpTransport.sendMail({
-                from: "julien.nied@gmail.com", // Expediteur
+                from: "wild.not.you@gmail.com", // Expediteur
                 to: "hollowspy@free.fr", // Destinataires
                 subject: "Nouvelle offre d'emploi !", // Sujet
                 text: "Nouvelle offre d'emploi !", // plaintext body
