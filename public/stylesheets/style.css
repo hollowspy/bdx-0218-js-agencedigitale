@@ -81,11 +81,12 @@ h2, h3, h4, h5 {
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
-  background: black;
-  color: #333;
+  color: black;
   transition: all 0.3s;
   font-family: 'bebas_neuebold';
   font-size: 1.5em;
+  background-color: grey;
+  opacity:0.7;
 }
 
 /*logo plus onglet recruteur*/
@@ -115,7 +116,7 @@ h2, h3, h4, h5 {
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
-  color: grey;
+  color: black;
 }
 
 .cl-effect-5 a span::before {
@@ -144,7 +145,7 @@ color:#0a7893;
 
 /*navbar autres onglets*/
 .navbar-light .navbar-nav .nav-link{
-  color: #fff;
+  color: black;
   margin-right: 20px;
 }
 
@@ -175,7 +176,8 @@ color:#0a7893;
   padding-top: 10px;
   padding-bottom: 10px;
   background: white;
-  color: black;
+  color: lightgrey;
+  opacity:1;
 }
 
 .navbar.compressed .navbar-nav .nav-link {
@@ -213,6 +215,7 @@ color:#0a7893;
 
 #header .video_header{
     position:relative;
+    opacity:0.7;
 }
 
 /* Dispo et taille des boutons - A redefinir ensuite selon la charte graphique */
