@@ -8,42 +8,42 @@ div.modal.modal-id(id='modalAjoutMission')
             span(aria-hidden='true') &times;
         |
         .modal-body
-          form(method='POST', action='/admin/missions/add')
+          form(action='/admin/missions/add')#createMiss
             .form-group
               label Nom du poste
-              input.form-control(type='text', name='nom_posteAdd')
+              input#nomAdd.form-control(type='text')
             .form-group
               label Recruteur
-              input.form-control(type='text', name='recruteurAdd')
+              input#recrutAdd.form-control(type='text')
             .form-group
               label Durée
-              input.form-control(type='text', name='dureeAdd')
+              input#durAdd.form-control(type='text')
             .form-group
               label Localisation
-              input.form-control(type='text', name='localisationAdd')
+              input#locAdd.form-control(type='text')
             .form-group
               label Département
-              input.form-control(type='text', name='departementAdd')
+              input#depAdd.form-control(type='text')
             .form-group
               label Diplôme
-              input.form-control(type='text', name='diplomeAdd')
+              input#diplAdd.form-control(type='text')
             .form-group
               label Expérience
-              input.form-control(type='text', name='experienceAdd')
+              input#expAdd.form-control(type='text')
             .form-group
               label Poste
-              input.form-control(type='text', name='posteAdd')
+              input#postAdd.form-control(type='text')
             .form-group
               label Entreprise
-              input.form-control(type='text', name='entrepriseAdd')
+              input#entrAdd.form-control(type='text')
             .form-group
               label Compétences
-              input.form-control(type='text', name='competencesAdd')
+              input#compAdd.form-control(type='text')
             .form-group
               label Logo
-              input.form-control(type='file', name='logoAdd')
+              input#logoAdd.form-control(type='file')
             |
-            button.btn.btn-primary(type='submit') Envoyer
+            button#btnAddMiss.btn.btn-primary(type='submit', data-dismiss='modal') Envoyer
         |
         .modal-footer
           button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer

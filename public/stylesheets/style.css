@@ -194,6 +194,10 @@ color:#0a7893;
   left: 20%;
 }
 
+#header .logo_wild {
+  display:none;
+}
+
 #log{
     margin-left : -100px;
 }
@@ -1186,6 +1190,7 @@ z-index: 1;
      position: absolute;
      top: 20%;
      left: 45%;
+     display:block;
    }
    #header_blog .logo_wild {
      background-image: url('../images/wyn-logo.png');

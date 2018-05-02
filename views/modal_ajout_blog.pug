@@ -8,30 +8,30 @@ div.modal.modal-id(id='modalAjoutBlog')
             span(aria-hidden='true') &times;
         |
         .modal-body
-          form(method='POST', action='/admin/blog/add')
+          form(action='/admin/blog/add')#createBlog
             .form-group
               label Date
               input.form-control(type='text', name='dateAdd', placeholder='YYYY-MM-DD')
             .form-group
               label Titre
-              input.form-control(type='text', name='titleAdd')
+              input#titreAdd.form-control(type='text')
             .form-group
               label Contenu
-              textarea.form-control( name='contentAdd')
+              textarea#contAdd.form-control( name='contentAdd')
             .form-group
               label Images
-              input.form-control(type='file', name='imagesAdd')
+              input#imgAdd.form-control(type='file')
             .form-group
               label Auteur
-              input.form-control(type='text', name='autorAdd')
+              input#autAdd.form-control(type='text')
             .form-group
               label Catégorie
-              input.form-control(type='text', name='categoryAdd')
+              input#catAdd.form-control(type='text')
             .form-group
               label Description
-              input.form-control(type='text', name='descriptionAdd')
+              input#descAdd.form-control(type='text')
             |
-            button.btn.btn-primary(type='submit') Envoyer
+            button#btnAddBlog.btn.btn-primary(type='submit', data-dismiss='modal') Envoyer
         |
         .modal-footer
           button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer
