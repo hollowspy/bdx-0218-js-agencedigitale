@@ -22,6 +22,9 @@ $(document).ready(function() {
     // Update
     $('#updateUser').on('click', updateUser);
 
+    // Specif VALIDATION
+    $('#valid').on('click', updateValid);
+
     // Delete User link click
     $('table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
 
@@ -194,7 +197,6 @@ function populateTableVal() {
     // Stick our user data array into a userlist variable in the global object
     userListData = data;
     let date = moment(this.date).format('L');
-    console.log(date)
 
 
     // For each item in our JSON, add a table row and cells to the content string
@@ -225,11 +227,11 @@ function populateTableVal() {
       tableContent += '<div class="col-12"><p class="textTitle">Compétences requises</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-12"><p class="text">' + this.compétences + '</p></div>';
+      tableContent += '<div class="col-12"><p class="text">' + this.competences + '</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-6 bordDroit"><a alt="Modifier" href="#" class="form-valide" data-value="delete"><i class="fas fa-times fa-2x"></i></a></div>';
-      tableContent += '<div class="col-6 bordTop"><a alt="Supprimer" href="#" class="form-valide" data-value="add" rel="' + this.id + '"><i class="fas fa-check fa-2x"></i></a></div>';
+      tableContent += '<div class="col-6 bordDroit"><a id="delete" href="#" class="form-valide" data-value="delete"><i class="fas fa-times fa-2x"></i></a></div>';
+      tableContent += '<div class="col-6 bordTop"><a id="valid" href="#" class="form-valide" data-value="add" rel="' + this.id + '"><i class="fas fa-check fa-2x"></i></a></div>';
       tableContent += '</div>';
       tableContent += '</div>';
     });
@@ -376,6 +378,25 @@ function updateUser(e) {
     }
 
 };
+
+function updateValid(e) {
+  e.preventDefault();
+  console.log(this);
+
+  // $.ajax({
+  //     type: 'PUT',
+  //     url: '/admin/valid/valider/' + $(this).attr('rel'),
+  //     dataType: 'JSON'
+  // }).done(function(response) {
+  //     // Check for successful (blank) response
+  //     if (response.msg === '') {
+  //         // Update the table
+  //         populateTableVal();
+  //     } else {
+  //         alert('Erreur: ' + response.msg);
+  //     }
+  // }); // fin ajax
+}
 
 // Add User
 function addUser(event) {
@@ -656,15 +677,15 @@ function updateModal(e) {
 
         if ($(this).data('label') === 'Contenu') {
             let textArea = '<div class="form-group"><label>' +
-                label + '</label><textarea class="form-control mceEditor" name="' + name + '">' + Txt + '</textarea></div>';
+                label + '</label><textarea id="' + name + 'Up" class="form-control mceEditor" name="' + name + '">' + Txt + '</textarea></div>';
             $('.modal-id form').prepend(textArea);
         } else if ($(this).data('type') === 'file') {
             let upload = '<div class="form-group"><label>' +
-                label + '</label><input class="form-control" value="' + Txt +
+                label + '</label><input id="' + name + 'Up" class="form-control" value="' + Txt +
                 '" name="' + name + '" type="file"></input></div>';
             $('.modal-id form').prepend(upload);
         } else {
-            let input = '<div class="form-group"><label>' + label + '</label><input class="form-control" value="' + Txt + '" name="' + name + '" type="text"></input></div>';
+            let input = '<div class="form-group"><label>' + label + '</label><input id="' + name + 'Up" class="form-control" value="' + Txt + '" name="' + name + '" type="text"></input></div>';
             $('.modal-id form').prepend(input);
         }
     });
