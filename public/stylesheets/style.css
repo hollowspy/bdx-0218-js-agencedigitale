@@ -84,6 +84,8 @@ h2, h3, h4, h5 {
   background: rgba(0,0,0,0.1);
   color: #333;
   transition: all 0.3s;
+  font-family: 'bebas_neuebold';
+  font-size: 1.5em;
 }
 
 /*logo plus onglet recruteur*/
