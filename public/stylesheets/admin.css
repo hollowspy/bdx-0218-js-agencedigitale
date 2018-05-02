@@ -147,6 +147,7 @@ body{
     font-weight: bold;
   }
 .boxValid .form-valide {
+  display: block;
   text-align: center;
   padding-top:2%;
 }
