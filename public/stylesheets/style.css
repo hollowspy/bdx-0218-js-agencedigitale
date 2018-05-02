@@ -81,6 +81,7 @@ h2, h3, h4, h5 {
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
+  background: black;
   color: #333;
   transition: all 0.3s;
   font-family: 'bebas_neuebold';
@@ -114,7 +115,7 @@ h2, h3, h4, h5 {
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
-  color: black;
+  color: grey;
 }
 
 .cl-effect-5 a span::before {
@@ -124,7 +125,7 @@ h2, h3, h4, h5 {
   content: attr(data-hover);
   font-weight: 500;
   -webkit-transform: translate3d(0,0,0);
-  -moz-transform: translate3d(0,0,0);
+  -moz-transformlog: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
 
@@ -145,6 +146,11 @@ color:#0a7893;
 .navbar-light .navbar-nav .nav-link{
   color: #fff;
   margin-right: 20px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:active{
+  font-style: oblique;
+  color: inherit;
 }
 
 .navbar-light .navbar-nav .nav-link #border a {
@@ -193,13 +199,20 @@ color:#0a7893;
   left: 20%;
 }
 
+#header .logo_wild {
+  display:none;
+}
+
+#log{
+    margin-left : -100px;
+}
+
 /*-----------------------
     HEADER VIDEO
 -----------------------*/
 
 #header .video_header{
     position:relative;
-    opacity: 0.6;
 }
 
 /* Dispo et taille des boutons - A redefinir ensuite selon la charte graphique */
@@ -223,7 +236,7 @@ color:#0a7893;
 
   #header .input-group {
       color: black;
-      margin-top: 15%;
+      margin-top: 8%;
       font-size: 1.2em;
     }
 
@@ -597,7 +610,7 @@ body.admin {
 ------------------------ */
 
 .margin-tibo {
-  margin-top: 5.5em;
+  margin-top: 9em;
   margin-bottom: 1em;
 }
 
@@ -739,6 +752,39 @@ z-index: 1;
 #blog .container{
   padding-top: 30px;
 }
+
+
+/* ------------------ */
+/* CONFIRMATION ENVOI MAIL */
+/* ---------------- */
+
+#confirm_emploi .container{
+    margin-top : 100px;
+    margin-bottom: 100px;
+}
+
+#confirm_emploi .txt_confirm{
+    margin-bottom: 5%;
+    text-align: justify;
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    margin-left : 60%;
+    margin-top : 5%;
+}
+
+
+#confirm_emploi .img-fluid{
+    width : auto;
+    height: 300px;
+
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    background-color: rgb(216,16,50);
+    border:1px rgb(216,16,50) solid;
+}
+
 
 
 /*_____________________*/
@@ -1154,8 +1200,9 @@ z-index: 1;
    #header .logo_wild {
      width: 115px;
      position: absolute;
-     top: 30%;
+     top: 20%;
      left: 45%;
+     display:block;
    }
    #header_blog .logo_wild {
      background-image: url('../images/wyn-logo.png');
