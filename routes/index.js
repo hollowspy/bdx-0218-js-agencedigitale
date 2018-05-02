@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const connection = require('../controllers/config');
-const nodemailer = require("nodemailer");
+
 
 
 let sql = 'SELECT * FROM bar WHERE type = "fun"; SELECT * FROM missions WHERE valide = 1 ORDER BY date DESC LIMIT 6; SELECT * FROM contact';

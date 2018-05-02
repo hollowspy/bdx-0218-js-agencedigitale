@@ -56,6 +56,8 @@ var smtpTransport = nodemailer.createTransport({
 let sqlAddEmploi = 'SELECT * FROM bar WHERE type = "serious"; SELECT * FROM collab ;SELECT * FROM contact; INSERT INTO missions SET ?';
 router.post('/addEmploi', function(req, res, next) {
     connection.query(sqlAddEmploi, req.body, function(err, rows, fields) {
+        console.log(req.body);
+        //console.log(req.body.recruteur);
         if (err) {
             res.status(500).json({
                 "status_code": 500,
@@ -67,7 +69,7 @@ router.post('/addEmploi', function(req, res, next) {
                 to: "hollowspy@free.fr", // Destinataires
                 subject: "Nouvelle offre d'emploi !", // Sujet
                 text: "Nouvelle offre d'emploi !", // plaintext body
-                html: "Bonjour. Une nouvelle offre d'emploi vient d'être postée. Merci d'aller sur l'administration pour la valider ou non", // html body
+                html: `Bonjour. la société ${req.body.recruteur} vient de poser nouvelle offre d'emploi pour une poste de ${req.body.nom_poste} à ${req.body.localisation} dans le département du ${req.body.departement}. Merci d'aller sur l'administration pour la valider ou non`, // html body
             })
             // Loop check on each row
             let contact = rows[2];
