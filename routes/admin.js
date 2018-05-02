@@ -37,34 +37,34 @@ router.get('/', function(req, res, next) {
 //                        //
 
 
-router.put('/valider/:id', function(req, res, next) {
-  if (req.body.action === 'add') {
-      connection.query("UPDATE missions SET valide = 1 WHERE id = ?",[req.params.id],function(err, result)
-    {
-    if (err)
-        throw err;
-    else{
-      res.redirect('/admin')
-    }
-  }
-  )}});
+// router.put('/valider/:id', function(req, res, next) {
+//   if (req.body.action === 'add') {
+//       connection.query("UPDATE missions SET valide = 1 WHERE id = ?",[req.params.id],function(err, result)
+//     {
+//     if (err)
+//         throw err;
+//     else{
+//       res.redirect('/admin')
+//     }
+//   }
+//   )}});
 
 //-----------------------------//
 // SUPPRESSION DANS LES TABLES //
 //-----------------------------//
 
 // INVALIDATION OFFRES EMPLOIS
-router.delete('/delete/:id', function(req, res, next) {
-  if (req.body.action === 'delete') {
-    connection.query("DELETE FROM missions WHERE id = ?",[req.params.id],function(err, result)
-    {
-      if (err)
-      throw err;
-    else{
-      res.redirect('/admin')
-    }
-  }
-  )}});
+// router.delete('/delete/:id', function(req, res, next) {
+//   if (req.body.action === 'delete') {
+//     connection.query("DELETE FROM missions WHERE id = ?",[req.params.id],function(err, result)
+//     {
+//       if (err)
+//       throw err;
+//     else{
+//       res.redirect('/admin')
+//     }
+//   }
+//   )}});
 
 
 module.exports = router;
