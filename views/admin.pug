@@ -13,157 +13,24 @@ block content
             .profile-name
               a(href='/', class='deconnexion btn btn-primary') Deconnexion
           li.mt-4
-            a.links#modifBar(href='#contentBar', data-showdiv='contentBar') Bar
+            a.links#modifBar(href='#', data-showdiv='contentBar') Bar
           li
-            a.links#modifBlog(href='#contentBlog', data-showdiv='contentBlog') Blog
+            a.links#modifBlog(href='#', data-showdiv='contentBlog') Blog
           li
-            a.links#modifOffres(href='#contentOffres', data-showdiv='contentOffres') Offres Emplois
+            a.links#modifOffres(href='#', data-showdiv='contentOffres') Offres Emplois
           li
-            a.links#modifCollab(href='#contentCollab', data-showdiv='contentCollab') Collaborateurs
+            a.links#modifCollab(href='#', data-showdiv='contentCollab') Collaborateurs
           li
-            a.links#modifContact(href='#contentFooter', data-showdiv='contentFooter') Contact
+            a.links#modifContact(href='#', data-showdiv='contentFooter') Contact
           li
-            a.links#modifValidation(href='#contentValidation', data-showdiv='contentValidation') Validation
+            a.links#modifValidation(href='#', data-showdiv='contentValidation') Validation
       #page-content-wrapper
         .container-fluid
           include admin_modal.pug
-          #contentBar.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Nom
-                .d-table-cell Icône
-                .d-table-cell Nombres
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < bar.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Nom', data-name='name')= bar[i].name
-                  .d-table-cell(data-label='Picto', data-name='picto')= bar[i].picto
-                  .d-table-cell(data-label='Chiffres', data-name='numbers')= bar[i].numbers
-                  .d-table-cell
-                    a(href='#', class='modifier bar', data-row-id=bar[i].id, data-target= '#Bar' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/bar/'+bar[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=bar[i].id, data-table='bar')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBa') Ajouter
-            include modal_ajout_ba.pug
-          #contentBlog.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Titre
-                .d-table-cell Contenu
-                .d-table-cell Images
-                .d-table-cell Auteur
-                .d-table-cell Categorie
-                .d-table-cell Description
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < blog.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Titre', data-name='title')= blog[i].title
-                  .d-table-cell(data-label='Contenu', data-name='content')= blog[i].content
-                  .d-table-cell(data-label='Images', data-name='images' data-type='file')= blog[i].images
-                  .d-table-cell(data-label='Auteur', data-name='autor')= blog[i].autor
-                  .d-table-cell(data-label='Categorie', data-name='category')= blog[i].category
-                  .d-table-cell(data-label='Description', data-name='description')= blog[i].description
-                  .d-table-cell
-                    a(href='#', class='modifier blog', data-row-id=blog[i].id, data-target= '#Blog' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/blog/'+blog[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=blog[i].id, data-table='blog')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutBlog') Ajouter
-            include modal_ajout_blog.pug
-          #contentOffres.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Nom du poste
-                .d-table-cell Recruteur
-                .d-table-cell Durée
-                .d-table-cell Localisation
-                .d-table-cell Département
-                .d-table-cell Diplôme
-                .d-table-cell Expérience
-                .d-table-cell Poste
-                .d-table-cell Compétences
-                .d-table-cell Logo
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < missions.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Nom du poste', data-name='nom_poste')= missions[i].nom_poste
-                  .d-table-cell(data-label='Recruteur', data-name='recruteur')= missions[i].recruteur
-                  .d-table-cell(data-label='Durée', data-name='duree')= missions[i].duree
-                  .d-table-cell(data-label='Localisation', data-name='localisation')= missions[i].localisation
-                  .d-table-cell(data-label='Département', data-name='departement')= missions[i].departement
-                  .d-table-cell(data-label='Diplôme', data-name='diplome')= missions[i].diplome
-                  .d-table-cell(data-label='Expérience', data-name='experience')= missions[i].experience
-                  .d-table-cell(data-label='Poste', data-name='poste')= missions[i].poste
-                  .d-table-cell(data-label='Compétences', data-name='competences')= missions[i].competences
-                  .d-table-cell(data-label='Logo', data-name='logo')= missions[i].logo
-                  .d-table-cell
-                    a(href='#', class='modifier missions', data-row-id=missions[i].id, data-target= '#Missions' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/missions/'+missions[i].id+'?_method=DELETE')
-                      button(class='delete btn btn-primary', data-id=missions[i].id, data-table='missions')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutMission') Ajouter
-            include modal_ajout_offres.pug
-          #contentCollab.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Nom
-                .d-table-cell Age
-                .d-table-cell Technologies
-                .d-table-cell Expérience
-                .d-table-cell Description
-                .d-table-cell Image
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < collab.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Nom', data-name='name')= collab[i].name
-                  .d-table-cell(data-label='Age', data-name='age')= collab[i].age
-                  .d-table-cell(data-label='Technologies', data-name='techno')= collab[i].techno
-                  .d-table-cell(data-label='Expérience', data-name='experience')= collab[i].experience
-                  .d-table-cell(data-label='Description', data-name='description')= collab[i].description
-                  .d-table-cell(data-label='Image', data-name='images')= collab[i].images
-                  .d-table-cell
-                    a(href='#', class='modifier collab', data-row-id=collab[i].id, data-target= '#Collab' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/collab/'+collab[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=collab[i].id, data-table='collab')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutCollab') Ajouter
-            include modal_ajout_collab.pug
-          #contentFooter.divs
-            .d-table.w-100
-              .d-table-row.head
-                .d-table-cell Horaires
-                .d-table-cell Adresse
-                .d-table-cell Tel
-                .d-table-cell Mail
-                .d-table-cell
-                .d-table-cell
-              - for (var i = 0; i < contact.length; i++)
-                .d-table-row
-                  .d-table-cell(data-label='Horaires', data-name='horaires')= contact[i].horaires
-                  .d-table-cell(data-label='Adresse', data-name='adresse')= contact[i].adresse
-                  .d-table-cell(data-label='Tél', data-name='tel')= contact[i].tel
-                  .d-table-cell(data-label='Mail', data-name='mail')= contact[i].mail
-                  .d-table-cell
-                    a(href='#', class='modifier contact', data-row-id=contact[i].id, data-target= '#Footer' + i, data-toggle='modal')
-                      i.far.fa-edit.fa-2x
-                  .d-table-cell
-                    form(method='POST', action='/admin/contact/'+contact[i].id+'?_method=DELETE')
-                      button(class='delete', data-id=contact[i].id, data-table='contact')
-                        i.far.fa-trash-alt.fa-2x
-            a(href="#", class='ajouter btn btn-primary', data-toggle='modal', data-target='#modalAjoutContact') Ajouter
-            include modal_ajout_contact.pug
+          include admin_bar.pug
+          include admin_blog.pug
+          include admin_miss.pug
+          include admin_collab.pug
+          include admin_contact.pug
           #contentValidation.divs
             include validation.pug

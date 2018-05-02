@@ -8,27 +8,27 @@ div.modal.modal-id(id='modalAjoutCollab')
             span(aria-hidden='true') &times;
         |
         .modal-body
-          form(method='POST', action='/admin/collab/add')
+          form(action='/admin/collab/add')#createCo
             .form-group
               label Nom
-              input.form-control(type='text', name='nameAdd')
+              input#nomAdd.form-control(type='text')
             .form-group
               label Age
-              input.form-control(type='text', name='ageAdd')
+              input#ageAdd.form-control(type='text')
             .form-group
               label Technologies
-              input.form-control(type='text', name='technoAdd')
+              input#techAdd.form-control(type='text')
               .form-group
               label Expérience
-              input.form-control(type='text', name='experienceAdd')
+              input#expAdd.form-control(type='text')
             .form-group
               label Description
-              input.form-control(type='text', name='descriptionAdd')
+              input#descAdd.form-control(type='text')
             .form-group
               label Image
-              input.form-control(type='text', name='imagesAdd')
+              input#imgAdd.form-control(type='text')
             |
-            button.btn.btn-primary(type='submit') Envoyer
+            button#btnAddCo.btn.btn-primary(type='submit', data-dismiss='modal') Envoyer
         |
         .modal-footer
           button.btn.btn-secondary(type='button', data-dismiss='modal') Fermer
