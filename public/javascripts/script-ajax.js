@@ -10,6 +10,7 @@ $(document).ready(function() {
   populateTableMiss();
   populateTableCo();
   populateTableCon();
+  populateTableVal();
 
   // Add User button click
   $('#btnAddBa').on('click', addUser);
@@ -178,6 +179,63 @@ function populateTableCon() {
 
     // Inject the whole content string into our existing HTML table
     $('#contentFooter table tbody').html(tableContent);
+  });
+};
+
+// Fill table with data
+function populateTableVal() {
+
+  // Empty content string
+  var tableContent = '';
+
+  // jQuery AJAX call for JSON
+  $.getJSON( '/admin/valid', function( data ) {
+
+    // Stick our user data array into a userlist variable in the global object
+    userListData = data;
+    let date = moment(this.date).format('L');
+    console.log(date)
+
+
+    // For each item in our JSON, add a table row and cells to the content string
+    $.each(data, function(){
+      tableContent += '<div class="boxValid">';
+      tableContent += '<div class="row"><div class="col-10"><p class="title">' + this.nom_poste + '</p></div><div class="col-2"><p class="titleDate">' + date + '</p></div></div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.recruteur + '</p></div>';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.localisation + '</p></div>';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.departement + '</p></div>';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.duree + '</p></div>';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.diplome + '</p></div>';
+      tableContent += '<div class="col-2"><p class="subtitle">' + this.experience + '</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="textTitle">Description du poste</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="text">' + this.poste + '</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="textTitle">Description de l\'entreprise</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="text">' + this.entreprise + '</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="textTitle">Compétences requises</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-12"><p class="text">' + this.compétences + '</p></div>';
+      tableContent += '</div>';
+      tableContent += '<div class="row">';
+      tableContent += '<div class="col-6 bordDroit"><a alt="Modifier" href="#" class="form-valide" data-value="delete"><i class="fas fa-times fa-2x"></i></a></div>';
+      tableContent += '<div class="col-6 bordTop"><a alt="Supprimer" href="#" class="form-valide" data-value="add" rel="' + this.id + '"><i class="fas fa-check fa-2x"></i></a></div>';
+      tableContent += '</div>';
+      tableContent += '</div>';
+    });
+
+    // Inject the whole content string into our existing HTML table
+    $('#contentValidation').html(tableContent);
   });
 };
 
