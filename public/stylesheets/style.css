@@ -736,6 +736,39 @@ z-index: 1;
 }
 
 
+/* ------------------ */
+/* CONFIRMATION ENVOI MAIL */
+/* ---------------- */
+
+#confirm_emploi .container{
+    margin-top : 100px;
+    margin-bottom: 100px;
+}
+
+#confirm_emploi .txt_confirm{
+    margin-bottom: 5%;
+    text-align: justify;
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    margin-left : 60%;
+    margin-top : 5%;
+}
+
+
+#confirm_emploi .img-fluid{
+    width : auto;
+    height: 300px;
+
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    background-color: rgb(216,16,50);
+    border:1px rgb(216,16,50) solid;
+}
+
+
+
 /*_____________________*/
 /* ______ FOOTER ______*/
 /*_____________________*/
