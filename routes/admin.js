@@ -239,6 +239,7 @@ router.post('/contact/add', function(req, res, next) {
 let insert5 = 'INSERT INTO blog SET ?'
 router.post('/blog/add', function(req, res, next) {
   let data5 = {
+    date_parution: req.body.dateAdd,
     title: req.body.titleAdd,
     content: req.body.contentAdd,
     images: req.body.imagesAdd,
