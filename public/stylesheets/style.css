@@ -211,21 +211,28 @@ color:#0a7893;
       height:100px;
       opacity: 0.7;
   }
-#header .icon_search{
-      background-color: rgba(0,0,0,0.7)
+  #header .icon_search {
+      background-color: white;
+      font-size: 1.5em;
+      border: none;
+      color: #d83832;
   }
 #header .btn_header_emploi, #header .btn_header_developpeur{
       margin-bottom: 5%;
   }
 
-#header .input-group{
-    border:1px gray solid;
-    margin-top:2%;
-}
+  #header .input-group {
+      color: black;
+      margin-top: 8%;
+      font-size: 1.2em;
+    }
 
-#header .custom-select{
-    height: 50px;
-}
+#header .custom-select {
+    height: 100%;
+    border: none;
+    margin: 0 -0.2em;
+    padding: 0 10%;
+  }
 
 /*------------------------
     OFFRES D'EMPLOIS
