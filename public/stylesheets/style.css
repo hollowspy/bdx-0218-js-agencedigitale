@@ -81,7 +81,6 @@ h2, h3, h4, h5 {
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
-  background: rgba(0,0,0,0.1);
   color: #333;
   transition: all 0.3s;
   font-family: 'bebas_neuebold';
@@ -206,6 +205,7 @@ color:#0a7893;
 
 #header .video_header{
     position:relative;
+    opacity: 0.6;
 }
 
 /* Dispo et taille des boutons - A redefinir ensuite selon la charte graphique */
@@ -229,7 +229,7 @@ color:#0a7893;
 
   #header .input-group {
       color: black;
-      margin-top: 8%;
+      margin-top: 15%;
       font-size: 1.2em;
     }
 
@@ -1202,7 +1202,7 @@ z-index: 1;
    #header .logo_wild {
      width: 115px;
      position: absolute;
-     top: 20%;
+     top: 30%;
      left: 45%;
      display:block;
    }
