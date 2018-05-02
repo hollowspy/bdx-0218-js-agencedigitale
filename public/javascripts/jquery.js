@@ -135,7 +135,7 @@ $(document).ready(function () {
 
       if ($(this).data('label') === 'Contenu') {
         let textArea = '<div class="form-group"><label>' +
-          label + '</label><textarea class="form-control" name="' + name + '">'+Txt+'</textarea></div>';
+          label + '</label><textarea class="form-control mceEditor" name="' + name + '">'+Txt+'</textarea></div>';
         $('.modal-id form').prepend(textArea);
       }else if($(this).data('type') === 'file'){
         let upload = '<div class="form-group"><label>' +
@@ -166,7 +166,10 @@ $(document).ready(function () {
       let action = '/admin/blog/' + idTable + '?_method=PUT';
       $('.modal-id form').attr('action', action);
     }
-    tinymce.init({ selector:'textarea' });
+    tinymce.init({
+      mode : "specific_textareas",
+      editor_selector : "mceEditor"
+  });
 
     $(idModal).modal('show');
 
