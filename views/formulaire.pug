@@ -1,42 +1,45 @@
 .formEmploi#formEmploi
   h2 Deposer une offre
-  form#myForm(class='form-emploi' method='POST'  enctype='multipart/form-data' action='/emploi')
-
+  form#myForm(class='form-emploi' method='POST' action='/recruteur/addEmploi')
     .container.form-ent
       .row.formOffre
         .col-6.col-sm-4
-          label.form_col(for='emploi') Poste :
-          input#emploi(name='emploi', type='text', placeholder='Saisissez votre emploi de rêve')
+          label.form_col(for='nom_poste') Poste :
+          input#nom_poste(name='nom_poste', type='text', placeholder='Saisissez votre emploi de rêve')
           span.tooltip Un poste ne peut pas faire moins de 2 caract&egrave;res
         .col-6.col-sm-4
           label.form_col(for='duree') Dur&eacute;e :
           input#duree(name='duree', type='text', placeholder='La durée de votre offre')
           span.tooltip La dur&eacute;e doit &ecirc;tre sup&eacute;rieure &agrave; 0
         .col-12.col-sm-4
-          label.form_col(for='lieu') Lieu :
-          input#duree(name='lieu', type='text', placeholder='L\'endroit idéal')
+          label.form_col(for='localisation') Lieu :
+          input#localisation(name='localisation', type='text', placeholder='L\'endroit idéal')
           span.tooltip Le lieu ne peut pas etre vide
       .row.formOffre
-        .col-6.col-sm-4
+        .col-6.col-sm-3
+          label.form_col(for='recruteur') Entreprise :
+          input#recruteur(name='recruteur', type='text', placeholder='Votre nom d\'entreprise')
+          span.tooltip Le champ entreprise ne peut pas &ecirc;tre vide
+        .col-6.col-sm-3
           label.form_col(for='diplome') Dipl&ocirc;me :
           input#diplome(name='diplome', type='text', placeholder='Le diplôme minimum souhaité')
           span.tooltip Le champ dipl&ocirc;me ne peut pas &ecirc;tre vide
-        .col-6.col-sm-4
+        .col-6.col-sm-3
           label.form_col(for='experience') Exp&eacute;rience :
           input#experience(name='experience', type='textarea', placeholder='L\'expérience qui fait la différence')
           span.tooltip Le champ exp&eacute;rience ne peut pas &ecirc;tre vide
-        .col-6.col-sm-4
+        .col-6.col-sm-3
           label.form_col(for='departement') Departement :
-          input#experience(name='experience', type='textarea', placeholder='00')
+          input#departement(name='departement', type='textarea', placeholder='00', maxlength='XXX')
           span.tooltip Le champ dept ne peut être vide
       .row.formOffre
         .col-12.col-sm-6
-          label.form_col(for='descEmploi') Description du poste :
-          textarea#descEmploi(name='descEmploi', rows='5')
+          label.form_col(for='poste') Description du poste :
+          textarea#poste(name='poste', rows='5')
           span.tooltip La description du poste ne peut pas &ecirc;tre vide
         .col-12.col-sm-6
-          label.form_col(for='descEnt') Description de l&apos;entreprise :
-          textarea#descEnt(name='descEnt', rows='5')
+          label.form_col(for='entreprise') Description de l&apos;entreprise :
+          textarea#entreprise(name='entreprise', rows='5')
           span.tooltip La description de l&apos;entreprise ne peut pas &ecirc;tre vide
       .row.formOffre
         .col-12.col-sm-6

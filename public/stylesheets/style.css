@@ -438,7 +438,7 @@ color:#0a7893;
     font-size:2em;
 }
 
-#formEmploi .formSubmit input {
+#formEmploi .formSubmit input, #formEmploi .formSubmit input:active{
     border: 1px solid black;
     display: inline-block;
     width: auto;
@@ -447,6 +447,8 @@ color:#0a7893;
     opacity: 0.8;
     border-radius: 0.1em;
     font-size: 0.7em;
+    padding: 1% 5%;
+    transition: none;
 }
 
 #formEmploi textarea{
@@ -732,6 +734,39 @@ z-index: 1;
 #blog .container{
   padding-top: 30px;
 }
+
+
+/* ------------------ */
+/* CONFIRMATION ENVOI MAIL */
+/* ---------------- */
+
+#confirm_emploi .container{
+    margin-top : 100px;
+    margin-bottom: 100px;
+}
+
+#confirm_emploi .txt_confirm{
+    margin-bottom: 5%;
+    text-align: justify;
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    margin-left : 60%;
+    margin-top : 5%;
+}
+
+
+#confirm_emploi .img-fluid{
+    width : auto;
+    height: 300px;
+
+}
+
+#confirm_emploi .btn_confirm_emploi{
+    background-color: rgb(216,16,50);
+    border:1px rgb(216,16,50) solid;
+}
+
 
 
 /*_____________________*/
