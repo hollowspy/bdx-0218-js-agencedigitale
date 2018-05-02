@@ -12,6 +12,7 @@ router.get('/', function(req, res) {
 
 // AJOUT table BAR
 router.post('/add', function(req, res) {
+  console.log(req.body);
   connection.query('INSERT INTO bar SET ?',req.body, function(err, result) {
     res.send(
       (err === null) ? { msg: '' } : { msg: err }

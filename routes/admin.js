@@ -26,11 +26,11 @@ router.get('/', function(req, res, next) {
 }); // fin de l'appel au getElementsByClassName('className')
 
 /* GET userlist. */
-router.get('/userlist', function(req, res) {
-  connection.query('SELECT * FROM bar', function(err, docs) {
-    res.json(docs);
-  });
-});
+// router.get('/userlist', function(req, res) {
+//   connection.query('SELECT * FROM bar', function(err, docs) {
+//     res.json(docs);
+//   });
+// });
 
 //                        //
 // MISE A JOUR DES TABLES //

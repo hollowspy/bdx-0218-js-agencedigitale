@@ -192,6 +192,7 @@ function updateUser(e) {
       'picto': $('#updateModalBa input#pictoUp').val(),
       'numbers': $('#updateModalBa input#numbersUp').val(),
     }
+    console.log(dataBar)
     // Use AJAX to post the object to our adduser service
     $.ajax({
       type: 'PUT',
