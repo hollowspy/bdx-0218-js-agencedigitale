@@ -707,6 +707,8 @@ function updateModal(e) {
         $('.modal-id form').attr('action', action).attr('id', 'updateModalBlo');
     }
 
+    tinyMCE.init({ mode : "specific_textareas", editor_selector : "mceEditor" });
+
     $(idModal).modal('show');
 
 };
