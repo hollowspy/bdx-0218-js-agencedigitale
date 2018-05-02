@@ -13,9 +13,8 @@ router.get('/', function(req, res) {
 
 // mise à jour table VALIDATION
 router.put('/valider/:id', function(req, res, next) {
-  console.log(req.body);
   let id = req.params.id;
-  if (req.body.action === 'add') {
+  if (req.body.valide === '1') {
     connection.query('UPDATE missions SET valide = 1 WHERE id = ?',[id], function(err, result) {
       res.send(
         (err === null) ? { msg: '' } : { msg: err }
@@ -26,7 +25,6 @@ router.put('/valider/:id', function(req, res, next) {
 
 // DELETE table VALIDATION
 router.delete('/delete/:id', function(req, res) {
-  console.log(req.body);
   let id = req.params.id;
   connection.query('DELETE FROM missions WHERE id = ?', [id], function(err) {
     res.send((err === null) ? { msg: '' } : { msg:'error: ' + err });

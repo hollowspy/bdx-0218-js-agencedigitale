@@ -22,8 +22,10 @@ $(document).ready(function() {
     // Update
     $('#updateUser').on('click', updateUser);
 
-    // Specif VALIDATION
-    $('#valid').on('click', updateValid);
+    // Specif sur validation
+    $('#contentValidation').on('click', "#valid", updateValid);
+
+    $('#contentValidation').on('click', "#delete", deleteValid);
 
     // Delete User link click
     $('table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
@@ -202,42 +204,42 @@ function populateTableVal() {
     // For each item in our JSON, add a table row and cells to the content string
     $.each(data, function(){
       tableContent += '<div class="boxValid">';
-      tableContent += '<div class="row"><div class="col-10"><p class="title">' + this.nom_poste + '</p></div><div class="col-2"><p class="titleDate">' + date + '</p></div></div>';
+      tableContent += '<div class="row"><div class="col-10"><p id="nameUp" class="title">' + this.nom_poste + '</p></div><div class="col-2"><p id="dateUp" class="titleDate">' + date + '</p></div></div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.recruteur + '</p></div>';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.localisation + '</p></div>';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.departement + '</p></div>';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.duree + '</p></div>';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.diplome + '</p></div>';
-      tableContent += '<div class="col-2"><p class="subtitle">' + this.experience + '</p></div>';
+      tableContent += '<div class="col-2"><p id="recrUp" class="subtitle">' + this.recruteur + '</p></div>';
+      tableContent += '<div class="col-2"><p id="locUp" class="subtitle">' + this.localisation + '</p></div>';
+      tableContent += '<div class="col-2"><p id="depUp" class="subtitle">' + this.departement + '</p></div>';
+      tableContent += '<div class="col-2"><p id="durUp" class="subtitle">' + this.duree + '</p></div>';
+      tableContent += '<div class="col-2"><p id="dipUp" class="subtitle">' + this.diplome + '</p></div>';
+      tableContent += '<div class="col-2"><p id="expUp" class="subtitle">' + this.experience + '</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
       tableContent += '<div class="col-12"><p class="textTitle">Description du poste</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-12"><p class="text">' + this.poste + '</p></div>';
+      tableContent += '<div class="col-12"><p id="posUp" class="text">' + this.poste + '</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
       tableContent += '<div class="col-12"><p class="textTitle">Description de l\'entreprise</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-12"><p class="text">' + this.entreprise + '</p></div>';
+      tableContent += '<div class="col-12"><p id="entUp" class="text">' + this.entreprise + '</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
       tableContent += '<div class="col-12"><p class="textTitle">Compétences requises</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-12"><p class="text">' + this.competences + '</p></div>';
+      tableContent += '<div class="col-12"><p id="compUp" class="text">' + this.competences + '</p></div>';
       tableContent += '</div>';
       tableContent += '<div class="row">';
-      tableContent += '<div class="col-6 bordDroit"><a id="delete" href="#" class="form-valide" data-value="delete"><i class="fas fa-times fa-2x"></i></a></div>';
+      tableContent += '<div class="col-6 bordDroit"><a id="delete" href="#" class="form-valide" data-value="delete" rel="' + this.id + '"><i class="fas fa-times fa-2x"></i></a></div>';
       tableContent += '<div class="col-6 bordTop"><a id="valid" href="#" class="form-valide" data-value="add" rel="' + this.id + '"><i class="fas fa-check fa-2x"></i></a></div>';
       tableContent += '</div>';
       tableContent += '</div>';
     });
 
     // Inject the whole content string into our existing HTML table
-    $('#contentValidation').html(tableContent);
+    $('#contentValidation div').html(tableContent);
   });
 };
 
@@ -252,7 +254,6 @@ function updateUser(e) {
             'picto': $('#updateModalBa input#pictoUp').val(),
             'numbers': $('#updateModalBa input#numbersUp').val(),
         }
-        console.log(dataBar)
             // Use AJAX to post the object to our adduser service
         $.ajax({
             type: 'PUT',
@@ -380,22 +381,25 @@ function updateUser(e) {
 };
 
 function updateValid(e) {
-  e.preventDefault();
-  console.log(this);
-
-  // $.ajax({
-  //     type: 'PUT',
-  //     url: '/admin/valid/valider/' + $(this).attr('rel'),
-  //     dataType: 'JSON'
-  // }).done(function(response) {
-  //     // Check for successful (blank) response
-  //     if (response.msg === '') {
-  //         // Update the table
-  //         populateTableVal();
-  //     } else {
-  //         alert('Erreur: ' + response.msg);
-  //     }
-  // }); // fin ajax
+  e.preventDefault;
+  console.log("je suis dans l'event");
+  let dataVal = {
+      'valide': '1'
+  }
+  $.ajax({
+      type: 'PUT',
+      data: dataVal,
+      url: '/admin/valid/valider/' + $(this).attr('rel'),
+      dataType: 'JSON'
+  }).done(function(response) {
+      // Check for successful (blank) response
+      if (response.msg === '') {
+          // Update the table
+          populateTableVal();
+      } else {
+          alert('Erreur: ' + response.msg);
+      }
+  }); // fin ajax
 }
 
 // Add User
@@ -658,6 +662,24 @@ function deleteUser(event) {
     }
 
 };
+
+function deleteValid(e){
+  e.preventDefault;
+  $.ajax({
+      type: 'DELETE',
+      url: '/admin/valid/delete/' + $(this).attr('rel')
+  }).done(function(response) {
+
+      // Check for a successful (blank) response
+      if (response.msg === '') {} else {
+          alert('Error: ' + response.msg);
+      }
+
+      // Update the table
+      populateTableVal();
+
+  });
+}
 
 function updateModal(e) {
     e.preventDefault;
