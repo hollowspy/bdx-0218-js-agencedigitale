@@ -696,10 +696,12 @@ function updateModal(e) {
     $('.modal-header').on('click', '.close', function(e){
       e.preventDefault;
       $('.form-group input').attr('value', "");
+      $('#tinymce p').empty();
     })
     $('.modal-footer').on('click', '.btn', function(e){
       e.preventDefault;
       $('.form-group input').attr('value', "");
+      $('#tinymce p').empty();
     })
 
     $(this).parent().prevAll('td').each(function() {
