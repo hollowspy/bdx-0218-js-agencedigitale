@@ -56,7 +56,7 @@ router.post('/search', function(req, res, next) {
                 console.log('mes objets',emploi);
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    emploi, bodyClass : 'search', contact
+                    emploi, bodyClass : 'developpeur', contact
                 });
             }
         });
