@@ -248,7 +248,6 @@ function updateUser(e) {
     e.preventDefault();
 
     if ($(this).parent().is('#updateModalBa')) {
-
         let dataBar = {
             'name': $('#updateModalBa input#nameUp').val(),
             'picto': $('#updateModalBa input#pictoUp').val(),
@@ -691,6 +690,17 @@ function updateModal(e) {
     $(this).parents().prevAll('.modal').find('#updateUser').attr('rel', idTable);
 
     $('.modal-id form .form-group').remove();
+
+    // let close = $(this).parents().prevAll;
+    // console.log(close);
+    $('.modal-header').on('click', '.close', function(e){
+      e.preventDefault;
+      $('.form-group input').attr('value', "");
+    })
+    $('.modal-footer').on('click', '.btn', function(e){
+      e.preventDefault;
+      $('.form-group input').attr('value', "");
+    })
 
     $(this).parent().prevAll('td').each(function() {
         let label = $(this).data('label');
