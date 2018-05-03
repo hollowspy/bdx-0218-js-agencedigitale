@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 
                 // Render index.pug page using array
                 res.render('page_emploi', {
-                    emploi, contact
+                    emploi, contact, bodyClass: 'developpeur'
                 });
             }
         });
