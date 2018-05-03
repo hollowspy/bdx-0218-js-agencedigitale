@@ -107,7 +107,7 @@ h2, h3, h4, h5 {
   padding-left: 105px;
   color: white;
 }
-.compressed .navbar-recruteur{
+.compressed .navbar-recruteur, .compressed .navbar-recruteur:hover{
   color: black;
 }
 
@@ -137,6 +137,10 @@ h2, h3, h4, h5 {
   -webkit-transform: translate3d(0,0,0);
   -moz-transformlog: translate3d(0,0,0);
   transform: translate3d(0,0,0);
+}
+
+.cl-effect-5 a:hover span::before {
+  color:#000;
 }
 
 /* .developpeur .cl-effect-5 a span::before {
