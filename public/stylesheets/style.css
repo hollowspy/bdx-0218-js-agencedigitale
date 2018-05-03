@@ -85,10 +85,13 @@ h2, h3, h4, h5 {
   transition: all 0.3s;
   font-family: 'bebas_neuebold';
   font-size: 1.5em;
-  background-color: grey;
-  opacity:0.7;
 }
-
+.developpeur .navbar{
+  background-color: rgba(204, 51, 51, 0.6);
+}
+.recruteur .navbar{
+  background-color: rgba(0, 102, 153, 0.6);
+}
 /*logo plus onglet recruteur*/
 .navbar-brand {
   position: absolute;
@@ -102,6 +105,9 @@ h2, h3, h4, h5 {
 
 .navbar-recruteur{
   padding-left: 105px;
+  color: white;
+}
+.compressed .navbar-recruteur{
   color: black;
 }
 
@@ -110,18 +116,21 @@ h2, h3, h4, h5 {
   overflow: hidden;
 }
 
+.cl-effect-5 a:hover {
+  color:#fff;
+}
+
 .cl-effect-5 a span {
   position: relative;
   display: inline-block;
   -webkit-transition: -webkit-transform 0.3s;
   -moz-transition: -moz-transform 0.3s;
   transition: transform 0.3s;
-  color: black;
 }
 
 .cl-effect-5 a span::before {
   position: absolute;
-  color: #d83832;
+  color: #fff;
   top: 100%;
   content: attr(data-hover);
   font-weight: 500;
@@ -130,9 +139,9 @@ h2, h3, h4, h5 {
   transform: translate3d(0,0,0);
 }
 
-.developpeur .cl-effect-5 a span::before {
+/* .developpeur .cl-effect-5 a span::before {
 color:#0a7893;
-  }
+  } */
 
 .cl-effect-5 a:hover span,
 .cl-effect-5 a:focus span {
@@ -145,7 +154,7 @@ color:#0a7893;
 
 /*navbar autres onglets*/
 .navbar-light .navbar-nav .nav-link{
-  color: black;
+  color: white;
   margin-right: 20px;
 }
 
