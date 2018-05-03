@@ -53,7 +53,6 @@ router.post('/search', function(req, res, next) {
                     let emploi = rows[0];
                     let contact = rows[1];
 
-                console.log('mes objets',emploi);
                 // Render index.pug page using array
                 res.render('page_emploi', {
                     emploi, bodyClass : 'developpeur', contact
