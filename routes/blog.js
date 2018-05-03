@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
       // Loop check on each row
       let tableau = rows[0];
       let contact = rows[1];
-    res.render('blog', { 'blogs': tableau, title: 'Blog WNY', moment, contact });
+    res.render('blog', { bodyClass: 'developpeur', 'blogs': tableau, title: 'Blog WNY', moment, contact });
     }
   });
 });
@@ -34,7 +34,7 @@ router.get('/:id', (req, res, next) => {
       let blogId = blogs[0];
       let contact = blogs[1];
       console.log(blogId.length);
-    res.render('full_article', { article : blogId[0], moment, contact });
+    res.render('full_article', { bodyClass: 'developpeur', article : blogId[0], moment, contact });
     }
   });
 });

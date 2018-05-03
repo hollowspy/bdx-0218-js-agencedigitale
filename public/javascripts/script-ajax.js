@@ -684,25 +684,25 @@ function updateModal(e) {
     e.preventDefault;
     let idModal = $(this).data('target');
     idModal = idModal.substring(1);
-    $(this).parents().prevAll('.modal').attr('id', idModal);
+    $(this).parents().prevAll('.modal-up').attr('id', idModal);
 
     let idTable = $(this).data('rowId');
-    $(this).parents().prevAll('.modal').find('#updateUser').attr('rel', idTable);
+    $(this).parents().prevAll('.modal-up').find('#updateUser').attr('rel', idTable);
 
-    $('.modal-id form .form-group').remove();
+    $('.modal-up form .form-group').remove();
 
     // let close = $(this).parents().prevAll;
     // console.log(close);
-    $('.modal-header').on('click', '.close', function(e){
-      e.preventDefault;
-      $('.form-group input').attr('value', "");
-      $('#tinymce p').empty();
-    })
-    $('.modal-footer').on('click', '.btn', function(e){
-      e.preventDefault;
-      $('.form-group input').attr('value', "");
-      $('#tinymce p').empty();
-    })
+    // $('.modal-header').on('click', '.close', function(e){
+    //   e.preventDefault;
+    //   $('.form-group input').attr('value', "");
+    //   $('#tinymce p').empty();
+    // })
+    // $('.modal-footer').on('click', '.btn', function(e){
+    //   e.preventDefault;
+    //   $('.form-group input').attr('value', "");
+    //   $('#tinymce p').empty();
+    // })
 
     $(this).parent().prevAll('td').each(function() {
         let label = $(this).data('label');
@@ -712,33 +712,33 @@ function updateModal(e) {
         if ($(this).data('label') === 'Contenu') {
             let textArea = '<div class="form-group"><label>' +
                 label + '</label><textarea id="' + name + 'Up" class="form-control mceEditor" name="' + name + '">' + Txt + '</textarea></div>';
-            $('.modal-id form').prepend(textArea);
+            $('.modal-up form').prepend(textArea);
         } else if ($(this).data('type') === 'file') {
             let upload = '<div class="form-group"><label>' +
                 label + '</label><input id="' + name + 'Up" class="form-control" value="' + Txt +
                 '" name="' + name + '" type="file"></input></div>';
-            $('.modal-id form').prepend(upload);
+            $('.modal-up form').prepend(upload);
         } else {
             let input = '<div class="form-group"><label>' + label + '</label><input id="' + name + 'Up" class="form-control" value="' + Txt + '" name="' + name + '" type="text"></input></div>';
-            $('.modal-id form').prepend(input);
+            $('.modal-up form').prepend(input);
         }
     });
 
     if ($(this).hasClass('bar')) {
         let action = '/admin/bar/update/' + idTable;
-        $('.modal-id form').attr('action', action).attr('id', 'updateModalBa');
+        $('.modal-up form').attr('action', action).attr('id', 'updateModalBa');
     } else if ($(this).hasClass('missions')) {
         let action = '/admin/missions/update/' + idTable;
-        $('.modal-id form').attr('action', action).attr('id', 'updateModalMi');
+        $('.modal-up form').attr('action', action).attr('id', 'updateModalMi');
     } else if ($(this).hasClass('collab')) {
         let action = '/admin/collab/update/' + idTable;
-        $('.modal-id form').attr('action', action).attr('id', 'updateModalCol');
+        $('.modal-up form').attr('action', action).attr('id', 'updateModalCol');
     } else if ($(this).hasClass('contact')) {
         let action = '/admin/contact/update/' + idTable;
-        $('.modal-id form').attr('action', action).attr('id', 'updateModalCon');
+        $('.modal-up form').attr('action', action).attr('id', 'updateModalCon');
     } else if ($(this).hasClass('blog')) {
         let action = '/admin/blog/update/' + idTable;
-        $('.modal-id form').attr('action', action).attr('id', 'updateModalBlo');
+        $('.modal-up form').attr('action', action).attr('id', 'updateModalBlo');
     }
 
     tinyMCE.init({ mode : "specific_textareas", editor_selector : "mceEditor" });
