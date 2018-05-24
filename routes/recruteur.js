@@ -66,7 +66,7 @@ router.post('/addEmploi', function(req, res, next) {
         } else {
             smtpTransport.sendMail({
                 from: "wild.not.you@gmail.com", // Expediteur
-                to: "ylarcade@argefo.com; julien.nied@gmail.com", // Destinataires
+                to: "julien.nied@gmail.com", // Destinataires
                 subject: "Nouvelle offre d'emploi !", // Sujet
                 text: "Nouvelle offre d'emploi !", // plaintext body
                 html: `Bonjour. la société ${req.body.recruteur} vient de poser nouvelle offre d'emploi pour une poste de ${req.body.nom_poste} à ${req.body.localisation} dans le département du ${req.body.departement}. Merci d'aller sur l'administration pour la valider ou non`, // html body
